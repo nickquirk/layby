@@ -1,3 +1,37 @@
 * {
   box-sizing: border-box;
 }
+
+
+// .sitewrapper {
+//   min-height: 100vh;
+// }
+
+.navbar {
+  background-color: rgb(124, 229, 237);
+
+  .nav-link {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+}
+
+.landing-page {
+  min-height: 100vh;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  background-color: bisque;
+  min-height: 400px;
+
+  #landing-search-bar {
+    display: flex;
+    align-items: flex-end;
+  }
+}

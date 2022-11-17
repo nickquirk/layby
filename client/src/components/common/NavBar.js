@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 
 const NavBar = () => {
   return (
-    <Navbar expand='sm'>
+    <Navbar expand='sm' className='navbar'>
       <Container>
         <Navbar.Brand as={Link} to='/' className='intro-navbar'>
         </Navbar.Brand>

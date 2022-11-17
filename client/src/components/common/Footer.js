@@ -1,4 +1,4 @@
-import { CDBFooter } from 'cdbreact'
+
 
 const Footer = () => {
   return (

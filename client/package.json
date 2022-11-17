@@ -4,14 +4,15 @@
   "private": true,
   "dependencies": {
     "axios": "^0.25.0",
+    "bootstrap": "^5.2.2",
     "eslint-plugin-react": "^7.31.10",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
     "sass": "^1.56.1"
   },
-  "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
