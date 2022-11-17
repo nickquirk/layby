@@ -1,11 +1,7 @@
 /* eslint-disable no-undef */
 import express from 'express'
-<<<<<<< HEAD
-import { registerUser } from '../controllers/auth.js'
-=======
 import { registerUser, getAllLocations } from '../controllers/auth.js'
 
->>>>>>> development
 
 const router = express.Router()
 
@@ -15,13 +11,9 @@ const router = express.Router()
 
 router.route('/regions/:id/locations').get(getAllLocations)
 
-<<<<<<< HEAD
 router.route('/register')
   .post(registerUser)
 
-=======
-router.route('/register').post(registerUser)
->>>>>>> development
 
 // router.route('/login').post(loginUser)
 
