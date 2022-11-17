@@ -17,8 +17,8 @@ export default [
     accessAndParking:
       'Large carpark on the beach. £2 for 2 hours, £4 /day.Can flood',
     localClubWebsite: 'https://www.facebook.com/groups/115179455209258/',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
-  }
+    image: 'https://i.imgur.com/hMJsF8I.jpg',
+  },
   {
     name: 'Camber Sands',
     description: 'Large beach which is choppy in light winds and has large swell in southwesterlies.  ',
@@ -29,7 +29,7 @@ export default [
     lifeguard: 'Lifeguards March - October',
     bestWindDirection: 'S - W',
     windDescription: 'ESE, clockwise around to W. The best directions are S, clockwise around to W. ',
-    tidalInfo: 'Beach exposed 3-4 hours either side of high tide'.
+    tidalInfo: 'Beach exposed 3-4 hours either side of high tide',
     hazards:
       'Shipwreck and sea defences which are hidden at high tide. Very busy with other water activities and beach users in summer. ',
     restrictions:
@@ -37,8 +37,8 @@ export default [
     accessAndParking:
       'Broomhill car park and large gravel car park beside the beach',
     localClubWebsite: 'https://en-gb.facebook.com/camberkiteclub/',
-    image: 'https://i.imgur.com/Z5EMnuB.jpg'
-  }
+    image: 'https://i.imgur.com/Z5EMnuB.jpg',
+  },
   {
     name: 'East Beach, Southend-on-Sea',
     description: 'Great shallow water area, with designated kite area, suitable for learning',
@@ -57,8 +57,8 @@ export default [
     accessAndParking:
       'Designated parking by the beach but gated and locked during winter. On street parking nearby ',
     localClubWebsite: 'https://www.facebook.com/essexkitesurf/',
-    image: 'https://i.imgur.com/yXha28A.jpg'
-  }
+    image: 'https://i.imgur.com/yXha28A.jpg',
+  },
   {
     name: 'Heacham Beach',
     description: 'Great for small waves and flat chop',
@@ -71,13 +71,13 @@ export default [
     windDescription: 'Works on anything from S round to N',
     tidalInfo: 'Only worth riding at high tide, otherwise its a long and muddy wade out to the water',
     hazards:
-      ' The holiday park and the beach groynes' ,
+      ' The holiday park and the beach groynes',
     restrictions:
       '',
     accessAndParking:
       'If the small South Beach carpark (20 spaces) is full the North Beach carpark is not far away £3.20/3 hours and  £5/day full day at peak season. Free after 6pm parking is free',
     localClubWebsite: 'https://en-gb.facebook.com/groups/115179455209258/',
-    image: 'https://i.imgur.com/UQlXoHm.jpg'
+    image: 'https://i.imgur.com/UQlXoHm.jpg',
   },
   {
     name: 'New Hunstandton',
@@ -97,9 +97,6 @@ export default [
     accessAndParking:
       'Council carpark next to the Sailing Club',
     localClubWebsite: 'https://www.facebook.com/groups/175543115927907/',
-    image: 'https://i.imgur.com/ajTqMCI.jpg'
-  }
-  {
-    
+    image: 'https://i.imgur.com/ajTqMCI.jpg',
   }
 ]

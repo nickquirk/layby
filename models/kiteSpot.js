@@ -22,6 +22,7 @@ const reviewSchema = new mongoose.Schema(
 
 // ? Location schema with embedded owner and referenced reviews
 const locationSchema = new mongoose.Schema({
+  region: { type: String, required: true },
   name: { type: String, required: true, unique: true },
   description: { type: String, required: true, unique: true },
   experienceLevel: { type: String, required: true, unique: false },
@@ -66,8 +67,8 @@ locationSchema.virtual('avgRating').get(function () {
 })
 
 locationSchema.set('toJSON', {
-  virtuals: true
+  virtuals: true,
 })
 
 // * Model
-export default mongoose.model('KiteSpot', locationSchema)
+export default mongoose.model('KiteSpot', areaSchema)
