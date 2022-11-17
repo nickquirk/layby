@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import express from 'express'
+import { registerUser } from './controllers/auth.js'
 
 const router = express.Router()
 
@@ -9,7 +10,9 @@ const router = express.Router()
 
 // router.route('/regions/:id/location/:locationId').get(getLocation)
 
-router.route('/register').post(registerUser)
+router.route('/register')
+  .post(registerUser)
+
 
 // router.route('/login').post(loginUser)
 
