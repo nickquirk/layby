@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import express from 'express'
-import { registerUser } from './controllers/auth.js'
+import { registerUser } from '../controllers/auth.js'
 
 const router = express.Router()
 
