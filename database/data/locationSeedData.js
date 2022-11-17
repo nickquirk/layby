@@ -57,8 +57,8 @@ export default [
     accessAndParking:
       'Designated parking by the beach but gated and locked during winter. On street parking nearby ',
     localClubWebsite: 'https://www.facebook.com/essexkitesurf/',
-    image: 'https://i.imgur.com/yXha28A.jpg',
-  },
+    image: 'https://i.imgur.com/yXha28A.jpg',,
+  },,
   {
     name: 'Heacham Beach',
     description: 'Great for small waves and flat chop',
@@ -71,7 +71,7 @@ export default [
     windDescription: 'Works on anything from S round to N',
     tidalInfo: 'Only worth riding at high tide, otherwise its a long and muddy wade out to the water',
     hazards:
-      ' The holiday park and the beach groynes' ,
+      ' The holiday park and the beach groynes',
     restrictions:
       '',
     accessAndParking:
@@ -98,8 +98,5 @@ export default [
       'Council carpark next to the Sailing Club',
     localClubWebsite: 'https://www.facebook.com/groups/175543115927907/',
     image: 'https://i.imgur.com/ajTqMCI.jpg',
-  },
-  {
-    
   }
 ]

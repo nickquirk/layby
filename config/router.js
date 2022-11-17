@@ -12,7 +12,8 @@ const router = express.Router()
 
 router.route('/regions/:id/locations/:locationId').get(getSingleLocation)
 
-router.route('/regions/:id/locations').get(getAllLocations)
+router.route('/regions/:id/locations')
+  .get(getAllLocations)
 
 router.route('/register').post(registerUser)
 
