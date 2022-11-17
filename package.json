@@ -19,10 +19,12 @@
   "homepage": "https://github.com/ajx-mijo/kite-surf-city#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bootstrap": "^5.2.2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {}
 }
