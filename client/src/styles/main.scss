@@ -35,3 +35,29 @@
     align-items: flex-end;
   }
 }
+
+.form-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  width: 300px;
+  padding: 40px 10px;
+  border-radius: 18px;
+  background-color: cornflowerblue;
+
+  input {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .btn {
+    width: 60%;
+    background-color: bisque;
+  }
+}

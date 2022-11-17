@@ -13,7 +13,8 @@ const router = express.Router()
 
 // router.route('/regions/:id').get(getSingleRegion)
 
-router.route('/regions/:id/locations').get(getAllLocations)
+router.route('/regions/:id/locations')
+  .get(getAllLocations)
 
 router.route('/register')
   .post(registerUser)
