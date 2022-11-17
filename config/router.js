@@ -9,7 +9,7 @@ const router = express.Router()
 
 // router.route('/regions/:id/location/:locationId').get(getLocation)
 
-// router.route('/register').post(registerUser)
+router.route('/register').post(registerUser)
 
 // router.route('/login').post(loginUser)
 

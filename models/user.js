@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
 userSchema.virtual('passwordConfirmation')
   .set(function(fieldValue){
     this.passwordConfirmation = fieldValue
-    // modify this so we don't get an infinite loop! 
+    // ! modify this so we don't get an infinite loop! 
   })
 
 // There are two types of requests that are likely with this schema
