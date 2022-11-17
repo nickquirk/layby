@@ -51,6 +51,16 @@ userSchema
     } 
     next() // No errors? Move on 
   })
+  
+// ? Check Password against hashed password
+// This is a custom method to take a password entered by a user and check it against a saved, hashed password
+// We are adding the method as a key in the methods object which contains kvp of all methods on that object
+// It will take one arg, the password entered by the user 
+// Using 'function' so we can use 'this' keyword
+userSchema.methods.validatePassword = function (plainTextPassword) {
+  return bcrypt.compareSync(plainTextPassword, this.password)
+}
+
 
 export default mongoose.model('User', userSchema)
 
