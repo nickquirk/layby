@@ -99,4 +99,24 @@ export default [
     localClubWebsite: 'https://www.facebook.com/groups/175543115927907/',
     image: 'https://i.imgur.com/ajTqMCI.jpg',
   }
+  {
+    name: '',
+    description: '',
+    experienceLevel: 'Intermediate',
+    type: 'Freestyle and wakestyle',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: '',
+    windDescription: '',
+    tidalInfo: '',
+    hazards:
+      '',
+    restrictions:
+      '',
+    accessAndParking:
+      '',
+    localClubWebsite: '',
+    image: '',
+  }
 ]
