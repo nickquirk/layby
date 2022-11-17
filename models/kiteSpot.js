@@ -7,17 +7,18 @@ import mongoose from 'mongoose'
 // 3- review schema
 // 4- rating (virtual) schema
 
-// ? Region schema with referenced owner schema and embedded review schema
-const areaSchema = new mongoose.Schema({
-  region: { type: String, required: true, unique: true },
-  title: { type: String, required: true, unique: true },
-  locations: [locationSchema],
-  owner: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'User',
-    required: true,
+// ? Review schema with embedded owner schema
+
+const reviewSchema = new mongoose.Schema(
+  {
+    text: { type: String, required: true, unique: false },
+    rating: { type: Number, required: true, min: 1, max: 5 },
+    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  },
+  {
+    timestamps: true,
   }
-})
+)
 
 // ? Location schema with embedded owner and referenced reviews
 const locationSchema = new mongoose.Schema({
@@ -32,8 +33,8 @@ const locationSchema = new mongoose.Schema({
   tidalInfo: { type: String, required: true, unique: false },
   hazards: { type: String, required: true, unique: false },
   accessAndParking: { type: String, required: true, unique: false },
-  localClubWebsite: { type: URL, required: true, unique: false },
-  image: { type: URL, required: true, unique: false },
+  localClubWebsite: { type: String, required: true, unique: false },
+  image: { type: String, required: true, unique: false },
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
@@ -42,18 +43,18 @@ const locationSchema = new mongoose.Schema({
   reviews: [reviewSchema],
 })
 
-// ? Review schema with embedded owner schema
-
-const reviewSchema = new mongoose.Schema(
-  {
-    text: { type: String, required: true, unique: false },
-    rating: { type: Number, required: true, min: 1, max: 5 },
-    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+// ? Region schema with referenced owner schema and embedded review schema
+const areaSchema = new mongoose.Schema({
+  region: { type: String, required: true, unique: true },
+  title: { type: String, required: true, unique: true },
+  locations: [locationSchema],
+  owner: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true,
   },
-  {
-    timestamps: true,
-  }
-)
+})
+
 
 // ? Rating
 locationSchema.virtual('avgRating').get(function () {

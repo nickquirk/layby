@@ -16,10 +16,10 @@ const userSchema = new mongoose.Schema({
 
 // Using virtual keyword to define a virtual field for passwordConfirmation 
 // This means that the form data can be used for validation but won't get saved to the database 
-userSchema.virtual('passwordConfirmation')
+userSchema
+  .virtual('passwordConfirmation')
   .set(function(fieldValue){
-    this.passwordConfirmation = fieldValue
-    // ! modify this so we don't get an infinite loop! 
+    this._passwordConfirmation = fieldValue
   })
 
 // There are two types of requests that are likely with this schema
@@ -33,7 +33,7 @@ userSchema.virtual('passwordConfirmation')
 
 userSchema
   .pre('validate', function(next){
-    if (this.isModified('password') && this.passwordConfirmation !== this.password){
+    if (this.isModified('password') && this._passwordConfirmation !== this.password){
       // If the password is being modified/created but doesn't match, throw a validation error
       this.invalidate('passwordConfirmation', 'Passwords do not match')
     }
@@ -47,7 +47,7 @@ userSchema
     // check if password is being modified or created
     if (this.isModified('password')){
       // set password equal to bcrypt hashed password using 12 salt rounds 
-      this.password = bcrypt.hashSync(this.password, bcrypt.genSalt(12))
+      this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(12))
     } 
     next() // No errors? Move on 
   })

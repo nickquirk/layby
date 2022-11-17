@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import express from 'express'
-import { registerUser, getAllLocations } from '../controllers/auth.js'
+import { registerUser } from '../controllers/auth.js'
+import { getAllLocations } from '../controllers/kiteSpots.js'
 
 
 const router = express.Router()
@@ -11,7 +12,9 @@ const router = express.Router()
 
 router.route('/regions/:id/locations').get(getAllLocations)
 
-router.route('/register').post(registerUser)
+router.route('/register')
+  .post(registerUser)
+
 
 // router.route('/login').post(loginUser)
 
