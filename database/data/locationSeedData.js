@@ -98,7 +98,7 @@ export default [
       'Council carpark next to the Sailing Club',
     localClubWebsite: 'https://www.facebook.com/groups/175543115927907/',
     image: 'https://i.imgur.com/ajTqMCI.jpg',
-  }
+  },
   {
     name: '',
     description: '',
