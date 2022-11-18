@@ -15,19 +15,39 @@ const seedDataBase = async () => {
     await mongoose.connection.db.dropDatabase()
     console.log('✅ Database Dropped')
     const users = await User.create(userData)
+    const findLocation = locationSeedData.map(location => {
+      console.log('In my function ->', regionSeedData)
+      let targetCountry
+      regionSeedData.forEach(region => {
+        if (region.countryCode === location.countryCode) {
+          const locatedCountry = { ...region, locations: location }
+          targetCountry = locatedCountry
+        }
+      })
+      return (targetCountry)
+      // for (i = 0; i < regionSeedData.length; i++) {
+
+      // }
+      // if (regionSeedData.countryCode === location.countryCode) {
+      //   // Make regionSeedData.countryCode an array which we must loop through and compare with location.countryCode ++ must still seed with owner
+      //   const locatedCountry = location
+      //   regionSeedData.locations.push(locatedCountry)
+      // }
+    })
+    console.log('The data I want ->', findLocation)
     console.log('Region Seed data ->', regionSeedData)
     const regionOwner = regionSeedData.map(region => {
       return { ...region, owner: users[0]._id }
     })
     await VanSpot.create(regionOwner)
-    console.log(regionOwner.countryCode)
+    // console.log(regionOwner)
     console.log('Countries seeded ✅ -> ', regionOwner)
-    const locationArea = locationSeedData.map(location => {
-      return { ...location, owner: users[0]._id }
-    })
-    console.log(regionOwner.countryCode)
-    await VanSpot.create(locationArea)
-    console.log('✅ Location Seeded ->', locationArea)
+    // const locationArea = locationSeedData.map(location => {
+    //   return { ...location, owner: users[0]._id }
+    // })
+    // console.log(regionOwner.countryCode)
+    // await VanSpot.create(locationArea)
+    // console.log('✅ Location Seeded ->', locationArea)
     console.log('✅ Database seeded')
     await mongoose.connection.close()
     console.log('✅ Connection dropped')

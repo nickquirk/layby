@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import express from 'express'
 import { registerUser, loginUser } from '../controllers/auth.js'
-import { getAllLocations, getSingleLocation } from '../controllers/kiteSpots.js'
+import { getAllLocations, getSingleLocation } from '../controllers/vanSpots.js'
 
 //TODO
 // Add secureRoute
@@ -10,14 +10,17 @@ const router = express.Router()
 
 // router.route('/regions').get(getAllRegions)
 
-router.route('/regions/:id/locations/:locationId').get(getSingleLocation)
+router.route('/regions/:id')
+  .get(getSingleLocation)
 
-router.route('/regions/:id/locations')
+router.route('/regions')
   .get(getAllLocations)
 
-router.route('/register').post(registerUser)
+router.route('/register')
+  .post(registerUser)
 
-router.route('/login').post(loginUser)
+router.route('/login')
+  .post(loginUser)
 
 // router.route('/locations/:locationId/review').post(secureRoute, addReview)
 
