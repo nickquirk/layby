@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const RegisterPage = () => {
 
   // ! State 
+  // Track state of following variables
   const [ username, setUsername ] = useState('')
   const [ email, setEmail] = useState('')
   const [ password, setPassword ] = useState('')
@@ -24,8 +25,8 @@ const RegisterPage = () => {
         <form onSubmit={handleSubmit}>
           <input required className='form-control' type="text" name="username" onChange={handleChange} placeholder="Username"/>
           <input required className='form-control' type="email" name="email" onChange={handleChange} placeholder="Email"/>
-          <input required className='form-control' type="text" name="password" onChange={handleChange} placeholder="Password"/>
-          <input required className='form-control' type="text" name="passwordConfirmation" onChange={handleChange} placeholder="Confirm password"/>
+          <input required className='form-control' type="password" name="password" onChange={handleChange} placeholder="Password"/>
+          <input required className='form-control' type="password" name="passwordConfirmation" onChange={handleChange} placeholder="Confirm password"/>
           <Link to={'/login'} className='btn btn-main'>Submit</Link>
         </form>
       </div>
