@@ -22,7 +22,7 @@ const reviewSchema = new mongoose.Schema(
 
 // ? Location schema with embedded owner and referenced reviews
 const locationSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
+  name: { type: String, required: true },
   latitude: { type: Number, required: true },
   longitude: { type: Number, required: true },
   countryCode: { type: String, required: true },
@@ -34,7 +34,7 @@ const locationSchema = new mongoose.Schema({
   water: { type: Boolean, required: true },
   nearestFuel: { type: Number, required: true },
   otherInfo: { type: String, required: true },
-  nearbyActivities: { type: String, required: true },
+  nearbyActivities: { type: String },
   image: { type: String, required: true },
   owner: {
     type: mongoose.Schema.ObjectId,

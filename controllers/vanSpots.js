@@ -23,9 +23,13 @@ export const getAllLocations = async (req, res) => {
 // Endpoint: '/regions/:id/locations/:locationId'
 export const getSingleLocation = async (req, res) => {
   try {
-    console.log('GET SINGLE LOCATION ENDPOINT HIT')
-    const location = await findLocation(res, req)
-    return res.json(location)
+    const { id } = req.params
+    const country = await VanSpot.findById(id).populate('owner')
+    if (!country) {
+      throw new Error('country not found!')
+    }
+    console.log(country.locations)
+    return res.json(country)
   } catch (err) {
     console.log(err)
   }

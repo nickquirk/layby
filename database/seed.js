@@ -6,7 +6,7 @@ import User from '../models/user.js'
 import userData from './data/user.js'
 import locationSeedData from './data/locationSeedData.js'
 import regionSeedData from './data/regionSeedData.js'
-import {} from 'dotenv/config'
+import { } from 'dotenv/config'
 
 const seedDataBase = async () => {
   try {
@@ -18,26 +18,33 @@ const seedDataBase = async () => {
     await mongoose.connection.db.dropDatabase()
     console.log('✅ Database Dropped')
 
-    // adding users
+    // seeding users
     const users = await User.create(userData)
     console.log('Users -- >', users)
     console.log(`users collection seeded with ${users.length} users`)
-    console.log('Region Seed data ->', regionSeedData)
-    const regionOwner = regionSeedData.map((region) => {
-      return { ...region, owner: users[0]._id }
-    })
-    await VanSpot.create(regionOwner)
-    console.log(regionOwner.countryCode)
-    console.log('Countries seeded ✅ -> ', regionOwner)
 
-    // once data dropped seed new data in datbase
+    // populating users on Location & Region
     const locationArea = locationSeedData.map((location) => {
       return { ...location, owner: users[0]._id }
     })
-    console.log(regionOwner.countryCode)
-    await VanSpot.create(locationArea)
-    console.log('✅ Locations Seeded ->', locationArea)
-    console.log(`✅ Database seeded with ${locationArea.length} locations !`)
+    const regionOwner = regionSeedData.map((region) => {
+      return { ...region, owner: users[0]._id }
+    })
+
+    // seeding countries
+    const countries = await VanSpot.create(regionOwner)
+    console.log('Countries seeded ✅ -> ', regionOwner)
+
+
+    // populating locations on countrySchema
+    for (const location of locationArea) {
+      for (const country of countries) {
+        if (location.countryCode === country.countryCode) {
+          country.locations.push(location)
+          await country.save()
+        }
+      }
+    }
 
     // disconnected from db
     await mongoose.connection.close()

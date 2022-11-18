@@ -3,8 +3,8 @@ import VanSpot from '../models/vanSpot.js'
 
 export const findLocation = async (req, _res) => {
   try {
-    const { id } = req.params
-    const location = await VanSpot.findById(id)
+    console.log('In Helper function ->', req.params)
+    const location = await VanSpot.findById(req.params)
     if (!location) {
       console.log('NOT FOUND')
     }

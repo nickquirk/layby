@@ -26,7 +26,7 @@ export default [
     currency: '€',
     description: 'A very difficult drive down uneaven dirt tracks. For those that persevere theres a large areas of flat ground with access to thermal hot springs. Its worth the drive',
     parking: true,
-    freeparking: true ,
+    freeparking: true,
     toilets: false,
     water: false,
     nearestFuel: 3,
