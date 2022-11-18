@@ -23,7 +23,7 @@ const LoginPage = () => {
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
           <input required className='form-control' type="email" name="email" onChange={handleChange} placeholder="Email"/>
-          <input required className='form-control' type="text" name="password" onChange={handleChange} placeholder="Password"/>
+          <input required className='form-control' type="password" name="password" onChange={handleChange} placeholder="Password"/>
           <Link to={'/'} className='btn btn-main'>Submit</Link>
         </form>
       </div>
