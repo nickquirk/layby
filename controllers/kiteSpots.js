@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import VanSpot from '../models/vanSpot.js'
 import { findLocation } from '../config/helpers.js'
+import { Unauthorised } from '../config/errors.js'
 
 // ? Region index route
 
@@ -8,9 +9,9 @@ import { findLocation } from '../config/helpers.js'
 // Type: get request
 // Endpoint: '/regions/:id/locations'
 export const getAllLocations = async (req, res) => {
-  console.log('GET ALL LOCATIONS ENDPOINT HIT') //.populate('owner')
+  console.log('GET ALL LOCATIONS ENDPOINT HIT')
   try {
-    const locations = await VanSpot.find()
+    const locations = await VanSpot.find().populate('owner')
     return res.json(locations)
   } catch (err) {
     console.log(err)
