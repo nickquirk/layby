@@ -45,9 +45,9 @@ const locationSchema = new mongoose.Schema({
 })
 
 // ? Region schema with referenced owner schema and embedded review schema
-const areaSchema = new mongoose.Schema({
-  region: { type: String, required: true, unique: true },
-  title: { type: String, required: true, unique: true },
+const countrySchema = new mongoose.Schema({
+  country: { type: String, required: true, unique: true },
+  countryCode: { type: String, required: true, unique: true },
   locations: [locationSchema],
   owner: {
     type: mongoose.Schema.ObjectId,
@@ -71,4 +71,4 @@ locationSchema.set('toJSON', {
 })
 
 // * Model
-export default mongoose.model('KiteSpot', areaSchema)
+export default mongoose.model('VanSpot', countrySchema)

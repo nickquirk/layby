@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import mongoose from 'mongoose'
-import KiteSpot from '../models/kiteSpot.js'
+import VanSpot from '../models/vanSpot.js'
 import User from '../models/user.js'
-import userData from './data/users.js'
+import userData from './data/user.js'
 import locationSeedData from './data/locationSeedData.js'
 import regionSeedData from './data/regionSeedData.js'
 import { } from 'dotenv/config'
@@ -19,7 +19,7 @@ const seedDataBase = async () => {
     const regionOwner = regionSeedData.map(region => {
       return { ...region, owner: users[0]._id }
     })
-    const regions = await KiteSpot.create(regionOwner)
+    const regions = await VanSpot.create(regionOwner)
     // const locationArea = locationSeedData.map(location => {
     //   return { ...location, region: regions[0]._id }
     // })

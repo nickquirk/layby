@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import KiteSpot from '../models/kiteSpot.js'
+import VanSpot from '../models/vanSpot.js'
 import { findLocation } from '../config/helpers.js'
 
 // ? Region index route
@@ -10,7 +10,7 @@ import { findLocation } from '../config/helpers.js'
 export const getAllLocations = async (req, res) => {
   console.log('GET ALL LOCATIONS ENDPOINT HIT') //.populate('owner')
   try {
-    const locations = await KiteSpot.find()
+    const locations = await VanSpot.find()
     return res.json(locations)
   } catch (err) {
     console.log(err)
