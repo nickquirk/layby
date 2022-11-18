@@ -13,38 +13,38 @@ const reviewSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, unique: false },
     rating: { type: Number, required: true, min: 1, max: 5 },
-    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 )
 
 // ? Location schema with embedded owner and referenced reviews
 const locationSchema = new mongoose.Schema({
-  region: { type: String, required: true },
   name: { type: String, required: true, unique: true },
-  description: { type: String, required: true, unique: true },
-  experienceLevel: { type: String, required: true, unique: false },
-  type: { type: String, required: true, unique: false },
+  latitude: { type: Number, required: true, unique: true },
+  longitude: { type: Number, required: true, unique: true },
+  countryCode: { type: String, required: true, unique: false },
+  currency: { type: String, required: true, unique: false },
+  description: { type: String, required: true, unique: false },
   parking: { type: Boolean, required: true, unique: false },
-  lifeguard: { type: String, required: true, unique: false },
-  bestWind: { type: String, required: true, unique: false },
-  windDescription: { type: String, required: true, unique: false },
-  tidalInfo: { type: String, required: true, unique: false },
-  hazards: { type: String, required: true, unique: false },
-  accessAndParking: { type: String, required: true, unique: false },
-  localClubWebsite: { type: String, required: true, unique: false },
+  freeparking: { type: Boolean, required: true, unique: false },
+  toilets: { type: Boolean, required: true, unique: false },
+  water: { type: Boolean, required: true, unique: false },
+  nearestFuel: { type: Number, required: true, unique: false },
+  otherInfo: { type: String, required: true, unique: false },
+  nearbyActivities: { type: String, required: true, unique: false },
   image: { type: String, required: true, unique: false },
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
-  reviews: [reviewSchema],
+  reviews: [reviewSchema]
 })
 
-// ? Region schema with referenced owner schema and embedded review schema
+// ? Country schema with referenced owner schema and embedded review schema
 const countrySchema = new mongoose.Schema({
   country: { type: String, required: true, unique: true },
   countryCode: { type: String, required: true, unique: true },
@@ -52,10 +52,9 @@ const countrySchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: true,
-  },
+    required: true
+  }
 })
-
 
 // ? Rating
 locationSchema.virtual('avgRating').get(function () {
@@ -67,7 +66,7 @@ locationSchema.virtual('avgRating').get(function () {
 })
 
 locationSchema.set('toJSON', {
-  virtuals: true,
+  virtuals: true
 })
 
 // * Model
