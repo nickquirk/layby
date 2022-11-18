@@ -12,7 +12,12 @@ export const getAllLocations = async (req, res) => {
   console.log('GET ALL LOCATIONS ENDPOINT HIT')
   try {
     const locations = await VanSpot.find().populate('owner')
-    return res.json(locations)
+    const filteredLocations = locations.map(loc => {
+      return loc.locations
+    })
+    const perfect = filteredLocations[0].concat(filteredLocations[1], filteredLocations[2], filteredLocations[3], filteredLocations[4])
+    console.log('double trouble ->', perfect)
+    return res.json(perfect)
   } catch (err) {
     console.log(err)
   }
