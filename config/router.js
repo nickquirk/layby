@@ -5,7 +5,7 @@ import {
   getAllLocations,
   getSingleLocation,
   addReview
-} from '../controllers/kiteSpots.js'
+} from '../controllers/vanSpots.js'
 import secureRoute from './secureRoute.js'
 
 //TODO
@@ -18,7 +18,7 @@ const router = express.Router()
 router.route('/regions/:id')
   .get(getSingleLocation)
 
-router.route('/regions/:id/locations').get(getAllLocations)
+router.route('/regions').get(getAllLocations)
 
 router.route('/register')
   .post(registerUser)

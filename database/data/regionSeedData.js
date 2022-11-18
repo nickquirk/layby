@@ -1,11 +1,6 @@
 /* eslint-disable comma-dangle */
 export default [
   {
-    country: 'France',
-    countryCode: 'FRA',
-    locations: [],
-  },
-  {
     country: 'United Kingdom',
     countryCode: 'UK',
     locations: [],
@@ -23,6 +18,11 @@ export default [
   {
     country: 'Spain',
     countryCode: 'ESP',
+    locations: [],
+  },
+  {
+    country: 'Portugal',
+    countryCode: 'PT',
     locations: [],
   },
 ]
