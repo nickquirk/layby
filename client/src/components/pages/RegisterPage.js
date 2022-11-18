@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+//TODO
+// Error handling
+// Display errors
+
 const RegisterPage = () => {
 
   // ! Location Variables
@@ -17,11 +21,13 @@ const RegisterPage = () => {
   })
 
   // ! Executions 
+  // 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/register')
-      // add navigate function
+      // send off form data to our API
+      await axios.post('/api/register', formFields)
+      // navigate to login page after request has completed
       navigate('/login')
     } catch (err) {
       console.log(err)
@@ -30,7 +36,14 @@ const RegisterPage = () => {
   }
 
   const handleChange = (e) => {
-    const input = e.target.value
+    // This happens on any change to the form
+    // create shallow copy of form fields by spreading in to a new object
+    const updatedFormFields = { ...formFields }
+    // set key name to value entered into form field
+    updatedFormFields[e.target.name] = e.target.value
+    // set formFields = updatedFormFields
+    setFormFields(updatedFormFields)
+    // ! if there's an error, set to an empty string
   }
 
   return (
@@ -38,12 +51,14 @@ const RegisterPage = () => {
       <h1>Register Page</h1>
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input required 
+          <input 
+            required 
             className='form-control' 
             type="text" 
             name="username" 
             onChange={handleChange} 
             placeholder="Username"
+            value={formFields.username} 
           />
           <input 
             required
@@ -52,6 +67,7 @@ const RegisterPage = () => {
             name="email" 
             onChange={handleChange} 
             placeholder="Email"
+            value={formFields.email} 
           />
           <input 
             required
@@ -60,6 +76,7 @@ const RegisterPage = () => {
             name="password" 
             onChange={handleChange} 
             placeholder="Password"
+            value={formFields.password} 
           />
           <input 
             required
@@ -68,6 +85,7 @@ const RegisterPage = () => {
             name="passwordConfirmation" 
             onChange={handleChange} 
             placeholder="Confirm password"
+            value={formFields.passwordConfirmation} 
           />
           <button className='btn btn-main'>Submit</button>
         </form>
