@@ -14,6 +14,7 @@ import VanSpot from '../models/vanSpot.js'
 //   }
 // }
 
+//This helper finds the location objects nested inside each region
 export const findAllLocations = async (req, _res) => {
   try {
     const locations = await VanSpot.find()
