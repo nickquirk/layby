@@ -18,15 +18,17 @@ const seedDataBase = async () => {
     await mongoose.connection.db.dropDatabase()
     console.log('✅ Database Dropped')
     const users = await User.create(userData)
-    console.log(regionSeedData)
+    console.log('Region Seed data ->', regionSeedData)
     const regionOwner = regionSeedData.map(region => {
       return { ...region, owner: users[0]._id }
     })
     await VanSpot.create(regionOwner)
+    console.log(regionOwner.countryCode)
     console.log('Countries seeded ✅ -> ', regionOwner)
     const locationArea = locationSeedData.map(location => {
       return { ...location, owner: users[0]._id }
     })
+    console.log(regionOwner.countryCode)
     await VanSpot.create(locationArea)
     console.log('✅ Location Seeded ->', locationArea)
     console.log('✅ Database seeded')
