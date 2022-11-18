@@ -71,4 +71,4 @@ locationSchema.set('toJSON', {
 })
 
 // * Model
-export default mongoose.model('VanCountry', countrySchema)
+export default mongoose.model('VanSpot', countrySchema)
