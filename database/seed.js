@@ -3,7 +3,7 @@
 import mongoose from 'mongoose'
 import KiteSpot from '../models/kiteSpot.js'
 import User from '../models/user.js'
-import userData from './data/users.js'
+import userData from './data/user.js'
 import locationSeedData from './data/locationSeedData.js'
 import regionSeedData from './data/regionSeedData.js'
 import { } from 'dotenv/config'

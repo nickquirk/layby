@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 export default [
   {
     name: 'Brancaster Beach',
@@ -18,7 +19,7 @@ export default [
     accessAndParking:
       'Large carpark on the beach. £2 for 2 hours, £4 /day. Can flood',
     localClubWebsite: 'https://www.facebook.com/groups/115179455209258/',
-    image: 'https://i.imgur.com/hMJsF8I.jpg',
+    image: 'https://i.imgur.com/hMJsF8I.jpg'
   },
   {
     name: 'Camber Sands',
@@ -40,7 +41,7 @@ export default [
     accessAndParking:
       'Broomhill car park and large gravel car park beside the beach',
     localClubWebsite: 'https://en-gb.facebook.com/camberkiteclub/',
-    image: 'https://i.imgur.com/Z5EMnuB.jpg',
+    image: 'https://i.imgur.com/Z5EMnuB.jpg'
   },
   {
     name: 'East Beach, Southend-on-Sea',
@@ -223,7 +224,7 @@ export default [
   },
   {
     name: 'Earnse Bay, Walney Island',
-    region: 'West England',
+    region: 'W England',
     description: 'A large shallow sand beach with lagoons at low tide',
     experienceLevel: 'Beginner',
     type: 'Freestyle and wakestyle',
@@ -242,7 +243,7 @@ export default [
   },
   {
     name: 'Morcambe Bay',
-    region: 'West England',
+    region: 'W England',
     description:
       'A huge bay with the largest expanse of intertidal mudflats in the uk. Its notorious for its quicksand and fast moving tides',
     experienceLevel: 'Intermediate',
@@ -263,7 +264,7 @@ export default [
   },
   {
     name: 'Hoylake',
-    region: 'West England',
+    region: 'W England',
     description: 'Great spot in the mouth of the river Dee estuary',
     experienceLevel: 'Beginner',
     type: 'Freestyle and foiling',
@@ -283,7 +284,7 @@ export default [
   },
   {
     name: 'Allonby Beach',
-    region: 'West England',
+    region: 'W England',
     description:
       'A long beach made up of sand and shingle with a great view of the mountains, with shallow waters and an open bay ',
     experienceLevel: 'Intermediate',
@@ -300,11 +301,11 @@ export default [
     accessAndParking: 'Beachfront parking',
     localClubWebsite:
       'https://www.facebook.com/groups/875254176750500/?paipv=0&eav=AfZpew9I0SezpY6y6Ssv0WgQFPa9efWgKyGrhC7Etrdd6p5mzfS4x5uoP9SqcQAblTo&_rdr',
-    image: 'https://i.imgur.com/gxruxmq.jpg',
+    image: 'https://i.imgur.com/gxruxmq.jpg'
   },
   {
     name: 'Starrgate , Blackpool',
-    region: 'West England',
+    region: 'W England',
     description:
       'Big wave spot situated just a few 100m form Blackpool pleasure beach',
     experienceLevel: 'Intermediate',
@@ -323,7 +324,7 @@ export default [
   },
   {
     name: 'Marine Beach, Fleetwood',
-    region: 'West England',
+    region: 'W England',
     description:
       'A quiet seaside resort with a large range of kiting conditions ',
     experienceLevel: 'Beginners',
@@ -345,8 +346,9 @@ export default [
 
   {
     name: 'Kite Beach Hayling Island',
-    region: 'South England',
-    description: 'An island off the south coast near Portsmouth. Flat water lagoons, perfect for beginners or for freestyle/wakestyle tricks.',
+    region: 'S England',
+    description:
+      'An island off the south coast near Portsmouth. Flat water lagoons, perfect for beginners or for freestyle/wakestyle tricks.',
     experienceLevel: 'Beginners',
     type: 'freestyle, wakestyle',
     parking: true,
@@ -354,17 +356,21 @@ export default [
     lifeguard: 'No Lifeguard',
     bestWindDirection: 'W',
     windDescription: 'Takes E to W',
-    tidalInfo: 'Any tide state. However, Spring high tides, combined with the swell can result in a shore break which may be unsuitable for beginners.',
-    hazards: 'At high tide the beach is steep, and can have a heavy shore break.',
-    restrictions: 'Hayling Island has a BKSA code of conduct, which shows clearly where you should and shouldnt go.',
+    tidalInfo:
+      'Any tide state. However, Spring high tides, combined with the swell can result in a shore break which may be unsuitable for beginners.',
+    hazards:
+      'At high tide the beach is steep, and can have a heavy shore break.',
+    restrictions:
+      'Hayling Island has a BKSA code of conduct, which shows clearly where you should and shouldnt go.',
     accessAndParking: 'Parking in front of the beach',
     localClubWebsite: 'https://www.cbk-haylingisland.com/',
-    image: 'https://i.imgur.com/ajTqMCI.jpg',
+    image: 'https://i.imgur.com/ajTqMCI.jpg'
   },
   {
     name: 'Shoreham Beach',
-    region: 'South England',
-    description: 'Great spot for all abilities. Just ten minute drive from Brighton, it features a large stretch of pebble beach with some sand at very low tide.',
+    region: 'S England',
+    description:
+      'Great spot for all abilities. Just ten minute drive from Brighton, it features a large stretch of pebble beach with some sand at very low tide.',
     experienceLevel: 'All levels',
     type: 'All-round',
     parking: true,
@@ -372,17 +378,20 @@ export default [
     lifeguard: 'No Lifeguard',
     bestWindDirection: 'E',
     windDescription: 'Takes E to W',
-    tidalInfo: 'Very big shore-break. Best to go when the tide is under four metres - about 2-3 hours either side of low tide.',
-    hazards: 'Wooden groynes on right side of beach. Harbour arm  is on far left',
+    tidalInfo:
+      'Very big shore-break. Best to go when the tide is under four metres - about 2-3 hours either side of low tide.',
+    hazards:
+      'Wooden groynes on right side of beach. Harbour arm  is on far left',
     restrictions: 'Refer to local club regarding insurance requirements',
     accessAndParking: 'Roadside parking',
     localClubWebsite: 'http://www.shorehamkitesurfclub.co.uk',
-    image: 'https://i.imgur.com/ajTqMCI.jpg',
+    image: 'https://i.imgur.com/ajTqMCI.jpg'
   },
   {
     name: 'Calshot Spit',
-    region: 'South England',
-    description: 'Great location for kitesurfing (and windsurfing/SUP/kayaking) with a variety of sailing conditions from butter flat water to rolling swell at high tide.',
+    region: 'S England',
+    description:
+      'Great location for kitesurfing (and windsurfing/SUP/kayaking) with a variety of sailing conditions from butter flat water to rolling swell at high tide.',
     experienceLevel: 'Intermediate',
     type: 'All-round',
     parking: true,
@@ -390,11 +399,13 @@ export default [
     lifeguard: 'No lifeguards',
     bestWindDirection: 'NE',
     windDescription: 'Takes NE to SW',
-    tidalInfo: 'There is no room at the car park spot to launch at high tide. Its sketchy at best so be careful.',
+    tidalInfo:
+      'There is no room at the car park spot to launch at high tide. Its sketchy at best so be careful.',
     hazards: 'No beach to launch. Shipping lane. Groynes in carpark',
     restrictions: 'Access to pond only between  1st November & 31st March',
     accessAndParking: 'Parking between beach huts or at activity centre',
-    localClubWebsite: 'https://www.calshotaca.co.uk/clubs/calshot-windsurf-club',
-    image: 'https://i.imgur.com/ajTqMCI.jpg',
+    localClubWebsite:
+      'https://www.calshotaca.co.uk/clubs/calshot-windsurf-club',
+    image: 'https://i.imgur.com/ajTqMCI.jpg'
   }
 ]
