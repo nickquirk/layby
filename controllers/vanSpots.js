@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import VanSpot from '../models/vanSpot.js'
-import { findLocation } from '../config/helpers.js'
+import { findAllLocations } from '../config/helpers.js'
 import { Unauthorised } from '../config/errors.js'
 
 // ? Region index route
@@ -11,8 +11,8 @@ import { Unauthorised } from '../config/errors.js'
 export const getAllLocations = async (req, res) => {
   console.log('GET ALL LOCATIONS ENDPOINT HIT')
   try {
-    const locations = await VanSpot.find().populate('owner')
-    return res.json(locations)
+    const location = await findAllLocations(req, res)
+    return res.json(location)
   } catch (err) {
     console.log(err)
   }
@@ -23,13 +23,17 @@ export const getAllLocations = async (req, res) => {
 // Endpoint: '/regions/:id/locations/:locationId'
 export const getSingleLocation = async (req, res) => {
   try {
-    const { id } = req.params
-    const country = await VanSpot.findById(id).populate('owner')
-    if (!country) {
+    const { locationId } = req.params
+    console.log('REQ --->', req.params)
+    const location = await findAllLocations(req, res)
+    if (!location) {
       throw new Error('country not found!')
     }
-    console.log(country.locations)
-    return res.json(country)
+    const targetLocation = location.filter((loc) => {
+      return locationId === loc.id
+    })
+    console.log(targetLocation)
+    return res.json(targetLocation)
   } catch (err) {
     console.log(err)
   }
@@ -49,3 +53,20 @@ export const addReview = async (req, res) => {
 // ? Delete review
 // Method: delete
 // Endpoint: '/locations/:locationId/review/:reviewId'
+
+// export const getAllLocations = async (req, res) => {
+//   console.log('GET ALL LOCATIONS ENDPOINT HIT')
+//   try {
+//     const locations = await VanSpot.find().populate('owner')
+//     let filteredLocations = locations.map((loc) => {
+//       const space = loc.locations.map((s) => {
+//         return s
+//       })
+//       filteredLocations = space
+//     })
+//     // Promise.all(filteredLocations)
+//     return res.json(filteredLocations)
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }

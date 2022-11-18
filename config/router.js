@@ -15,16 +15,13 @@ const router = express.Router()
 
 // router.route('/regions').get(getAllRegions)
 
-router.route('/regions/:id')
-  .get(getSingleLocation)
+router.route('/locations/:locationId').get(getSingleLocation)
 
-router.route('/regions').get(getAllLocations)
+router.route('/locations').get(getAllLocations)
 
-router.route('/register')
-  .post(registerUser)
+router.route('/register').post(registerUser)
 
-router.route('/login')
-  .post(loginUser)
+router.route('/login').post(loginUser)
 
 router.route('/locations/:locationId/review').post(secureRoute, addReview)
 
