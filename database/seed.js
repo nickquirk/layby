@@ -10,8 +10,11 @@ import { } from 'dotenv/config'
 
 const seedDataBase = async () => {
   try {
+    //connecting to db
     await mongoose.connect(process.env.DB_URI)
     console.log('✅ Connected to Database')
+
+    // dropping data
     await mongoose.connection.db.dropDatabase()
     console.log('✅ Database Dropped')
     const users = await User.create(userData)

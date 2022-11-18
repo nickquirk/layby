@@ -4,7 +4,7 @@ export default [
     name: 'Cova Negra',
     countryCode: 'ESP',
     latitude: 123456789,
-    longitude: 123456789,
+    longitude: 987654321,
     country: 'Spain',
     currency: '€',
     description: 'xxxx',
@@ -16,7 +16,7 @@ export default [
     otherInfo: 'Wifi from cafe next door',
     nearbyActivities: 'Surfing nearby ',
     image: 'https://i.imgur.com/hMJsF8I.jpg'
-  },
+  }
   // {
   //   name: 'Cova Negra',
   //   latitude: 123456789,
@@ -81,5 +81,4 @@ export default [
   //   nearbyActivities: 'Surfing nearby ',
   //   image: 'https://i.imgur.com/hMJsF8I.jpg'
   // },
-
 ]
