@@ -18,7 +18,7 @@ import UserProfilePage from './components/pages/UserProfilePage'
 const App = () => {
   // useEffect(() => {
   //   const getData = async () => {
-  //     const { data } = await axios.get('/api/products/') // * <-- replace with your endpoint
+  //     const { data } = await axios.get('') // * <-- replace with your endpoint
   //     console.log(data)
   //   }
   //   getData()
@@ -39,8 +39,6 @@ const App = () => {
         </Routes>
         <Footer />
       </BrowserRouter>
-
-
     </div>
 
   )

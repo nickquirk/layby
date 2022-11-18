@@ -20,7 +20,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/register')
+      await axios.post('/api/register')
       // add navigate function
       navigate('/login')
     } catch (err) {
