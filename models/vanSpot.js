@@ -22,20 +22,20 @@ const reviewSchema = new mongoose.Schema(
 
 // ? Location schema with embedded owner and referenced reviews
 const locationSchema = new mongoose.Schema({
-  region: { type: String, required: true },
   name: { type: String, required: true, unique: true },
-  description: { type: String, required: true, unique: true },
-  experienceLevel: { type: String, required: true, unique: false },
-  type: { type: String, required: true, unique: false },
-  parking: { type: Boolean, required: true, unique: false },
-  lifeguard: { type: String, required: true, unique: false },
-  bestWind: { type: String, required: true, unique: false },
-  windDescription: { type: String, required: true, unique: false },
-  tidalInfo: { type: String, required: true, unique: false },
-  hazards: { type: String, required: true, unique: false },
-  accessAndParking: { type: String, required: true, unique: false },
-  localClubWebsite: { type: String, required: true, unique: false },
-  image: { type: String, required: true, unique: false },
+  latitude: { type: Number, required: true },
+  longitude: { type: Number, required: true },
+  countryCode: { type: String, required: true },
+  currency: { type: String, required: true },
+  description: { type: String, required: true },
+  parking: { type: Boolean, required: true },
+  freeparking: { type: Boolean, required: true },
+  toilets: { type: Boolean, required: true },
+  water: { type: Boolean, required: true },
+  nearestFuel: { type: Number, required: true },
+  otherInfo: { type: String, required: true },
+  nearbyActivities: { type: String, required: true },
+  image: { type: String, required: true },
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
@@ -44,10 +44,10 @@ const locationSchema = new mongoose.Schema({
   reviews: [reviewSchema],
 })
 
-// ? Region schema with referenced owner schema and embedded review schema
+// ? Country schema with referenced owner schema and embedded review schema
 const countrySchema = new mongoose.Schema({
   country: { type: String, required: true, unique: true },
-  countryCode: { type: String, required: true, unique: true },
+  countryCode: { type: String, required: true },
   locations: [locationSchema],
   owner: {
     type: mongoose.Schema.ObjectId,
@@ -55,7 +55,6 @@ const countrySchema = new mongoose.Schema({
     required: true,
   },
 })
-
 
 // ? Rating
 locationSchema.virtual('avgRating').get(function () {
