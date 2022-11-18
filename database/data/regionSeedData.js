@@ -20,4 +20,8 @@ export default [
     country: 'Spain',
     countryCode: 'ESP'
   },
+  {
+    country: 'Portugal',
+    countryCode: 'PT'
+  },
 ]
