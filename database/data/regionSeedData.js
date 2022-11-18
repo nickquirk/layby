@@ -1,35 +1,23 @@
 /* eslint-disable comma-dangle */
 export default [
   {
-    region: 'NE England',
-    title: 'North East of England'
+    country: 'France',
+    countryCode: 'FRA'
   },
   {
-    region: 'SE England',
-    title: 'South East of England'
+    country: 'United Kingdom',
+    countryCode: 'UK'
   },
   {
-    region: 'W England',
-    title: 'West of England'
+    country: 'Germany',
+    countryCode: 'DE'
   },
   {
-    region: 'S England',
-    title: 'South of England'
+    country: 'Morocco',
+    countryCode: 'MA'
   },
   {
-    region: 'SW England',
-    title: 'South West of England'
+    country: 'Spain',
+    countryCode: 'ESP'
   },
-  {
-    region: 'Wales',
-    title: 'Wales'
-  },
-  {
-    region: 'W Scotland',
-    title: 'West of Scotland'
-  },
-  {
-    region: 'E Scotland',
-    title: 'East of Scotland'
-  }
 ]
