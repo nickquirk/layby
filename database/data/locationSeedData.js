@@ -3,7 +3,7 @@ export default [
   {
     name: 'Cova Negra',
     countryCode: 'ESP',
-    latitude: 123456789,
+    latitude: 987654321,
     longitude: 123456789,
     country: 'Spain',
     currency: '€',
