@@ -60,7 +60,7 @@ export default [
     accessAndParking:
       'Designated parking by the beach but gated and locked during winter. On street parking nearby ',
     localClubWebsite: 'https://www.facebook.com/essexkitesurf/',
-    image: 'https://i.imgur.com/yXha28A.jpg'
+    image: 'https://i.imgur.com/yXha28A.jpg',
   },
   {
     name: 'Heacham Beach',
@@ -79,7 +79,7 @@ export default [
     accessAndParking:
       'If the small South Beach carpark (20 spaces) is full the North Beach carpark is not far away £3.20/3 hours and  £5/day full day at peak season. Free after 6pm parking is free',
     localClubWebsite: 'https://en-gb.facebook.com/groups/115179455209258/',
-    image: 'https://i.imgur.com/UQlXoHm.jpg'
+    image: 'https://i.imgur.com/UQlXoHm.jpg',
   },
   {
     name: 'New Hunstandton',
@@ -97,7 +97,7 @@ export default [
     restrictions: '',
     accessAndParking: 'Council carpark next to the sailing club',
     localClubWebsite: 'https://www.facebook.com/groups/175543115927907/',
-    image: 'https://i.imgur.com/ajTqMCI.jpg'
+    image: 'https://i.imgur.com/ajTqMCI.jpg',
   },
   {
     name: 'Aberavon',
@@ -118,7 +118,7 @@ export default [
     restrictions: '',
     accessAndParking: 'Parking by the beach',
     localClubWebsite: 'https://www.facebook.com/groups/7688168135/',
-    image: 'https://i.imgur.com/PafQ9jI.jpg'
+    image: 'https://i.imgur.com/PafQ9jI.jpg',
   },
   {
     name: 'Newgale Sands',
@@ -138,7 +138,7 @@ export default [
     restrictions: 'No kiting in the lifeguarded bathing areas.',
     accessAndParking: 'Four car parks along the beach. ',
     localClubWebsite: 'https://www.facebook.com/Kwpembs/',
-    image: 'https://i.imgur.com/OwXOzGL.jpg'
+    image: 'https://i.imgur.com/OwXOzGL.jpg',
   },
   {
     name: 'Aberdyfi',
@@ -159,7 +159,7 @@ export default [
     accessAndParking:
       'Layby parking on nearby road or at Treefeddian point to the north of the village, a short walk across the golf course ',
     localClubWebsite: 'https://www.facebook.com/groups/12267582106/',
-    image: 'https://i.imgur.com/iJIcKkP.jpg'
+    image: 'https://i.imgur.com/iJIcKkP.jpg',
   },
   {
     name: 'Black Rock Sands, Porthmadog ',
@@ -180,7 +180,7 @@ export default [
     accessAndParking:
       'Parking on the beach is free out of season. Take care not to block the roadway',
     localClubWebsite: 'https://www.facebook.com/groups/1380983302146434/',
-    image: 'https://i.imgur.com/LF6yqpz.jpg'
+    image: 'https://i.imgur.com/LF6yqpz.jpg',
   },
   {
     name: 'Dinas Dinlle',
@@ -200,7 +200,7 @@ export default [
     restrictions: '',
     accessAndParking: 'Free parking along the beachfront ',
     localClubWebsite: 'https://www.facebook.com/kiteclubwales/',
-    image: 'https://i.imgur.com/mZUo7Up.jpg'
+    image: 'https://i.imgur.com/mZUo7Up.jpg',
   },
   {
     name: 'Kimmel Bay',
@@ -219,7 +219,7 @@ export default [
       'You need to buy a permit to kite in the bay £10/day or £15/year. Contact local club',
     accessAndParking: 'Beach side carpark ',
     localClubWebsite: 'https://www.facebook.com/groups/1380983302146434',
-    image: 'https://i.imgur.com/KBFhgUa.jpg'
+    image: 'https://i.imgur.com/KBFhgUa.jpg',
   },
   {
     name: 'Earnse Bay, Walney Island',
@@ -238,7 +238,7 @@ export default [
     restrictions: '',
     accessAndParking: 'Free parking',
     localClubWebsite: 'https://www.facebook.com/groups/1380983302146434',
-    image: 'https://i.imgur.com/qflNMXl.jpg'
+    image: 'https://i.imgur.com/qflNMXl.jpg',
   },
   {
     name: 'Morcambe Bay',
@@ -259,7 +259,7 @@ export default [
       'Abide by local regulation on the sign by the car park. Launch on the sand by the behind the breakwater, not in front of the cafe',
     accessAndParking: 'Cheap beachside parking',
     localClubWebsite: 'https://www.facebook.com/MorecambeBayKitesurfing/',
-    image: 'https://i.imgur.com/SwbyVXX.jpg'
+    image: 'https://i.imgur.com/SwbyVXX.jpg',
   },
   {
     name: 'Hoylake',
@@ -279,7 +279,7 @@ export default [
     accessAndParking: 'On-street parking in front to of the beach',
     localClubWebsite:
       'https://www.facebook.com/groups/875254176750500/?paipv=0&eav=AfZpew9I0SezpY6y6Ssv0WgQFPa9efWgKyGrhC7Etrdd6p5mzfS4x5uoP9SqcQAblTo&_rdr',
-    image: 'https://imgur.com/jxQhmNX'
+    image: 'https://imgur.com/jxQhmNX',
   },
   {
     name: 'Allonby Beach',
@@ -319,7 +319,7 @@ export default [
     restrictions: '',
     accessAndParking: 'Onstreet parking, can be difficult to find',
     localClubWebsite: 'https://www.facebook.com/groups/164516490232895/',
-    image: 'https://i.imgur.com/HFzgIbw.jpg'
+    image: 'https://i.imgur.com/HFzgIbw.jpg',
   },
   {
     name: 'Marine Beach, Fleetwood',
@@ -340,7 +340,7 @@ export default [
     accessAndParking: 'Free beachside parking with overnight stays allowed',
     localClubWebsite:
       'https://www.britishkitesports.org/clubs/find-a-club/fleetwood',
-    image: 'https://i.imgur.com/7D7F6at.jpg'
+    image: 'https://i.imgur.com/7D7F6at.jpg',
   },
 
   {
@@ -396,5 +396,237 @@ export default [
     accessAndParking: 'Parking between beach huts or at activity centre',
     localClubWebsite: 'https://www.calshotaca.co.uk/clubs/calshot-windsurf-club',
     image: 'https://i.imgur.com/ajTqMCI.jpg',
+  },
+  {
+    region: 'E Scotland',
+    name: 'Longniddry',
+    description: 'Longniddry is a small village in East Lothian, just a few miles from Edinburgh. It has a relatively small wind direction range, but when it’s on it’s really good.',
+    experienceLevel: 'Intermediate',
+    type: 'All-round',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'WSW',
+    windDescription: 'Will work on SW around to W but is best on WSW.',
+    tidalInfo: 'Tide goes in and out very quickly, not much space for launching & landing at high-tide',
+    hazards:
+      'Rocks',
+    restrictions:
+      '',
+    accessAndParking:
+      'Parking in Longniddry Village, 113 Main St., East Lothian, EH32 0NF',
+    localClubWebsite: 'https://www.facebook.com/FifeEdinburghKitesurfClub',
+    image: '',
+  },
+  {
+    region: 'E Scotland',
+    name: 'Cramond',
+    description: 'Cramond is a seaside village, now part of suburban Edinburgh. It is located in the north-west corner of the city at the mouth of the River Almond where it enters the Firth of Forth.',
+    experienceLevel: 'Experienced',
+    type: 'Flat-water',
+    parking: true,
+    toilets: false,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'NE',
+    windDescription: 'Best NE, will work N around to E',
+    tidalInfo: 'Cramond is strongly influenced by tidal state and not ideal at high tide as there is very little beach to launch / land.',
+    hazards:
+      'Long causeway linking Cramond Island to the Beach, exposed metal spikes and busy during summer months. Unsuitable for beginners',
+    restrictions:
+      '',
+    accessAndParking:
+      'Free Parking by the beach at 30 Cramond Village, EH4 6NU',
+    localClubWebsite: 'https://www.facebook.com/FifeEdinburghKitesurfClub',
+    image: '',
+  },
+  {
+    region: 'E Scotland',
+    name: 'Pettycur/Burnt Island',
+    description: 'Pettycur Bay is located at Kinghorn, a pretty fishing village, in Fife, Scotland. It’s on the opposite side of the estuary to Edinburgh. The town’s lifeboat station is one of the busiest in Scotland, but don’t let that put you off! On a SW or SSW wind you can expect butter smooth flat water.',
+    experienceLevel: 'Intermediate',
+    type: 'Freestyle/Wakestyle',
+    parking: true,
+    toilets: false,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'SW',
+    windDescription: 'Will work on E, clockwise around to W',
+    tidalInfo: 'If you stay on the wide patch of beach west of Pettycur, you can ride at all states of tide. However, you must be confident in your ability to stay upwind, to avoid drifting into the harbour. Beginners should really only ride here at low tide',
+    hazards:
+      'Rapidly changing tides, avoid the harbour and only suitable for beginners at low tides',
+    restrictions:
+      '',
+    accessAndParking:
+      'Free parking on street',
+    localClubWebsite: 'https://www.facebook.com/FifeEdinburghKitesurfClub',
+    image: '',
+  },
+  {
+    region: 'W Scotland',
+    name: 'Troon South Beach',
+    description: 'Troon is around 45 minutes from Glasgow, and just 15 minutes from Europe’s biggest wind farm. That has to be a good sign! It’s actually 2 beaches separated by a marina: This one, South Beach, and North (Barassie) Beach.Either beach at Troon are great spot for beginners but South Beach provides better protection from the waves, providing flatter water for learning or tricks.',
+    experienceLevel: 'Beginner',
+    type: 'Beginner',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'SW',
+    windDescription: 'Best SW, will work from S around NNW',
+    tidalInfo: 'Suitable at all tide heights',
+    hazards:
+      'Rocks, the reef running adjacent to South Beach 150m out',
+    restrictions:
+      '',
+    accessAndParking:
+      'Free Parking on the beach at the South Beach Esplanade Car Park',
+    localClubWebsite: 'https://www.facebook.com/kitesurfscotland.co.uk/',
+    image: '',
+  },
+  {
+    region: 'W Scotland',
+    name: 'Troon North',
+    description: 'Troon is around 45 minutes from Glasgow, and just 15 minutes from Europe’s biggest wind farm. That has to be a good sign! It’s actually 2 beaches separated by a marina: This one, South Beach, and North (Barassie) Beach.Either beach at Troon are great spot for beginners but South Beach provides better protection from the waves, providing flatter water for learning or tricks.',
+    experienceLevel: 'Beginner',
+    type: 'All-round',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'N to S',
+    windDescription: 'Will work from N to S',
+    tidalInfo: 'Can be ridden at all tides',
+    hazards:
+      'Avoid the harbour',
+    restrictions:
+      '',
+    accessAndParking:
+      'Free Parking on Beach Road',
+    localClubWebsite: 'https://www.facebook.com/kitesurfscotland.co.uk/',
+    image: '',
+  },
+  {
+    region: 'NE England',
+    name: 'Filey Bay',
+    description: 'Filey is a small but popular tourist spot within the borough of Scarborough. Filey Bay features a curved, shallow, sandy beach with tall cliffs at its northern end, which curve eastward to a narrow, rocky peninsula called The Brigg. Moving south, the beach is backed by a sea wall, then opens out again to slowly collapsing, cliffs. Continue South and you’ll pass Primrose Valley, Hunmany Gap, Reighton Sands, and eventually reach Bempton, where the beach gives way to tall cliffs.The bay is well protected from swell by the Brigg. On a good day you’ll find really small, clean waves with flat spots between them, perfect for freestyle riding, and boosting air.',
+    experienceLevel: 'Intermediate',
+    type: 'Freestyle/Freeride',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'NE to SE',
+    windDescription: 'Will work from N to S',
+    tidalInfo: 'Small tidal range, and the water comes right up to the cliffs & sea wall, leaving no space to launch or land. Leave at least 3 hours either side of high tide.',
+    hazards:
+      'Very busy in the summer months, kids, dog walkers',
+    restrictions:
+      'No restictions in place at the moment.',
+    accessAndParking:
+      'Paid parking at Cleveland Way, YO14 9LF',
+    localClubWebsite: '',
+    image: '',
+  },
+  {
+    region: 'NE England',
+    name: 'Hunmanby Gap',
+    description: 'Hunmanby Gap is a sandy beach, just to the south of the picturesque Filey Bay, sat just between Reighton Sands and Primrose Valley Holiday Park. The waves here are not as clean as those at Filey, but can get big. On the right day you can get a good run up on flat spots, to boost off waves nearer the shoreline.',
+    experienceLevel: 'Intermediate',
+    type: 'Big-wave/Freestyle',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'N around to E',
+    windDescription: 'Will work on a NW all the way to ESE',
+    tidalInfo: 'Has a relatively small tidal range, and the water comes right up to the cliffs, leaving no space to launch or land. Leave at least 3 hours either side of high tide.',
+    hazards:
+      'Very strong northerly current, busy beach',
+    restrictions:
+      'No restictions in place at the moment',
+    accessAndParking:
+      'Paid Parking at Sands Road, Filey',
+    localClubWebsite: '',
+    image: '',
+  },
+  {
+    region: 'NE England',
+    name: 'South Bay Scarborough',
+    description: 'Scarborough has 2 main beaches suitable for kitesurfing: North Bay and South Bay. Both are really busy tourist beaches. There are lots of other little spots in the area that surfers use but they’re not suitable for kitesurfing unless you’re extremely brave! South Bay features smaller, tamer waves that North Bay. It’s a sheltered spot, and a useful option if it’s too windy at other local venues.',
+    experienceLevel: 'Beginner/Intermediate',
+    type: 'Freestyle',
+    parking: true,
+    toilets: false,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'E to SE',
+    windDescription: 'Works E to SE, but wind strength is prone to change and the Bay is sheltered',
+    tidalInfo: 'Not suitable for launching and landing at high-tide',
+    hazards:
+      'Strong currents and rip tides, promenade and the public',
+    restrictions:
+      'No restictions in place at the moment',
+    accessAndParking:
+      'Paid parking adjacent to the beaches',
+    localClubWebsite: '',
+    image: '',
+  },
+  {
+    region: 'NE England',
+    name: 'Cleethorpes',
+    description: 'Cleethorpes is situated on the south edge of the Humber Estuary Mouth, in North Lincolnshire. It’s a traditional seaside resort with three miles of sandy beach and a promenade. At mid/low tide, Cleethorpes is a good flat water venue.',
+    experienceLevel: 'Intermediate',
+    type: 'All-round',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'NW to SE',
+    windDescription: 'Gusty from NW to NNW',
+    tidalInfo: 'Cleethorpes will pretty much work on any tide state. At low tide expect a long walk to the water. The best tide state is mid tide, where large, flat water lagoons form in between the sand banks.',
+    hazards:
+      'The Humber is a busy shipping lane, shipwrecks in the area, fast-changing tides, fishing nets, local Wildlife, a strong rip, to the south is Donna Nook a MOD bombing target range - never enter when red flags are flying',
+    restrictions:
+      'Don’t ride in front of or to the North of The Leisure Centre.',
+    accessAndParking:
+      'Car Park on the beach front',
+    localClubWebsite: '',
+    image: '',
+  },
+  {
+    region: 'NE England',
+    name: 'Cayton Bay',
+    description: 'Cayton Bay is just south of the seaside town of Scarborough. If you live locally or you’re on holiday in this area, Cayton is one of the few beaches in the area that will work on a wind with some west in it (see below). It’s reef makes it an excellent wave venue, on the right day.',
+    experienceLevel: 'Intermediate',
+    type: 'Waverider/Freestyle',
+    parking: true,
+    toilets: true,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'NW to ESE',
+    windDescription: 'Will work from NW to ESE, NW and ESE will be gusty at high-tide',
+    tidalInfo: 'Tide often comes right up to the steps, so avoid kitesurfing an hour or so either side of high tide.',
+    hazards:
+      'Can be busy, there is a reef which can be exposed at low tide, strong rip in Cayton Bay, sharp stones at the south end of beach',
+    restrictions:
+      '',
+    accessAndParking:
+      'Paid parking fro £2 a day at the Surf Shack on Cleveland Way',
+    localClubWebsite: '',
+    image: '',
+  },
+  {
+    region: 'NE England',
+    name: 'Majuba Beach, Redcar',
+    description: 'Majuba will work on anything from WNW clockwise around to E. Many of the experienced local riders will go out on a W, but this is ever so slightly off-shore so only consider it if you know what you’re doing.',
+    experienceLevel: 'Beginner/Intermediate',
+    type: 'Freestyle/Freeride',
+    parking: true,
+    toilets: false,
+    lifeguard: 'Not lifeguarded',
+    bestWindDirection: 'W',
+    windDescription: 'Works from WNW to E, experienced riders go offshore for W',
+    tidalInfo: 'At high tide there is a small landing zone',
+    hazards:
+      'Reefs at east end of beach, beach popular with land boarders and buggiers',
+    restrictions:
+      '',
+    accessAndParking:
+      'Seasonal paid Parking at the Car Park on Majuba Road',
+    localClubWebsite: '',
+    image: '',
   }
+
 ]
