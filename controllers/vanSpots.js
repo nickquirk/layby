@@ -10,7 +10,6 @@ import router from '../config/router.js'
 // Type: get request
 // Endpoint: '/api/locations'
 export const getAllLocations = async (req, res) => {
-  console.log('GET ALL LOCATIONS ENDPOINT HIT')
   try {
     const location = await findAllLocations(req, res)
     return res.json(location)
@@ -25,7 +24,6 @@ export const getAllLocations = async (req, res) => {
 export const getSingleLocation = async (req, res) => {
   try {
     const { locationId } = req.params
-    console.log('REQ --->', req.params)
     const location = await findAllLocations(req, res)
     if (!location) {
       throw new NotFound('Location not found!')
@@ -39,19 +37,51 @@ export const getSingleLocation = async (req, res) => {
     console.log(err)
   }
 }
-
 // ? Add review
 // Method: post
 // Endpoint: '/api/locations/:locationId/review'
 export const addReview = async (req, res) => {
   try {
-    // const { locationId } = req.params
-    const locationToReview = await getSingleLocation(req, res)
-    if (locationToReview) {
-      const reviewWithOwner = { ...req.body, owner: req.currentUser._id }
-      locationToReview.reviews.push(reviewWithOwner)
-      await locationToReview.save()
-      return res.json(locationToReview)
+    const { locationId } = req.params
+    const location = await findAllLocations(req, res)
+    if (!location) {
+      throw new NotFound('Location not found!')
+    }
+    const targetLocation = location.filter((loc) => {
+      return locationId === loc.id
+    })
+    console.log('Target location ', targetLocation)
+    if (targetLocation) {
+      const reviewWithOwner = { ...req.body, owner: req.currentUser.id }
+      console.log('review with owner -->', reviewWithOwner)
+      targetLocation[0].reviews.push(reviewWithOwner)
+      await targetLocation[0].save()
+      return res.json(targetLocation)
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+// returning the review but not saving it
+
+// ? Delete review
+// Method: delete
+// Endpoint: '/api/locations/:locationId/review/:reviewId'
+export const deleteReview = async (req, res) => {
+  try {
+    //// const { locationId } = req.params
+    const location = await findAllLocations(req, res)
+    if (location) {
+      const { reviewId } = req.params
+      console.log('REVIEW ID -->', reviewId)
+      console.log('location.reviews-->', location)
+      const foundReview = location.reviews._id(reviewId)
+      if (!foundReview) throw new NotFound('Review not found')
+      if (!req.currentUser._id.equals(foundReview.owner))
+        throw new Unauthorised()
+      await foundReview.remove()
+      await location.save()
+      return res.sendStatus(204)
     }
   } catch (err) {
     console.log(err)
@@ -60,8 +90,5 @@ export const addReview = async (req, res) => {
 
 // ? Update review
 // Method: put
-//Endpoint: '/locations/:locationId/review/:reviewId'
-
-// ? Delete review
-// Method: delete
-// Endpoint: '/locations/:locationId/review/:reviewId'
+//Endpoint: '/api/locations/:locationId/review/:reviewId'
+export const editReview = async (req, res) => {}
