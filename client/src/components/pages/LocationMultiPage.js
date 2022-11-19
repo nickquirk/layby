@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+
+import FilterSearch from '../common/FilterSearch'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/row'
@@ -12,6 +14,7 @@ const LocationMultiPage = () => {
 
   const [locations, setLocations] = useState([])
   const [errors, setErrors] = useState(false)
+  const [filteredLocations, setFilteredLocations] = useState([])
 
   useEffect(() => {
     const getData = async () => {
@@ -32,13 +35,16 @@ const LocationMultiPage = () => {
   return (
     <main className='location-index'>
       <Container className='char-container mt-4'>
-        {locations.length ?
+        <FilterSearch locations={locations} filteredLocations={filteredLocations} setFilteredLocations={setFilteredLocations} />
+        {filteredLocations.length ?
           <Row>
-            {locations.map(loc => {
-              const { name, countryCode, freeparking, image, toilets, water, _id } = loc
+            {filteredLocations.map(loc => {
+              console.log('Hello')
+              const { name, countryCode, freeparking, image, toilets, water, id } = loc
+              console.log(image)
               return (
-                <Col key={_id} sm='6' md='3' className='char-card mb-4'>
-                  <Link className='text-decoration-none' to={`/character/${_id}`}>
+                <Col key={id} sm='6' md='3' className='char-card mb-4'>
+                  <Link className='text-decoration-none' to={`/location/${id}`}>
                     <Card>
                       <div className='card-image' style={{ backgroundImage: `url(${image})` }}></div>
                       <Card.Body>
@@ -53,7 +59,7 @@ const LocationMultiPage = () => {
             })}
           </Row>
           :
-          errors ? <h2>Something is wrong, please try again later...</h2> : <h2>Loading...</h2>
+          errors ? <h2>Something has gone wrong, my sincere apologies...</h2> : <h2>Loading...</h2>
         }
       </Container>
     </main>

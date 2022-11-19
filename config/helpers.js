@@ -21,14 +21,8 @@ export const findAllLocations = async (req, _res) => {
     const filteredLocations = locations.map((loc) => {
       return loc.locations
     })
-    const perfect = filteredLocations[0].concat(
-      filteredLocations[1],
-      filteredLocations[2],
-      filteredLocations[3],
-      filteredLocations[4]
-    )
-    console.log('double trouble ->', perfect)
-    return perfect
+    const concatFilteredLocations = filteredLocations.flat()
+    return concatFilteredLocations
   } catch (err) {
     console.log(err)
   }
