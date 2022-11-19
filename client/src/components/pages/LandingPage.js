@@ -32,7 +32,6 @@ const LandingPage = () => {
       }
     }
     getData()
-    // topSpots()
   }, [])
 
   const navigateToLogin = () => {
@@ -43,15 +42,8 @@ const LandingPage = () => {
     navigate('/register')
   }
 
-  // //randomly display 3 van spots - eventually can be display the top rated
-  // let randomChoices = []
-
-  // const topSpots = () => {
-  //   while (randomChoices.length < 3) {
-  //     const randomIndex = Math.floor(Math.random() * location.length)
-  //     randomIndex.push(randomChoices)
-  //   }
-  // }
+  // const randomIndex = Math.floor(Math.random() * locations.length)
+  // const randomLocation = locations[randomIndex]
 
   return (
     <main className="landing-page">
@@ -75,7 +67,7 @@ const LandingPage = () => {
           <div className="display-top-rated text-center">
             <h2>Top Rated Spots</h2>
           </div>
-          {/* {randomChoices.map((loc) => {
+          {locations.map((loc) => {
             const {
               name,
               countryCode,
@@ -104,7 +96,7 @@ const LandingPage = () => {
                 </Link>
               </Col>
             )
-          })} */}
+          })}
         </Row>
         <Row id="login-register">
           <div

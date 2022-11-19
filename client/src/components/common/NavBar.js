@@ -14,15 +14,17 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            {/* More Links to site pages here */}
             <Nav.Link as={Link} to="/locations">
               Locations
             </Nav.Link>
             <Nav.Link as={Link} to="/login">
-              Register
+              Login
             </Nav.Link>
             <Nav.Link as={Link} to="/register">
-              Login
+              Register
+            </Nav.Link>
+            <Nav.Link as={Link} to="/profile">
+              Profile
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
