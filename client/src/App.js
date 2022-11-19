@@ -34,7 +34,8 @@ const App = () => {
           <Route path='/locations/:id' element={<LocationSinglePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
-          <Route path='/profile/:id' element={<UserProfilePage />} />
+          {/* Just changed this to work on the profile page, will change it back :) */}
+          <Route path='/profile' element={<UserProfilePage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

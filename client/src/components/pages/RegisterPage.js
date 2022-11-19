@@ -45,7 +45,8 @@ const RegisterPage = () => {
     setFormFields(updatedFormFields)
     // ! if there's an error, set to an empty string
   }
-
+  // ! JSX
+  // Display register form 
   return (
     <div className='hero-page text-center form-main'>
       <h1>Register Page</h1>
