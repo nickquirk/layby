@@ -1,15 +1,19 @@
+/* eslint-disable comma-dangle */
 import { useEffect, useState } from 'react'
 
 const FilterSearch = ({ locations, setFilteredLocations }) => {
   console.log('Locations -> ', locations)
   const [input, setInput] = useState({
     search: '',
-    countryCode: 'All',
+    countryCode: 'All'
   })
   useEffect(() => {
     const regex = new RegExp(input.search, 'i')
-    const filteredArr = locations.filter(loc => {
-      return regex.test(loc.name) && (loc.countryCode === input.countryCode || input.countryCode === 'All')
+    const filteredArr = locations.filter((loc) => {
+      return (
+        regex.test(loc.name) &&
+        (loc.countryCode === input.countryCode || input.countryCode === 'All')
+      )
     })
     setFilteredLocations(filteredArr)
   }, [input, locations, setFilteredLocations])
@@ -19,21 +23,34 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
   }
 
   return (
-
     <>
-      <div className='search-filter-input'>
-        <input onChange={handleChange} type='text' placeholder="Search location" name='search' id='filter' value={input.search} />
-        <select onChange={handleChange} name='countryCode' id='filter' value={input.countryCode}>
-          <option value='All'>All</option>
-          <option value='DE'>Germany</option>
-          <option value='MA'>Morocco</option>
-          <option value='PT'>Portugal</option>
-          <option value='ESP'>Spain</option>
-          <option value='UK'>United Kingdom</option>
+      <div className="search-filter-input">
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Find a spot"
+          name="search"
+          id="filter"
+          value={input.search}
+        />
+        <select
+          onChange={handleChange}
+          name="countryCode"
+          id="filter"
+          value={input.countryCode}
+        >
+          <option value="" disabled>
+            -- Choose country --
+          </option>
+          <option value="All">All</option>
+          <option value="DE">Germany</option>
+          <option value="MA">Morocco</option>
+          <option value="PT">Portugal</option>
+          <option value="ESP">Spain</option>
+          <option value="UK">United Kingdom</option>
         </select>
       </div>
     </>
-
   )
 }
 

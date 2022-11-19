@@ -20,21 +20,39 @@
 
 .landing-page {
   min-height: 100vh;
-}
-
-.hero {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-  background-color: bisque;
-  min-height: 400px;
-
-  #landing-search-bar {
+    #hero {
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    height: 200px;
+      #landing-search-bar  {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+  .row{
+    background-color: rgb(191, 249, 249);
+  }
+  #login-register {
+    background-color: rgb(87, 248, 248);
+  }
+  .button {
+    margin-left: 20px;
+    margin-right:20px;
+    #login-register-buttons{
+      align-content: center;
+    }
+  }
+  .search-filter-input{
+    padding-top: 250px;
   }
 }
+
 
 .form-main {
   display: flex;
