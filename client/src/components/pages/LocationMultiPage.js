@@ -32,7 +32,6 @@ const LocationMultiPage = () => {
   return (
     <main className='location-index'>
       <Container className='char-container mt-4'>
-        {/* <Filters characters={characters} setFilteredCharacters={setFilteredCharacters} filteredCharacters={filteredCharacters} /> */}
         {locations.length ?
           <Row>
             {locations.map(loc => {
