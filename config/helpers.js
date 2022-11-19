@@ -27,7 +27,6 @@ export const findAllLocations = async (req, _res) => {
       filteredLocations[3],
       filteredLocations[4]
     )
-    console.log('double trouble ->', perfect)
     return perfect
   } catch (err) {
     console.log(err)
