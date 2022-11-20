@@ -68,7 +68,6 @@ export const addReview = async (req, res) => {
 // Endpoint: '/api/locations/:locationId/review/:reviewId'
 export const deleteReview = async (req, res) => {
   try {
-    console.log(req.params)
     const { locationId } = req.params
     const location = await findAllLocations(req, res)
     const targetLocation = location.filter(loc => {
@@ -76,10 +75,7 @@ export const deleteReview = async (req, res) => {
     })
     const [newTargetLocation] = targetLocation
     const { reviewId } = req.params
-    console.log('New target location ->', newTargetLocation.reviews)
-    console.log('Review ID ->', reviewId)
     const review = newTargetLocation.reviews.id(reviewId)
-    console.log('Rev->', review)
     if (!review) {
       throw new Error('Review not found')
     }
@@ -102,12 +98,20 @@ export const editReview = async (req, res) => {
   try {
     const { locationId } = req.params
     const location = await findAllLocations(req, res)
-    if (!location) {
-      throw new NotFound('Location not found!')
-    }
     const targetLocation = location.filter(loc => {
       return locationId === loc.id
     })
+    const [newTargetLocation] = targetLocation
+    const { reviewId } = req.params
+    const review = newTargetLocation.reviews.id(reviewId)
+    if (review && req.currentUser._id.equals(review.owner)) {
+      Object.assign(review, req.body)
+      const parent = await newTargetLocation.parent()
+      await parent.save()
+      return res.status(202).json(review)
+    } else {
+      throw new Error('Update failed')
+    }
   } catch (error) {
     console.log(error)
   }
