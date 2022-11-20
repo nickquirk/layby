@@ -106,7 +106,9 @@
     flex-direction: column;
     align-items: center;
   }
+
   .user-reviews{
+    width: 100%;S
     .user-card {
       max-width: 100%;
       }
@@ -115,21 +117,25 @@
             margin: 5px 0;
           }
   }
-  
   .user-favourites{
-    max-width: fit-content;
+    width: 100%;
 
     .favourite-card-container{
+      display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-    }
-    .user-card {
       max-width: 100%;
     }
+    .favourite-card {
+      max-width: 50%;
+    }
     img{
-      max-width: 200px;
+      max-width: 100px;
       margin: 5px 0;
     }
   }
-
 }
+.user-content{
+  max-width: 600px;
+}
+

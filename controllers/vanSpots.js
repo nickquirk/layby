@@ -50,16 +50,16 @@ export const addReview = async (req, res) => {
     const targetLocation = location.filter((loc) => {
       return locationId === loc.id
     })
-    console.log('Target location ', targetLocation)
-    if (targetLocation) {
+    const [newTargetLocation] = targetLocation
+    if (newTargetLocation) {
       const reviewWithOwner = { ...req.body, owner: req.currentUser.id }
-      console.log('review with owner -->', reviewWithOwner)
-      targetLocation[0].reviews.push(reviewWithOwner)
-      await targetLocation[0].save()
-      return res.json(targetLocation)
+      newTargetLocation.reviews.push(reviewWithOwner)
+      const parent = await newTargetLocation.parent()
+      await parent.save()
+      return res.status(201).json(newTargetLocation)
     }
   } catch (err) {
-    console.log(err)
+    console.log('This the error ->', err)
   }
 }
 // returning the review but not saving it
@@ -91,4 +91,4 @@ export const deleteReview = async (req, res) => {
 // ? Update review
 // Method: put
 //Endpoint: '/api/locations/:locationId/review/:reviewId'
-export const editReview = async (req, res) => {}
+export const editReview = async (req, res) => { }

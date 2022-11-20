@@ -43,7 +43,6 @@ const UserProfilePage = () => {
               </Card.Body>
             </Card>
           </div>
-          
         </div>
       </div>
     </div>
