@@ -108,6 +108,7 @@
   }
 
   .user-reviews{
+    width: 100%;S
     .user-card {
       max-width: 100%;
       }
@@ -116,13 +117,13 @@
             margin: 5px 0;
           }
   }
-  
   .user-favourites{
-    max-width: 100%;
+    width: 100%;
 
     .favourite-card-container{
+      display: flex;
       flex-direction: row;
-      // flex-wrap: wrap;
+      flex-wrap: wrap;
       max-width: 100%;
     }
     .favourite-card {
