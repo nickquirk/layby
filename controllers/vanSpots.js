@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
-import VanSpot from '../models/vanSpot.js'
-import { findAllLocations } from '../config/helpers.js'
+import { findAllLocations, findLocation, findReview } from '../config/helpers.js'
 import { NotFound, Unauthorised } from '../config/errors.js'
-import router from '../config/router.js'
+import { errorHandler } from '../config/helpers.js'
 
 // ? Region index route
 
@@ -15,6 +14,7 @@ export const getAllLocations = async (req, res) => {
     return res.json(location)
   } catch (err) {
     console.log(err)
+    errorHandler(res, err)
   }
 }
 
@@ -23,18 +23,11 @@ export const getAllLocations = async (req, res) => {
 // Endpoint: '/api/locations/:locationId'
 export const getSingleLocation = async (req, res) => {
   try {
-    const { locationId } = req.params
-    const location = await findAllLocations(req, res)
-    if (!location) {
-      throw new NotFound('Location not found!')
-    }
-    const targetLocation = location.filter((loc) => {
-      return locationId === loc.id
-    })
-    console.log(targetLocation)
-    return res.json(targetLocation)
+    const location = await findLocation(req, res)
+    return res.json(location)
   } catch (err) {
     console.log(err)
+    errorHandler(res, err)
   }
 }
 // ? Add review
@@ -42,24 +35,17 @@ export const getSingleLocation = async (req, res) => {
 // Endpoint: '/api/locations/:locationId/review'
 export const addReview = async (req, res) => {
   try {
-    const { locationId } = req.params
-    const location = await findAllLocations(req, res)
-    if (!location) {
-      throw new NotFound('Location not found!')
-    }
-    const targetLocation = location.filter(loc => {
-      return locationId === loc.id
-    })
-    const [newTargetLocation] = targetLocation
-    if (newTargetLocation) {
+    const location = await findLocation(req, res)
+    if (location) {
       const reviewWithOwner = { ...req.body, owner: req.currentUser.id }
-      newTargetLocation.reviews.push(reviewWithOwner)
-      const parent = await newTargetLocation.parent()
+      location.reviews.push(reviewWithOwner)
+      const parent = await location.parent()
       await parent.save()
-      return res.status(201).json(newTargetLocation)
+      return res.status(201).json(location)
     }
   } catch (err) {
-    console.log('This the error ->', err)
+    console.log(err)
+    errorHandler(res, err)
   }
 }
 
@@ -68,26 +54,15 @@ export const addReview = async (req, res) => {
 // Endpoint: '/api/locations/:locationId/review/:reviewId'
 export const deleteReview = async (req, res) => {
   try {
-    const { locationId } = req.params
-    const location = await findAllLocations(req, res)
-    const targetLocation = location.filter(loc => {
-      return locationId === loc.id
-    })
-    const [newTargetLocation] = targetLocation
-    const { reviewId } = req.params
-    const review = newTargetLocation.reviews.id(reviewId)
-    if (!review) {
-      throw new Error('Review not found')
-    }
-    if (!req.currentUser._id.equals(review.owner)) {
-      throw new Error('Not permitted to delete this review')
-    }
+    const location = await findLocation(req, res)
+    const review = await findReview(req, res, location)
     await review.remove()
-    const parent = await newTargetLocation.parent()
+    const parent = await location.parent()
     await parent.save()
     return res.sendStatus(204)
   } catch (err) {
     console.log(err)
+    errorHandler(res, err)
   }
 }
 
@@ -96,23 +71,18 @@ export const deleteReview = async (req, res) => {
 //Endpoint: '/api/locations/:locationId/review/:reviewId'
 export const editReview = async (req, res) => {
   try {
-    const { locationId } = req.params
-    const location = await findAllLocations(req, res)
-    const targetLocation = location.filter(loc => {
-      return locationId === loc.id
-    })
-    const [newTargetLocation] = targetLocation
-    const { reviewId } = req.params
-    const review = newTargetLocation.reviews.id(reviewId)
+    const location = await findLocation(req, res)
+    const review = await findReview(req, res, location)
     if (review && req.currentUser._id.equals(review.owner)) {
       Object.assign(review, req.body)
-      const parent = await newTargetLocation.parent()
+      const parent = await location.parent()
       await parent.save()
       return res.status(202).json(review)
     } else {
       throw new Error('Update failed')
     }
-  } catch (error) {
-    console.log(error)
+  } catch (err) {
+    console.log(err)
+    errorHandler(res, err)
   }
 }
