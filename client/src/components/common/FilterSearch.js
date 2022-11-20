@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 
 const FilterSearch = ({ locations, setFilteredLocations }) => {
-  console.log('Locations -> ', locations)
   const [input, setInput] = useState({
     search: '',
     countryCode: 'All'
@@ -43,11 +42,11 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
             -- Choose country --
           </option>
           <option value="All">All</option>
-          <option value="DE">Germany</option>
-          <option value="MA">Morocco</option>
-          <option value="PT">Portugal</option>
-          <option value="ESP">Spain</option>
-          <option value="UK">United Kingdom</option>
+          <option value="DE">Germany 🇩🇪</option>
+          <option value="MA">Morocco 🇲🇦</option>
+          <option value="PT">Portugal 🇵🇹</option>
+          <option value="ESP">Spain 🇪🇸</option>
+          <option value="UK">United Kingdom 🇬🇧</option>
         </select>
       </div>
     </>
