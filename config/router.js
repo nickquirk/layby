@@ -15,8 +15,6 @@ import secureRoute from './secureRoute.js'
 
 const router = express.Router()
 
-// router.route('/regions').get(getAllRegions)
-// This needs to be changed back
 router.route('/locations/:locationId').get(getSingleLocation)
 
 router.route('/locations').get(getAllLocations)

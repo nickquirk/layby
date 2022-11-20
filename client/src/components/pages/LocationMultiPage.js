@@ -44,7 +44,7 @@ const LocationMultiPage = () => {
               console.log(image)
               return (
                 <Col key={id} sm='6' md='3' className='char-card mb-4'>
-                  <Link className='text-decoration-none' to={`/location/${id}`}>
+                  <Link className='text-decoration-none' to={`/locations/${id}`}>
                     <Card>
                       <div className='card-image' style={{ backgroundImage: `url(${image})` }}></div>
                       <Card.Body>
