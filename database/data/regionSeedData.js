@@ -21,7 +21,7 @@ export default [
   {
     country: 'Spain',
     countryCode: 'ESP',
-    flag: 'U+1F1EA U+1F1F8',
+    flag: '🇪🇸',
     locations: []
   },
   {
