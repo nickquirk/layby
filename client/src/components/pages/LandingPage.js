@@ -17,6 +17,7 @@ const LandingPage = () => {
   const navigate = useNavigate()
 
   const [locations, setLocations] = useState([])
+  const [randomChoice, setRandomChoice] = useState([])
   const [errors, setErrors] = useState(false)
   const [filteredLocations, setFilteredLocations] = useState([])
 
@@ -24,8 +25,8 @@ const LandingPage = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/locations')
-        console.log('data->', data)
         setLocations(data)
+        getRandomChoice()
       } catch (err) {
         console.log(err.message)
         setErrors(true)
@@ -42,8 +43,11 @@ const LandingPage = () => {
     navigate('/register')
   }
 
-  // const randomIndex = Math.floor(Math.random() * locations.length)
-  // const randomLocation = locations[randomIndex]
+  const getRandomChoice = () => {
+    const randomIndex = Math.floor(Math.random() * locations.length)
+    setRandomChoice(locations)
+    console.log('random choice here -->', randomChoice)
+  }
 
   return (
     <main className="landing-page">
@@ -67,10 +71,12 @@ const LandingPage = () => {
           <div className="display-top-rated text-center">
             <h2>Top Rated Spots</h2>
           </div>
-          {locations.map((loc) => {
+          {randomChoice.map((loc) => {
             const {
               name,
-              countryCode,
+              flag,
+              ccountryCode,
+              description,
               freeparking,
               image,
               toilets,
@@ -83,14 +89,32 @@ const LandingPage = () => {
                   <Card>
                     <div
                       className="card-image"
-                      style={{ backgroundImage: `url(${image})` }}
+                      style={{
+                        backgroundImage: `url(${image}) alt=(${name})`
+                      }}
                     ></div>
-                    <Card.Body>
-                      <h4>{name}</h4>
-                      <span>{countryCode}</span>
-                      <p>{toilets}</p>
-                      <p>{freeparking}</p>
-                      <p>{water}</p>
+                    <Card.Body className="d-flex flex-column">
+                      <h4>
+                        <span>{name}</span>
+                      </h4>
+                      <span>{flag}</span>
+                      <p>{description}</p>
+                      <span></span>
+                      <div className="icon-container d-flex justify-content-evenly">
+                        <div className="icon">
+                          {toilets === false ? <span></span> : <span>🚾</span>}
+                        </div>
+                        <div className="icon">
+                          {freeparking === false ? (
+                            <span></span>
+                          ) : (
+                            <span>🅿️</span>
+                          )}
+                        </div>
+                        <div className="icon">
+                          {water === false ? <span></span> : <span>💧</span>}
+                        </div>
+                      </div>
                     </Card.Body>
                   </Card>
                 </Link>

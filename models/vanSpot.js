@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import mongoose from 'mongoose'
 // ! Schema and model
 
@@ -13,10 +14,10 @@ const reviewSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, unique: false },
     rating: { type: Number, required: true, min: 1, max: 5 },
-    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 )
 
@@ -39,21 +40,22 @@ const locationSchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: true,
+    required: true
   },
-  reviews: [reviewSchema],
+  reviews: [reviewSchema]
 })
 
 // ? Country schema with referenced owner schema and embedded review schema
 const countrySchema = new mongoose.Schema({
   country: { type: String, required: true, unique: true },
   countryCode: { type: String, required: true },
+  flag: { type: String, required: true },
   locations: [locationSchema],
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: true,
-  },
+    required: true
+  }
 })
 
 // ? Rating
@@ -66,7 +68,7 @@ locationSchema.virtual('avgRating').get(function () {
 })
 
 locationSchema.set('toJSON', {
-  virtuals: true,
+  virtuals: true
 })
 
 // * Model

@@ -3,26 +3,31 @@ export default [
   {
     country: 'United Kingdom',
     countryCode: 'UK',
-    locations: [],
+    flag: '🇬🇧',
+    locations: []
   },
   {
     country: 'Germany',
     countryCode: 'DE',
-    locations: [],
+    flag: '🇩🇪',
+    locations: []
   },
   {
     country: 'Morocco',
     countryCode: 'MA',
-    locations: [],
+    flag: '🇲🇦',
+    locations: []
   },
   {
     country: 'Spain',
     countryCode: 'ESP',
-    locations: [],
+    flag: 'U+1F1EA U+1F1F8',
+    locations: []
   },
   {
     country: 'Portugal',
     countryCode: 'PT',
-    locations: [],
+    flag: '🇵🇹',
+    locations: []
   }
 ]
