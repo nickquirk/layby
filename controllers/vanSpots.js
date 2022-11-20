@@ -1,18 +1,18 @@
 /* eslint-disable no-unused-vars */
 import VanSpot from '../models/vanSpot.js'
-import { findLocation } from '../config/helpers.js'
-import { Unauthorised } from '../config/errors.js'
+import { findAllLocations } from '../config/helpers.js'
+import { NotFound, Unauthorised } from '../config/errors.js'
+import router from '../config/router.js'
 
 // ? Region index route
 
 // ? Location index route
 // Type: get request
-// Endpoint: '/regions/:id/locations'
+// Endpoint: '/api/locations'
 export const getAllLocations = async (req, res) => {
-  console.log('GET ALL LOCATIONS ENDPOINT HIT')
   try {
-    const locations = await VanSpot.find().populate('owner')
-    return res.json(locations)
+    const location = await findAllLocations(req, res)
+    return res.json(location)
   } catch (err) {
     console.log(err)
   }
@@ -20,32 +20,75 @@ export const getAllLocations = async (req, res) => {
 
 // ? Show single location route
 // Type: get
-// Endpoint: '/regions/:id/locations/:locationId'
+// Endpoint: '/api/locations/:locationId'
 export const getSingleLocation = async (req, res) => {
   try {
-    const { id } = req.params
-    const country = await VanSpot.findById(id).populate('owner')
-    if (!country) {
-      throw new Error('country not found!')
+    const { locationId } = req.params
+    const location = await findAllLocations(req, res)
+    if (!location) {
+      throw new NotFound('Location not found!')
     }
-    console.log(country.locations)
-    return res.json(country)
+    const targetLocation = location.filter((loc) => {
+      return locationId === loc.id
+    })
+    console.log(targetLocation)
+    return res.json(targetLocation)
+  } catch (err) {
+    console.log(err)
+  }
+}
+// ? Add review
+// Method: post
+// Endpoint: '/api/locations/:locationId/review'
+export const addReview = async (req, res) => {
+  try {
+    const { locationId } = req.params
+    const location = await findAllLocations(req, res)
+    if (!location) {
+      throw new NotFound('Location not found!')
+    }
+    const targetLocation = location.filter((loc) => {
+      return locationId === loc.id
+    })
+    console.log('Target location ', targetLocation)
+    if (targetLocation) {
+      const reviewWithOwner = { ...req.body, owner: req.currentUser.id }
+      console.log('review with owner -->', reviewWithOwner)
+      targetLocation[0].reviews.push(reviewWithOwner)
+      await targetLocation[0].save()
+      return res.json(targetLocation)
+    }
+  } catch (err) {
+    console.log(err)
+  }
+}
+// returning the review but not saving it
+
+// ? Delete review
+// Method: delete
+// Endpoint: '/api/locations/:locationId/review/:reviewId'
+export const deleteReview = async (req, res) => {
+  try {
+    //// const { locationId } = req.params
+    const location = await findAllLocations(req, res)
+    if (location) {
+      const { reviewId } = req.params
+      console.log('REVIEW ID -->', reviewId)
+      console.log('location.reviews-->', location)
+      const foundReview = location.reviews._id(reviewId)
+      if (!foundReview) throw new NotFound('Review not found')
+      if (!req.currentUser._id.equals(foundReview.owner))
+        throw new Unauthorised()
+      await foundReview.remove()
+      await location.save()
+      return res.sendStatus(204)
+    }
   } catch (err) {
     console.log(err)
   }
 }
 
-// ? Add review
-// Method: post
-// Endpoint: '/locations/:locationId/review'
-export const addReview = async (req, res) => {
-  console.log('Add review endpoint hit')
-}
-
 // ? Update review
 // Method: put
-//Endpoint: '/locations/:locationId/review/:reviewId'
-
-// ? Delete review
-// Method: delete
-// Endpoint: '/locations/:locationId/review/:reviewId'
+//Endpoint: '/api/locations/:locationId/review/:reviewId'
+export const editReview = async (req, res) => {}

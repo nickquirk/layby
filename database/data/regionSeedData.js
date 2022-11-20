@@ -24,9 +24,5 @@ export default [
     country: 'Portugal',
     countryCode: 'PT',
     locations: [],
-  },
-  {
-    country: 'Portugal',
-    countryCode: 'PT'
-  },
+  }
 ]
