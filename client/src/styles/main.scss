@@ -83,23 +83,35 @@
   img{
     max-width: 50%;
   }
-  .user-details, .user-content, .user-reviews{
+  .user-details, .user-content, .user-reviews, .user-favourites{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .user-reviews{
-    Card {
-      color: aquamarine;
-    }
+    .user-card {
+      max-width: 100%;
+      }
     img{
             max-width: 400px;
             margin: 5px 0;
-            overflow: hidden;
           }
-
-
   }
   
+  .user-favourites{
+    max-width: fit-content;
+
+    .favourite-card-container{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .user-card {
+      max-width: 100%;
+    }
+    img{
+      max-width: 200px;
+      margin: 5px 0;
+    }
+  }
 
 }
