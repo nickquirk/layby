@@ -37,12 +37,11 @@ const LocationSinglePage = () => {
     getLocation()
   }, [locationId])
 
-
   return (
-    <main className='single-page'>
-      <Container className='fluid mt-4 single-page-container'>
+    <main className="single-page">
+      <Container className="fluid mt-4 single-page-container">
         <Row>
-          {location ?
+          {location ? (
             <>
               <div className='single-page-header'>
                 <h1 className='single-page-title'>{location.name}</h1>
@@ -68,9 +67,9 @@ const LocationSinglePage = () => {
                 </Tab>
               </Tabs>
             </>
-            :
+          ) : (
             <h2>Something went wrong...</h2>
-          }
+          )}
         </Row>
       </Container>
     </main>
