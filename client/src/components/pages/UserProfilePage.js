@@ -3,7 +3,8 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-import Tab from 'react-bootstrap/Tab'
+import ListGroup from 'react-bootstrap/ListGroup'
+import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 
 
 const UserProfilePage = () => {
@@ -21,6 +22,10 @@ const UserProfilePage = () => {
           <Col md="8">
             <div className='user-reviews'>
               <h3>User Reviews</h3>
+              <ListGroup>
+                <ListGroupItem>Review 1</ListGroupItem>
+                <ListGroupItem>Review 2</ListGroupItem>
+              </ListGroup>
               <Card className='review-card sm-4'>
                 <Card.Body>
                   <Card.Img className='card-image' variant='top' src='https://tinyurl.com/5atpj5f8'/>
