@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
+import Tab from 'react-bootstrap/Tab'
 
 
 const UserProfilePage = () => {
