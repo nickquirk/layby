@@ -2,7 +2,7 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable no-undef */
 import axios from 'axios'
-import van from '../images/van.jpg'
+import van from '../images/van.jpeg'
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import FilterSearch from '../common/FilterSearch'
@@ -17,7 +17,7 @@ const LandingPage = () => {
   const navigate = useNavigate()
 
   const [locations, setLocations] = useState([])
-  const [randomChoice, setRandomChoice] = useState([])
+  // const [randomChoice, setRandomChoice] = useState([])
   const [errors, setErrors] = useState(false)
   const [filteredLocations, setFilteredLocations] = useState([])
 
@@ -26,7 +26,7 @@ const LandingPage = () => {
       try {
         const { data } = await axios.get('/api/locations')
         setLocations(data)
-        getRandomChoice()
+        // getRandomChoice()
       } catch (err) {
         console.log(err.message)
         setErrors(true)
@@ -43,11 +43,11 @@ const LandingPage = () => {
     navigate('/register')
   }
 
-  const getRandomChoice = () => {
-    const randomIndex = Math.floor(Math.random() * locations.length)
-    setRandomChoice(locations)
-    console.log('random choice here -->', randomChoice)
-  }
+  // const getRandomChoice = () => {
+  //   const randomIndex = Math.floor(Math.random() * locations.length)
+  //   setRandomChoice(locations)
+  //   console.log('random choice here -->', randomChoice)
+  // }
 
   return (
     <main className="landing-page">
@@ -69,9 +69,9 @@ const LandingPage = () => {
         </Row>
         <Row className="top-rated">
           <div className="display-top-rated text-center">
-            <h2>Top Rated Spots</h2>
+            <h2>Discover Top Rated Spots</h2>
           </div>
-          {randomChoice.map((loc) => {
+          {locations.slice(0, 4).map((loc) => {
             const {
               name,
               flag,
@@ -123,6 +123,7 @@ const LandingPage = () => {
           })}
         </Row>
         <Row id="login-register">
+          <h4 className="text-center">Leave a Review or Post a New Van Spot</h4>
           <div
             id="login-register-buttons"
             className="col border-end  d-flex justify-content-center align-items-center"
@@ -142,8 +143,9 @@ const LandingPage = () => {
           </div>
         </Row>
         <Row id="tickertape">
-          <div className="ticker-tape-div text-center"></div>
-          <div data-mc-src="359dbd97-d501-4e1d-8a2f-8e00870bd464#instagram"></div>
+          <div className="ticker-tape-div text-center">
+            <div data-mc-src="359dbd97-d501-4e1d-8a2f-8e00870bd464#instagram"></div>
+          </div>
         </Row>
       </Container>
     </main>
