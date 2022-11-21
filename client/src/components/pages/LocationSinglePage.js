@@ -4,22 +4,17 @@ import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 
 //React Icon Components
-import { MdOutlineLocalGasStation, MdOutlineWaterDrop } from 'react-icons/md'
-import { BiPound, BiEuro } from 'react-icons/bi'
-import { IoMdWater } from 'react-icons/io'
-import { GrRestroom } from 'react-icons/gr'
+
 // Bootstrap components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
 
 //
 import ReviewField from '../common/ReviewField'
-
+import Infographic from '../common/Infographic'
 const LocationSinglePage = () => {
   // ! State
   const [location, setLocation] = useState([])
@@ -54,25 +49,7 @@ const LocationSinglePage = () => {
                 </picture>
                 <h1 className='single-page-header'>{location.name}</h1>
               </div>
-              <div className='widget-container'>
-                {location.currency === '£' ?
-                  <div className='ifg' id='pound-ifg'><BiPound /></div>
-                  :
-                  <></>}
-                {location.currency === '€' ?
-                  <div className='ifg' id='euro-ifg'><BiEuro /></div>
-                  :
-                  <></>}
-                {location.water === true ?
-                  <div className='ifg' id='water-ifg'><MdOutlineWaterDrop /></div>
-                  :
-                  <></>}
-                {location.toilets === true ?
-                  <div className='ifg' id='restroom-ifg'><GrRestroom /></div>
-                  :
-                  <></>}
-                <div className='ifg' id='gas-ifg'><MdOutlineLocalGasStation /></div>
-              </div>
+              <Infographic location={location} />
               <hr className='hr'></hr>
               <Tabs
                 defaultActiveKey="details"
