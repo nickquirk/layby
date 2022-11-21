@@ -10,7 +10,6 @@ const UserProfilePage = () => {
     <>
       <Container className='profile-page-container'>
         <Row className='text-center'>
-          <h1>User Profile Page</h1>
           <Col md="4" className='text-center'>
             <div className='user-details'>
               <h3>Username</h3>

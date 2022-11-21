@@ -278,5 +278,41 @@ export default [
     nearbyActivities: 'Surfing nearby ',
     image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
+  {
+    name: 'Yorkshire Dales',
+    latitude: 37.806104,
+    longitude: -8.796337,
+    countryCode: 'UK',
+    flag: '🇬🇧',
+    country: 'United Kingdom',
+    currency: '£',
+    description: 'xxxx',
+    parking: true,
+    freeparking: false,
+    toilets: true,
+    water: true,
+    nearestFuel: 15,
+    otherInfo: 'Wifi from cafe next door',
+    nearbyActivities: 'Surfing nearby ',
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
+  },
+  {
+    name: 'Yorkshire Dales',
+    latitude: 37.806104,
+    longitude: -8.796337,
+    countryCode: 'UK',
+    flag: '🇬🇧',
+    country: 'United Kingdom',
+    currency: '£',
+    description: 'xxxx',
+    parking: true,
+    freeparking: false,
+    toilets: true,
+    water: true,
+    nearestFuel: 15,
+    otherInfo: 'Wifi from cafe next door',
+    nearbyActivities: 'Surfing nearby ',
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
+  },
 
 ]

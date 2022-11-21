@@ -46,7 +46,7 @@ const LoginPage = () => {
 
   return (
     <div className='hero-page text-center form-main'>
-      <h1>Login Page</h1>
+      <h1>Login</h1>
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
           <input 
