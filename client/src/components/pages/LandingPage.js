@@ -20,7 +20,7 @@ const LandingPage = () => {
   const navigate = useNavigate()
 
   const [locations, setLocations] = useState([])
-  // let [shuffled, setShuffled] = useState([])
+  let [shuffled, setShuffled] = useState([])
   const [errors, setErrors] = useState(false)
 
   useEffect(() => {
@@ -47,6 +47,20 @@ const LandingPage = () => {
   const navigateToLocationIndex = () => {
     navigate('/locations')
   }
+  
+  
+  useEffect(() => {
+    const getRandomLocations = () => {
+      for (let i = locations.length - 1; i > 0; i--) {
+        const shuffled = (Math.floor(Math.random() * (i + 1))[
+          (locations[i], locations[shuffled])
+        ] = [locations[shuffled], locations[i]])
+      }
+      setShuffled(shuffled)
+      console.log('This is shuffled', shuffled)
+    }
+    getRandomLocations()
+  }, [locations])
 
   // useEffect(() => {
   //   const getRandomLocations = () => {
