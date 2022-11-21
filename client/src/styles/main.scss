@@ -3,7 +3,7 @@
 * {
   font-family: 'Roboto Slab', serif;
   color: black;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   // font-family:'Yeseva One', cursive;
 }
 
@@ -106,6 +106,7 @@
     margin-top: 30px;
   }
 }
+
 // User profile page
 .profile-main {
   display: flex;
@@ -124,7 +125,8 @@
     flex-direction: column;
     align-items: center;
   }
-// User profile reviews section
+
+  // User profile reviews section
   .user-reviews {
     width: 100%;
 
@@ -137,7 +139,8 @@
       margin: 5px 0;
     }
   }
-// User profile favourites 
+
+  // User profile favourites 
   .user-favourites {
     width: 100%;
 
@@ -202,29 +205,97 @@
 }
 
 // Location Single Page
-.single-page{
-  display:flex;
+.single-page {
+  display: flex;
   max-width: 100%;
+  padding: 0px;
+  margin: 0px;
+
+  .single-page-container {
+    margin: 0 auto;
+  }
+
+  .mt-4 {
+    margin-top: 0 !important;
+  }
+
+  .header-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    // border-top-left-radius: 20px; above mobile size implement these!!
+    // border-top-right-radius: 20px;
+    border: 2px, solid, grey;
+    max-height: 250px; //above mobile make larger
+
+    .single-page-hero {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      min-width: 900px;
+      padding: 0px;
+      border: 2px, solid, grey;
+    }
+
+    .single-page-header {
+      font-size: 30px;
+      color: white;
+      text-align: center;
+      position: absolute;
+      top: 0; // change this to push name down when above mobile size
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: fit-content;
+      margin: auto;
+      max-width: 200px; // increase when going up screen size
+    }
+  }
+
   img {
     max-width: 100%;
     margin: 0;
     padding: 0;
   }
 
-  .widget-container{
-    height: 50px;
+  .widget-container {
+    display: flex;
+    flex-direction: column;
+    block-size: fit-content;
     max-width: 100%;
-    background-color: rgb(131, 170, 221);
+    background-color: white;
+    padding: 12px;
+    padding-left: 40px; // needs more padding above mobile screen size / change orientation to row
+
+    .ifg {
+      display: flex;
+      margin-bottom: 15px;
+
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
   }
-  .review-form{
+
+  hr {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 12px;
+  }
+
+  .review-form {
     display: flex;
   }
 
-  .btn{
+  .btn {
     background-color: bisque;
     align-self: flex-end;
-    }
-  textarea{
+  }
+
+  textarea {
     width: 100%;
   }
 }

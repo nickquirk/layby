@@ -30,7 +30,7 @@ const LocationMultiPage = () => {
 
   return (
     <main className="location-index">
-      <Container className="char-container mt-4">
+      <Container className=" fluid char-container mt-4">
         <FilterSearch
           locations={locations}
           filteredLocations={filteredLocations}
@@ -50,8 +50,13 @@ const LocationMultiPage = () => {
                 water,
                 id
               } = loc
+<<<<<<< HEAD
               return ( 
                 <Col key={id} sm="6" md="3" className="char-card mb-4">
+=======
+              return (
+                <Col key={id} sm="6" md="3" lg='3' xl='3' className="char-card mb-4">
+>>>>>>> development
                   <Link className="text-decoration-none" to={`/locations/${id}`}>
                     <Card className="location-card">
                       <div
