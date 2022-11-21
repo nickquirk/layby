@@ -4,11 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 // imports
 import axios from 'axios'
-import { setToken } from '../../helpers/auth'
+import { setToken } from '../common/Auth'
 
-//TODO
-// Error handling
-// Display errors
 
 const LoginPage = () => {
   // ! Location Variables
@@ -27,10 +24,9 @@ const LoginPage = () => {
     e.preventDefault()
     try {
       const { data } = await axios.post('/api/login', formFields)
-      console.log(data.token)
       setToken(data.token)
       // navigate to home after successful login
-      navigate('/locations ')
+      navigate('/')
     } catch (err) {
       console.log(err)
     }

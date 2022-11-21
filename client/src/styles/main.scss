@@ -220,10 +220,12 @@ p {
       margin: 8px;
     }
 
-    .single-page-code {
+    .card-code {
       margin-bottom: 0px 0px 8px 0px;
       display: flex;
       align-items: flex-end;
+      color: $secondary;
+      font-weight: 800;
     }
   }
 }
@@ -273,6 +275,11 @@ img {
     svg {
       width: 1.5em;
       height: 1.5em;
+      color: #be3144;
+    }
+
+    #ifg {
+      color: #be3144;
     }
   }
 }

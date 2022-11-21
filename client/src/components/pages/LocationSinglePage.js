@@ -45,7 +45,7 @@ const LocationSinglePage = () => {
             <>
               <div className='single-page-header'>
                 <h1 className='single-page-title'>{location.name}</h1>
-                <p className='single-page-code'>{location.countryCode}</p>
+                <p className='card-code'>{location.countryCode}</p>
               </div>
               <CarouselController location={location} />
               <Infographic location={location} />
