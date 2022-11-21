@@ -40,14 +40,6 @@ const LocationSinglePage = () => {
     <main className='single-page'>
       <Container className='fluid mt-4 single-page-container'>
         <Row>
-<<<<<<< HEAD
-          { location ?
-            <>  
-              <h1>{location.name}</h1>
-              <div className='header-image'></div>
-              <img src={location.image} alt={location.name} />
-              <div className='widget-container'>Infographic container</div>
-=======
           {location ?
             <>
               <div className='header-image col-xs-1' id='hero'>
@@ -59,6 +51,7 @@ const LocationSinglePage = () => {
               </div>
               <Infographic location={location} />
               <hr className='hr'></hr>
+<<<<<<< HEAD
               <Tabs
                 defaultActiveKey="details"
                 id="fill-tab-example"
@@ -75,6 +68,18 @@ const LocationSinglePage = () => {
                   <ReviewField />
                 </Tab>
               </Tabs>
+=======
+              <Col md="6">
+                <h2>Description</h2>
+                <p>{location.description}</p>
+                <h2>Leave a Review</h2>
+                <form id="review-form">
+                  <textarea form="review-form" id="review" name="user-review" rows="5"></textarea>
+                  <Link className='btn btn-main'>Submit</Link>
+                </form>
+                <h2>Reviews</h2>
+              </Col>
+>>>>>>> nick
             </>
             :
             <h2>Something went wrong...</h2>

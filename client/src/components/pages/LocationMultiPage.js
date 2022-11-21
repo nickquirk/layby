@@ -53,11 +53,8 @@ const LocationMultiPage = () => {
                 water,
                 id
               } = loc
-<<<<<<< HEAD
-              return ( 
-                <Col key={id} sm="6" md="3" className="char-card mb-4">
-=======
               return (
+<<<<<<< HEAD
                 <Col
                   key={id}
                   sm="6"
@@ -70,6 +67,10 @@ const LocationMultiPage = () => {
                     className="text-decoration-none"
                     to={`/locations/${id}`}
                   >
+=======
+                <Col key={id} sm="6" md="3" lg='3' xl='3' className="char-card mb-4">
+                  <Link className="text-decoration-none" to={`/locations/${id}`}>
+>>>>>>> nick
                     <Card className="location-card">
                       <div
                         className="card-image"
