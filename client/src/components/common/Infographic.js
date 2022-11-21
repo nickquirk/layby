@@ -5,7 +5,8 @@ import { GrRestroom } from 'react-icons/gr'
 
 
 
-const Infographic = (location) => {
+const Infographic = ({ location }) => {
+
   return (
     <div className='widget-container'>
       {location.currency === '£' ?
