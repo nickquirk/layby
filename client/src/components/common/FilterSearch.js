@@ -31,10 +31,7 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
           className="dropdown"
           value={input.countryCode}
         >
-          <option value="" disabled>
-            -- Choose country --
-          </option>
-          <option value="All">Select region</option>
+          <option value="All">Select country</option>
           <option value="DE">Germany 🇩🇪</option>
           <option value="MA">Morocco 🇲🇦</option>
           <option value="PT">Portugal 🇵🇹</option>

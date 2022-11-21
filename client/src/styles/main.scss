@@ -5,14 +5,16 @@
   color: black;
   // box-sizing: border-box;
   // font-family:'Yeseva One', cursive;
+  
 }
 
-// .sitewrapper {
-//   min-height: 100vh;
-// }
+.sitewrapper {
+  // min-height: 100vh;
+  background-color:whitesmoke;
+}
 
 .navbar {
-  background-color: rgb(124, 229, 237);
+  background-color: whitesmoke;
 
   .nav-link {
     color: rgb(0, 0, 0);
@@ -45,30 +47,21 @@
     background-repeat: no-repeat;
     min-height: 400px;
     height: 200px;
-
     #landing-search-bar {
       display: flex;
       align-items: flex-end;
     }
   }
-
-  .row {
-    background-color: rgb(191, 249, 249);
-  }
-
   #login-register {
-    background-color: rgb(87, 248, 248);
+    background-color: #2494d9;
   }
-
-  .button {
+  .btn {
     margin-left: 20px;
     margin-right: 20px;
-
     #login-register-buttons {
       align-content: center;
     }
   }
-
   .search-filter-input {
     padding-top: 250px;
   }
@@ -79,6 +72,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: whitesmoke;
 }
 
 .form-container {
@@ -89,7 +83,7 @@
   width: 300px;
   padding: 40px 10px 20px 10px;
   border-radius: 18px;
-  background-color: cornflowerblue;
+  background-color: white ;
 
   form {
     width: 80%;
@@ -271,3 +265,24 @@
     width: 100%;
   }
 }
+
+
+.footer {
+  background-color:whitesmoke;
+}
+
+
+
+/* Desktop up - once gets above phone screen size of 992 then apply this */
+@media (min-width: 992px){
+  .location-card {
+    height: 350px;
+}
+// .card-image {
+//   height: 200px;
+// }
+}
+
+// @media (min-width: 1200px){}
+
+// @media (min-width: 1400px){}

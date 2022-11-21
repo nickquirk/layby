@@ -103,7 +103,14 @@ const LandingPage = () => {
               id
             } = loc
             return (
-              <Col key={id} sm="6" md="3" className="char-card mb-4">
+              <Col
+                key={id}
+                sm="6"
+                md="6"
+                lg="3"
+                xl="3"
+                className="char-card mb-4"
+              >
                 <Link className="text-decoration-none" to={`/location/${id}`}>
                   <Card className="location-card">
                     <div
@@ -146,13 +153,13 @@ const LandingPage = () => {
             className="col border-end  d-flex justify-content-center align-items-center"
           >
             <Button
-              className="button login-button mt-3 mb-3 "
+              className="btn login-button mt-3 mb-3 "
               onClick={() => navigateToLogin()}
             >
               Login
             </Button>
             <Button
-              className="button register-button mt-3 mb-3"
+              className="btn register-button mt-3 mb-3"
               onClick={() => navigateToRegister()}
             >
               Register
