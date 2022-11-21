@@ -10,7 +10,7 @@ import Container from 'react-bootstrap/Container'
 
 const LocationSinglePage = () => {
   // ! State
-  const [location, setLocation] = useState(null)
+  const [location, setLocation] = useState([])
 
   // ! Location
   const { id } = useParams()
@@ -27,7 +27,7 @@ const LocationSinglePage = () => {
       }
     }
     getLocation()
-  }, [id])  
+  }, [id])
 
 
   return (
