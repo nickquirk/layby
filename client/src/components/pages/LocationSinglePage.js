@@ -59,19 +59,6 @@ const LocationSinglePage = () => {
               </div>
               <Infographic location={location} />
               <hr className='hr'></hr>
-<<<<<<< HEAD
->>>>>>> development
-              <Col md="6">
-                <h2>Description</h2>
-                <p>{location.description}</p>
-                <h2>Leave a Review</h2>
-                <form id="review-form">
-                  <textarea form="review-form" id="review" name="user-review" rows="5"></textarea>
-                  <Link className='btn btn-main'>Submit</Link>
-                </form>
-                <h2>Reviews</h2>
-              </Col>
-=======
               <Tabs
                 defaultActiveKey="details"
                 id="fill-tab-example"
@@ -88,7 +75,6 @@ const LocationSinglePage = () => {
                   <ReviewField />
                 </Tab>
               </Tabs>
->>>>>>> 701001484182ab85f8ab7efb0bc8cf8b4828b2f2
             </>
             :
             <h2>Something went wrong...</h2>
