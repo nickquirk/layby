@@ -35,14 +35,6 @@ const LocationSinglePage = () => {
     <main className='single-page'>
       <Container className='fluid mt-4 single-page-container'>
         <Row>
-<<<<<<< HEAD
-          { location ?
-            <>  
-              <h1>{location.name}</h1>
-              <div className='header-image'></div>
-              <img src={location.image} alt={location.name} />
-              <div className='widget-container'>Infographic container</div>
-=======
           {location ?
             <>
               <div className='header-image col-xs-1' id='hero'>
@@ -72,7 +64,6 @@ const LocationSinglePage = () => {
                 <div className='ifg' id='gas-ifg'><MdOutlineLocalGasStation /></div>
               </div>
               <hr className='hr'></hr>
->>>>>>> development
               <Col md="6">
                 <h2>Description</h2>
                 <p>{location.description}</p>
