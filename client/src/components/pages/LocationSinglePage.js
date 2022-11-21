@@ -51,7 +51,6 @@ const LocationSinglePage = () => {
               <CarouselController location={location} />
               <Infographic location={location} />
               <hr className='hr'></hr>
-<<<<<<< HEAD
               <Tabs
                 defaultActiveKey="details"
                 id="fill-tab-example"
@@ -68,18 +67,6 @@ const LocationSinglePage = () => {
                   <ReviewField />
                 </Tab>
               </Tabs>
-=======
-              <Col md="6">
-                <h2>Description</h2>
-                <p>{location.description}</p>
-                <h2>Leave a Review</h2>
-                <form id="review-form">
-                  <textarea form="review-form" id="review" name="user-review" rows="5"></textarea>
-                  <Link className='btn btn-main'>Submit</Link>
-                </form>
-                <h2>Reviews</h2>
-              </Col>
->>>>>>> nick
             </>
             :
             <h2>Something went wrong...</h2>
