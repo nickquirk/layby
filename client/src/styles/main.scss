@@ -124,14 +124,14 @@ $primary: #158bc6;
   }
 }
 
-// User profile page
-<<<<<<< HEAD .profile-pic {
-  =======.profile-page-container {
+
+.profile-pic {
+  .profile-page-container {
     margin-top: 20px;
   }
 
   .profile-pic {
-    >>>>>>>development max-width: 200px;
+    max-width: 200px;
   }
 
   .review-card,
@@ -223,99 +223,100 @@ $primary: #158bc6;
         align-items: flex-end;
       }
     }
+  }
 
-    .header-image {
+  .header-image {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    // border-top-left-radius: 20px; above mobile size implement these!!
+    // border-top-right-radius: 20px;
+    border: 2px, solid, grey;
+    max-height: 250px; //above mobile make larger
+
+    .single-page-hero {
+      object-fit: cover;
+      width: 100%;
       height: 100%;
-      width: 100%;
-      position: relative;
-      overflow: hidden;
+      min-width: 900px;
       padding: 0px;
-      // border-top-left-radius: 20px; above mobile size implement these!!
-      // border-top-right-radius: 20px;
       border: 2px, solid, grey;
-      max-height: 250px; //above mobile make larger
-
-      .single-page-hero {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        min-width: 900px;
-        padding: 0px;
-        border: 2px, solid, grey;
-      }
-
     }
 
+  }
 
-    img {
-      max-width: 100%;
-      margin: 0;
-      padding: 0;
-    }
 
-    .widget-container {
+  img {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .widget-container {
+    display: flex;
+    flex-direction: column;
+    block-size: fit-content;
+    max-width: 100%;
+    background-color: white;
+    padding: 12px;
+    padding-left: 40px; // needs more padding above mobile screen size / change orientation to row
+
+    .ifg {
       display: flex;
-      flex-direction: column;
-      block-size: fit-content;
-      max-width: 100%;
-      background-color: white;
-      padding: 12px;
-      padding-left: 40px; // needs more padding above mobile screen size / change orientation to row
+      margin-bottom: 15px;
 
-      .ifg {
-        display: flex;
-        margin-bottom: 15px;
-
-        svg {
-          width: 1.5em;
-          height: 1.5em;
-        }
+      svg {
+        width: 1.5em;
+        height: 1.5em;
       }
     }
-
-    hr {
-      width: 90%;
-      margin: 0 auto;
-      margin-bottom: 12px;
-    }
-
-    .review-form {
-      display: flex;
-    }
-
-    .btn {
-      background-color: bisque;
-      align-self: flex-end;
-    }
-
-    textarea {
-      width: 100%;
-    }
   }
 
-
-  .footer {
-    background-color: whitesmoke;
+  hr {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 12px;
   }
 
-  @media (min-width: 768px) {
-    .header-image {
-      max-height: 500px;
-
-    }
+  .review-form {
+    display: flex;
   }
 
-  /* Desktop up - once gets above phone screen size of 992 then apply this */
-  @media (min-width: 992px) {
-    .location-card {
-      height: 350px;
-    }
-
-    // .card-image {
-    //   height: 200px;
-    // }
+  .btn {
+    background-color: bisque;
+    align-self: flex-end;
   }
 
-  // @media (min-width: 1200px){}
+  textarea {
+    width: 100%;
+  }
+}
 
-  // @media (min-width: 1400px){}
+
+.footer {
+  background-color: whitesmoke;
+}
+
+@media (min-width: 768px) {
+  .header-image {
+    max-height: 500px;
+
+  }
+}
+
+/* Desktop up - once gets above phone screen size of 992 then apply this */
+@media (min-width: 992px) {
+  .location-card {
+    height: 350px;
+  }
+
+  // .card-image {
+  //   height: 200px;
+  // }
+}
+
+// @media (min-width: 1200px){}
+
+// @media (min-width: 1400px){}
