@@ -2,6 +2,9 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { MdOutlineWaterDrop } from 'react-icons/md'
+import { GrRestroom } from 'react-icons/gr'
+import { TbParking } from 'react-icons/tb'
 
 import FilterSearch from '../common/FilterSearch'
 
@@ -79,20 +82,30 @@ const LocationMultiPage = () => {
                         <div className="icon-container d-flex justify-content-evenly">
                           <div className="icon">
                             {toilets === false ? (
-                              <span></span>
+                              <></>
                             ) : (
-                              <span>🚾</span>
+                              <div className="ifg" id="restroom-ifg">
+                                <GrRestroom />
+                              </div>
                             )}
                           </div>
                           <div className="icon">
                             {freeparking === false ? (
-                              <span></span>
+                              <></>
                             ) : (
-                              <span>🅿️</span>
+                              <div className="ifg" id="parking-ifg">
+                                <TbParking />
+                              </div>
                             )}
                           </div>
                           <div className="icon">
-                            {water === false ? <span></span> : <span>💧</span>}
+                            {water === false ? (
+                              <></>
+                            ) : (
+                              <div className="ifg" id="water-ifg">
+                                <MdOutlineWaterDrop />
+                              </div>
+                            )}
                           </div>
                         </div>
                       </Card.Body>
