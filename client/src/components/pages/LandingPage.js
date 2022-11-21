@@ -86,7 +86,7 @@ const LandingPage = () => {
             return (
               <Col key={id} sm="6" md="3" className="char-card mb-4">
                 <Link className="text-decoration-none" to={`/location/${id}`}>
-                  <Card className="card h-200">
+                  <Card className="location-card">
                     <div
                       className="card-image"
                       style={{

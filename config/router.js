@@ -25,8 +25,7 @@ router.route('/login').post(loginUser)
 
 router.route('/locations/:locationId/review').post(secureRoute, addReview)
 
-router
-  .route('/locations/:locationId/review/:reviewId')
+router.route('/locations/:locationId/review/:reviewId')
   .delete(secureRoute, deleteReview)
   .put(secureRoute, editReview)
 

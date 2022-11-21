@@ -24,6 +24,23 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
   return (
     <>
       <div className="search-filter-input">
+        <select
+          onChange={handleChange}
+          name="countryCode"
+          id="filter"
+          className="dropdown"
+          value={input.countryCode}
+        >
+          <option value="" disabled>
+            -- Choose country --
+          </option>
+          <option value="All">Select region</option>
+          <option value="DE">Germany 🇩🇪</option>
+          <option value="MA">Morocco 🇲🇦</option>
+          <option value="PT">Portugal 🇵🇹</option>
+          <option value="ESP">Spain 🇪🇸</option>
+          <option value="UK">United Kingdom 🇬🇧</option>
+        </select>
         <input
           onChange={handleChange}
           type="text"
@@ -32,22 +49,6 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
           id="filter"
           value={input.search}
         />
-        <select
-          onChange={handleChange}
-          name="countryCode"
-          id="filter"
-          value={input.countryCode}
-        >
-          <option value="" disabled>
-            -- Choose country --
-          </option>
-          <option value="All">All</option>
-          <option value="DE">Germany 🇩🇪</option>
-          <option value="MA">Morocco 🇲🇦</option>
-          <option value="PT">Portugal 🇵🇹</option>
-          <option value="ESP">Spain 🇪🇸</option>
-          <option value="UK">United Kingdom 🇬🇧</option>
-        </select>
       </div>
     </>
   )
