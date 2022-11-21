@@ -59,8 +59,8 @@ const LocationMultiPage = () => {
                   xs="12"
                   sm="6"
                   md="6"
-                  lg="3"
-                  xl="3"
+                  lg="4"
+                  xl="4"
                   className="char-card mb-4"
                 >
                   <Link
