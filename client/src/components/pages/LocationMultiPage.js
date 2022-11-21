@@ -56,10 +56,11 @@ const LocationMultiPage = () => {
               return (
                 <Col
                   key={id}
+                  xs="12"
                   sm="6"
-                  md="3"
-                  lg="3"
-                  xl="3"
+                  md="6"
+                  lg="4"
+                  xl="4"
                   className="char-card mb-4"
                 >
                   <Link
