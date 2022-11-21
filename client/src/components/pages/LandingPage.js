@@ -5,7 +5,9 @@ import axios from 'axios'
 import van from '../images/van.jpeg'
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import FilterSearch from '../common/FilterSearch'
+import { MdOutlineWaterDrop } from 'react-icons/md'
+import { GrRestroom } from 'react-icons/gr'
+import { TbParking } from 'react-icons/tb'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/row'
@@ -88,7 +90,7 @@ const LandingPage = () => {
         </Row>
         <Row className="top-rated">
           <div className="display-top-rated text-center">
-            <h2>Discover Top Rated Spots</h2>
+            <h2 className="mt-3 mb-6">Discover Top Rated Spots</h2>
           </div>
           {locations.slice(0, 4).map((loc) => {
             const {
@@ -126,17 +128,31 @@ const LandingPage = () => {
                       <span></span>
                       <div className="icon-container d-flex justify-content-evenly">
                         <div className="icon">
-                          {toilets === false ? <span></span> : <span>🚾</span>}
-                        </div>
-                        <div className="icon">
-                          {freeparking === false ? (
-                            <span></span>
+                          {toilets === false ? (
+                            <></>
                           ) : (
-                            <span>🅿️</span>
+                            <div className="ifg" id="restroom-ifg">
+                              <GrRestroom />
+                            </div>
                           )}
                         </div>
                         <div className="icon">
-                          {water === false ? <span></span> : <span>💧</span>}
+                          {freeparking === false ? (
+                            <></>
+                          ) : (
+                            <div className="ifg" id="parking-ifg">
+                              <TbParking />
+                            </div>
+                          )}
+                        </div>
+                        <div className="icon">
+                          {water === false ? (
+                            <></>
+                          ) : (
+                            <div className="ifg" id="water-ifg">
+                              <MdOutlineWaterDrop />
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Card.Body>
@@ -147,19 +163,21 @@ const LandingPage = () => {
           })}
         </Row>
         <Row id="login-register">
-          <h4 className="text-center">Leave a Review or Post a New Van Spot</h4>
+          <h4 className="text-center mt-3">Review or Post a New Van Spot</h4>
           <div
             id="login-register-buttons"
-            className="col border-end  d-flex justify-content-center align-items-center"
+            className="col border-end d-flex justify-content-center align-items-center"
           >
             <Button
-              className="btn login-button mt-3 mb-3 "
+              type="button"
+              className="btn mt-3 mb-3"
               onClick={() => navigateToLogin()}
             >
               Login
             </Button>
             <Button
-              className="btn register-button mt-3 mb-3"
+              type="button"
+              className="btn  mt-3 mb-3"
               onClick={() => navigateToRegister()}
             >
               Register
