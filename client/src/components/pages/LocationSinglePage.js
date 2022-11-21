@@ -35,7 +35,6 @@ const LocationSinglePage = () => {
         <Row>
           {location ?
             <>
-<<<<<<< HEAD
               <div className='header-image col-xs-1' id='hero'>
                 <picture className='single-page-hero'>
                   <source media="(min-width: 0px)" srcSet={location.image} />
@@ -44,12 +43,6 @@ const LocationSinglePage = () => {
                 <h1 className='single-page-header'>{location.name}</h1>
               </div>
               <div className='widget-container'>Widget container</div>
-=======
-              <h1>{location.name}</h1>
-              <div className='header-image'></div>
-              <img src={location.image} alt={location.name} />
-              <div className='widget-container'>Infographic container</div>
->>>>>>> development
               <Col md="6">
                 <h2>Description</h2>
                 <p>{location.description}</p>

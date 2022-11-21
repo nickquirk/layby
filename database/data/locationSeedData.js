@@ -15,14 +15,10 @@ export default [
     nearestFuel: 15,
     otherInfo: 'Dirt parking within the forest, shaded in the day and quite bumpy.',
     nearbyActivities: 'Climbing, trecking',
-<<<<<<< HEAD
-    image: ['https://i.imgur.com/hMJsF8I.jpg']
-=======
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
     ]
->>>>>>> development
   },
   {
     name: 'Mazzaron',
@@ -115,7 +111,7 @@ export default [
 =======
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027327/Pics/Portugal/Da%20Mata/IMG_20180101_180002753_ay7mqp.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027425/Pics/Portugal/Da%20Mata/DSC_7179_xcltzs.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027415/Pics/Portugal/Da%20Mata/DSC_7291_u6chgs.jpg'  
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027415/Pics/Portugal/Da%20Mata/DSC_7291_u6chgs.jpg'
     ]
 >>>>>>> development
   },
