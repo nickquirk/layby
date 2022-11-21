@@ -154,8 +154,14 @@ $primary: #158bc6;
     width: 100%;
     // height: 15vw;
       object-fit: cover;
-
-
+  }
+  .card-text{
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
   }
 }
 

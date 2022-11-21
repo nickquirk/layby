@@ -35,23 +35,25 @@ const LocationSinglePage = () => {
     getLocation()
   }, [locationId])
 
-
   return (
-    <main className='single-page'>
-      <Container className='fluid mt-4 single-page-container'>
+    <main className="single-page">
+      <Container className="fluid mt-4 single-page-container">
         <Row>
-          {location ?
+          {location ? (
             <>
-              <div className='header-image col-xs-1' id='hero'>
-                <picture className='single-page-hero'>
+              <div className="header-image col-xs-1" id="hero">
+                <picture className="single-page-hero">
                   <source media="(min-width: 0px)" srcSet={location.image} />
-                  <img className='single-page-hero' src={location.image} alt={location.name} />
+                  <img
+                    className="single-page-hero"
+                    src={location.image}
+                    alt={location.name}
+                  />
                 </picture>
-                <h1 className='single-page-header'>{location.name}</h1>
+                <h1 className="single-page-header">{location.name}</h1>
               </div>
               <Infographic location={location} />
-              <hr className='hr'></hr>
-<<<<<<< HEAD
+              <hr className="hr"></hr>
               <Tabs
                 defaultActiveKey="details"
                 id="fill-tab-example"
@@ -68,22 +70,10 @@ const LocationSinglePage = () => {
                   <ReviewField />
                 </Tab>
               </Tabs>
-=======
-              <Col md="6">
-                <h2>Description</h2>
-                <p>{location.description}</p>
-                <h2>Leave a Review</h2>
-                <form id="review-form">
-                  <textarea form="review-form" id="review" name="user-review" rows="5"></textarea>
-                  <Link className='btn btn-main'>Submit</Link>
-                </form>
-                <h2>Reviews</h2>
-              </Col>
->>>>>>> nick
             </>
-            :
+          ) : (
             <h2>Something went wrong...</h2>
-          }
+          )}
         </Row>
       </Container>
     </main>

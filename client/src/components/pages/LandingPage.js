@@ -125,7 +125,7 @@ const LandingPage = () => {
                         <span>{name}</span>
                       </h4>
                       <span>{flag}</span>
-                      <p>{description}</p>
+                      <p className="card-text">{description}</p>
                       <span></span>
                       <div className="icon-container d-flex justify-content-evenly">
                         <div className="icon">
