@@ -15,7 +15,7 @@ export default [
     nearestFuel: 15,
     otherInfo: 'Dirt parking within the forest, shaded in the day and quite bumpy.',
     nearbyActivities: 'Climbing, trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Mazzaron',
@@ -32,7 +32,7 @@ export default [
     nearestFuel: 3,
     otherInfo: 'About 20 minute walk from the nearby town of Mazzaron. Has supermarkets, fuel and other amenities.',
     nearbyActivities: 'Thermal hot springs, trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Cabo de Gata',
@@ -49,7 +49,7 @@ export default [
     nearestFuel: 13,
     otherInfo: 'Lots of walking routes, great for sea swimming',
     nearbyActivities: 'Sea-swimming, Kayaking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Praia dos Aivados',
@@ -66,7 +66,7 @@ export default [
     nearestFuel: 2,
     otherInfo: 'Sea great for swimming. Can sometimes get very widy here.',
     nearbyActivities: 'Surfing, trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Da Mata',
@@ -83,7 +83,7 @@ export default [
     nearestFuel: 5,
     otherInfo: 'Just a few km from the town of Barao de Sao Joao which has a supermarket and other amenities',
     nearbyActivities: 'Trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Lagos',
@@ -100,7 +100,7 @@ export default [
     nearestFuel: 15,
     otherInfo: '€3 per night, €2 Service  ',
     nearbyActivities: 'Bars, Harbour',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Speilbachersee',
@@ -117,7 +117,7 @@ export default [
     nearestFuel: 5,
     otherInfo: 'BBQ facililities',
     nearbyActivities: 'Swimming',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Heidelberg',
@@ -134,7 +134,7 @@ export default [
     nearestFuel: 1,
     otherInfo: 'Wifi from nearby cafe',
     nearbyActivities: 'Skatepark',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Aschbachsee',
@@ -151,7 +151,7 @@ export default [
     nearestFuel: 9,
     otherInfo: 'About 2km from town of Herrenzimmern',
     nearbyActivities: 'Swimming',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Chefchaoen',
@@ -168,7 +168,7 @@ export default [
     nearestFuel: 1,
     otherInfo: '20DH per night stay. Camper service, toilet and water available. ',
     nearbyActivities: 'Trecking, bars',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Desert Point',
@@ -185,7 +185,7 @@ export default [
     nearestFuel: 15,
     otherInfo: 'Water from a nearby well',
     nearbyActivities: 'Surfing',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Tafraoute',
@@ -202,7 +202,7 @@ export default [
     nearestFuel: 1,
     otherInfo: '20DH per night, camper service and water 15DH',
     nearbyActivities: '',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
   {
     name: 'Da Mata',
@@ -219,7 +219,7 @@ export default [
     nearestFuel: 15,
     otherInfo: 'Wifi from cafe next door',
     nearbyActivities: 'Surfing nearby ',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://i.imgur.com/hMJsF8I.jpg']
   },
 
 ]
