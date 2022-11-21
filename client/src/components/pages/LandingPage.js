@@ -94,6 +94,7 @@ const LandingPage = () => {
             <h2 className="m-5">Discover Top Rated Spots</h2>
           </div>
           {locations.slice(0, 4).map((loc) => {
+            console.log('Hello')
             const {
               name,
               flag,
@@ -105,6 +106,7 @@ const LandingPage = () => {
               water,
               id
             } = loc
+            console.log(image)
             return (
               <Col
                 key={id}
