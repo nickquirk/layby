@@ -31,7 +31,7 @@ const LocationMultiPage = () => {
 
   return (
     <main className="location-index">
-      <Container className="char-container mt-4">
+      <Container className=" fluid char-container mt-4">
         <FilterSearch
           locations={locations}
           filteredLocations={filteredLocations}

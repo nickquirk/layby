@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
@@ -9,7 +10,6 @@ import { GrRestroom } from 'react-icons/gr'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
-
 
 const LocationSinglePage = () => {
   // ! State
@@ -33,7 +33,7 @@ const LocationSinglePage = () => {
 
   return (
     <main className='single-page'>
-      <Container className='mt-4 single-page-container'>
+      <Container className='fluid mt-4 single-page-container'>
         <Row>
           {location ?
             <>
@@ -81,7 +81,6 @@ const LocationSinglePage = () => {
         </Row>
       </Container>
     </main>
-
   )
 }
 
