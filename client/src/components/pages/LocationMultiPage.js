@@ -20,6 +20,7 @@ const LocationMultiPage = () => {
       try {
         const { data } = await axios.get('/api/locations')
         setLocations(data)
+        console.log(data)
       } catch (err) {
         console.log(err.message)
         setErrors(true)
@@ -56,7 +57,7 @@ const LocationMultiPage = () => {
                     <Card className="location-card">
                       <div
                         className="card-image"
-                        style={{ backgroundImage: `url(${image})` }}
+                        style={{ backgroundImage: `url(${image[0]})` }}
                       ></div>
                       <Card.Body className="d-flex flex-column">
                         <h4>
