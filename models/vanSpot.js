@@ -36,7 +36,7 @@ const locationSchema = new mongoose.Schema({
   nearestFuel: { type: Number, required: true },
   otherInfo: { type: String, required: true },
   nearbyActivities: { type: String },
-  image: { type: String, required: true },
+  image: [String],
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
