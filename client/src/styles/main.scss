@@ -149,6 +149,9 @@ $primary: #158bc6;
   border-bottom-right-radius: 20px;
 
   .card-image {
+    background-size: cover;
+    background-image: center;
+    height: 400px;
     font-weight: 300;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -166,7 +169,6 @@ $primary: #158bc6;
     -webkit-box-orient: vertical;
     white-space: normal;
   }
-
 }
 
 p {
