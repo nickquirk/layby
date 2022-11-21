@@ -15,7 +15,10 @@ export default [
     nearestFuel: 15,
     otherInfo: 'Dirt parking within the forest, shaded in the day and quite bumpy.',
     nearbyActivities: 'Climbing, trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    ]
   },
   {
     name: 'Mazzaron',
@@ -32,7 +35,9 @@ export default [
     nearestFuel: 3,
     otherInfo: 'About 20 minute walk from the nearby town of Mazzaron. Has supermarkets, fuel and other amenities.',
     nearbyActivities: 'Thermal hot springs, trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027305/Pics/Spain/Mazzaron/DSC_0925_EDIT_wmudpq.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027348/Pics/Spain/Mazzaron/DSC_0950_wbfkka.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027348/Pics/Spain/Mazzaron/DSC_0950_wbfkka.jpg']
   },
   {
     name: 'Cabo de Gata',
@@ -49,7 +54,10 @@ export default [
     nearestFuel: 13,
     otherInfo: 'Lots of walking routes, great for sea swimming',
     nearbyActivities: 'Sea-swimming, Kayaking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cabo-de-Gata/DSC_1159_EDIT2_htiwtt.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027442/Pics/Spain/Cabo-de-Gata/DSC_1106_i0x4zk.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027347/Pics/Spain/Cabo-de-Gata/DSC_1211_qwawmo.jpg'
+    ]
   },
   {
     name: 'Praia dos Aivados',
@@ -66,7 +74,10 @@ export default [
     nearestFuel: 2,
     otherInfo: 'Sea great for swimming. Can sometimes get very widy here.',
     nearbyActivities: 'Surfing, trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027472/Pics/Portugal/Aviados/DSC_6751_imakw7.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027421/Pics/Portugal/Aviados/DSC_6729_zyo8iz.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027441/Pics/Portugal/Aviados/DSC_6736_ajbtfq.jpg'
+    ]
   },
   {
     name: 'Da Mata',
@@ -83,7 +94,10 @@ export default [
     nearestFuel: 5,
     otherInfo: 'Just a few km from the town of Barao de Sao Joao which has a supermarket and other amenities',
     nearbyActivities: 'Trecking',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027327/Pics/Portugal/Da%20Mata/IMG_20180101_180002753_ay7mqp.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027425/Pics/Portugal/Da%20Mata/DSC_7179_xcltzs.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027415/Pics/Portugal/Da%20Mata/DSC_7291_u6chgs.jpg'  
+    ]
   },
   {
     name: 'Lagos',
@@ -92,7 +106,7 @@ export default [
     countryCode: 'PT',
     country: 'Portugal',
     currency: '€',
-    description: 'A large parking area in the center of the city of Lagos. Full camper service, greate for exploring the city',
+    description: 'A large parking area in the center of the city of Lagos. Pretty ugly but functional, full camper service, great for exploring the city',
     parking: true,
     freeparking: false,
     toilets: true,
@@ -100,7 +114,7 @@ export default [
     nearestFuel: 15,
     otherInfo: '€3 per night, €2 Service  ',
     nearbyActivities: 'Bars, Harbour',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027362/Pics/Portugal/Lagos/IMG_20171218_173101924_civmle.jpg']
   },
   {
     name: 'Speilbachersee',
@@ -117,7 +131,7 @@ export default [
     nearestFuel: 5,
     otherInfo: 'BBQ facililities',
     nearbyActivities: 'Swimming',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027471/Pics/Germany/Speilbachersee/DSC_8723_ljkmww.jpg']
   },
   {
     name: 'Heidelberg',
@@ -134,7 +148,10 @@ export default [
     nearestFuel: 1,
     otherInfo: 'Wifi from nearby cafe',
     nearbyActivities: 'Skatepark',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027385/Pics/Germany/Heidelberg/IMG_20180712_132931253_HDR_u1ezgz.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027369/Pics/Germany/Heidelberg/IMG_20180712_153741070_patgwg.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027366/Pics/Germany/Heidelberg/DSC_8837_l3e1j5.jpg'
+    ]
   },
   {
     name: 'Aschbachsee',
@@ -151,7 +168,10 @@ export default [
     nearestFuel: 9,
     otherInfo: 'About 2km from town of Herrenzimmern',
     nearbyActivities: 'Swimming',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Germany/Aschbachsee/DSC_8255_ijtbs8.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027404/Pics/Germany/Aschbachsee/DSC_8414_r6zwmp.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027460/Pics/Germany/Aschbachsee/DSC_8301_cekypg.jpg'
+    ]
   },
   {
     name: 'Chefchaoen',
@@ -168,7 +188,10 @@ export default [
     nearestFuel: 1,
     otherInfo: '20DH per night stay. Camper service, toilet and water available. ',
     nearbyActivities: 'Trecking, bars',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027309/Pics/Morocco/Chefchaoen/DSC_1317_mzbdhi.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027352/Pics/Morocco/Chefchaoen/DSC_1264_l0lob6.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027341/Pics/Morocco/Chefchaoen/DSC_1262_hro9gf.jpg'
+    ]
   },
   {
     name: 'Desert Point',
@@ -185,7 +208,10 @@ export default [
     nearestFuel: 15,
     otherInfo: 'Water from a nearby well',
     nearbyActivities: 'Surfing',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027370/Pics/Morocco/Desert%20Point/DSC_2125_noedke.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027317/Pics/Morocco/Desert%20Point/DSC_1508_i5vmpt.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027315/Pics/Morocco/Desert%20Point/DSC_2053_hlapyf.jpg'
+    ]
   },
   {
     name: 'Tafraoute',
@@ -202,15 +228,18 @@ export default [
     nearestFuel: 1,
     otherInfo: '20DH per night, camper service and water 15DH',
     nearbyActivities: '',
-    image: 'https://i.imgur.com/hMJsF8I.jpg'
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027404/Pics/Morocco/Tafraoute/DSC_1974_h1oucy.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027334/Pics/Morocco/Tafraoute/DSC_1945_vhki2c.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027337/Pics/Morocco/Tafraoute/DSC_1951_jfpek2.jpg'
+    ]
   },
   {
-    name: 'Da Mata',
+    name: 'Yorkshire Dales',
     latitude: 37.806104,
     longitude: -8.796337,
     countryCode: 'UK',
     country: 'United Kingdom',
-    currency: '€',
+    currency: '£',
     description: 'xxxx',
     parking: true,
     freeparking: false,

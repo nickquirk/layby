@@ -36,9 +36,9 @@ const LocationSinglePage = () => {
           { location ?
             <>
               <h1>{location.name}</h1>
-              <div className='header-image' background-image={location.image}></div>
+              <div className='header-image'></div>
               <img src={location.image} alt={location.name} />
-              <div className='widget-container'>Widget container</div>
+              <div className='widget-container'>Infographic container</div>
               <Col md="6">
                 <h2>Description</h2>
                 <p>{location.description}</p>
