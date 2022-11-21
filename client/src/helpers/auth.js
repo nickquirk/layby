@@ -1,5 +1,4 @@
 import { Buffer } from 'buffer'
-import { useNavigate } from 'react-router-dom'
 
 const tokenName = 'sei67-project-three'
 
@@ -35,7 +34,6 @@ export const isAuthenticated = () => {
   if (!payload) return false
   // Check the expiry from the token is in the future
   const { exp } = payload
-  console.log('EXP-->', exp)
   const now = Math.round(Date.now() / 1000)
   return exp > now
 }

@@ -1,6 +1,8 @@
 /* eslint-disable comma-dangle */
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+
+// imports
 import axios from 'axios'
 import { setToken } from '../../helpers/auth'
 

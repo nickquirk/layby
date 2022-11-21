@@ -1,9 +1,14 @@
+//REACT components
 import { Link, useNavigate } from 'react-router-dom'
+
+// imports
+import { handleLogout, isAuthenticated } from '../../helpers/auth'
+import { useEffect } from 'react'
+
+//bootstrap
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
-import { handleLogout, isAuthenticated } from '../../helpers/auth'
-import { useEffect } from 'react'
 
 const NavBar = () => {
   // location variable
@@ -11,7 +16,7 @@ const NavBar = () => {
 
   useEffect(() => {
     !isAuthenticated() && navigate('/login')
-  })
+  }, [])
 
   return (
     <Navbar expand="sm" className="navbar sticky-top">

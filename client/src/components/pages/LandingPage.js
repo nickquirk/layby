@@ -77,7 +77,6 @@ const LandingPage = () => {
           </div>
         </Row>
         <Row className="top-rated">
-          {/* <LocationCard location={locations} /> */}
           <div className="display-top-rated text-center">
             <h2 className="m-5">Discover Top Rated Spots</h2>
           </div>
