@@ -23,7 +23,7 @@ const UserProfilePage = () => {
               <h3>User Reviews</h3>
               <Card className='review-card sm-4'>
                 <Card.Body>
-                  <Card.Img variant='top' src='https://tinyurl.com/5atpj5f8'/>
+                  <Card.Img className='card-image' variant='top' src='https://tinyurl.com/5atpj5f8'/>
                   <Card.Title>Location Name</Card.Title>
                   <Card.Subtitle>Country here</Card.Subtitle>
                   <Card.Text>Review text here...</Card.Text>
