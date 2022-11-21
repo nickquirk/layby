@@ -124,8 +124,7 @@ $primary: #158bc6;
   }
 }
 
-
-.profile-pic {
+// User profile page
   .profile-page-container {
     margin-top: 20px;
   }
@@ -139,11 +138,13 @@ $primary: #158bc6;
     margin: 10px 0;
   }
 
-  .user-details {
     p {
       margin-top: 20px;
     }
-  }
+
+.card-image{
+        width: 100px;
+      }
 
   // Cards
   .location-card {
@@ -292,7 +293,7 @@ $primary: #158bc6;
   textarea {
     width: 100%;
   }
-}
+
 
 
 .footer {
