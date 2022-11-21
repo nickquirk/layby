@@ -17,16 +17,14 @@ const LandingPage = () => {
   const navigate = useNavigate()
 
   const [locations, setLocations] = useState([])
-  // const [randomChoice, setRandomChoice] = useState([])
+  // let [shuffled, setShuffled] = useState([])
   const [errors, setErrors] = useState(false)
-  const [filteredLocations, setFilteredLocations] = useState([])
 
   useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/locations')
         setLocations(data)
-        // getRandomChoice()
       } catch (err) {
         console.log(err.message)
         setErrors(true)
@@ -43,11 +41,33 @@ const LandingPage = () => {
     navigate('/register')
   }
 
-  // const getRandomChoice = () => {
-  //   const randomIndex = Math.floor(Math.random() * locations.length)
-  //   setRandomChoice(locations)
-  //   console.log('random choice here -->', randomChoice)
-  // }
+  const navigateToLocationIndex = () => {
+    navigate('/locations')
+  }
+
+  // useEffect(() => {
+  //   const getRandomLocations = () => {
+  //     for (let i = locations.length - 1; i > 0; i--) {
+  //       const shuffled = (Math.floor(Math.random() * (i + 1))[
+  //         (locations[i], locations[shuffled])
+  //       ] = [locations[shuffled], locations[i]])
+  //     }
+  //     setShuffled(shuffled)
+  //     console.log('This is shuffled', shuffled)
+  //   }
+  //   getRandomLocations()
+  // }, [locations])
+
+  // useEffect(() => {
+  //   const getRandomLocations = () => {
+  //     const shuffledArray = [...locations].sort(() =>
+  //       Math.floor(Math.random() * locations.length)
+  //     )
+  //     setShuffled(shuffledArray)
+  //     console.log('This is shuffled', shuffled)
+  //   }
+  //   getRandomLocations()
+  // }, [locations])
 
   return (
     <main className="landing-page">
@@ -58,13 +78,12 @@ const LandingPage = () => {
             id="hero"
             style={{ backgroundImage: `url(${van})` }}
           >
-            <FilterSearch
-              className="search-bar mb-4 text-center"
-              id="landing-search-bar"
-              locations={locations}
-              filteredLocations={filteredLocations}
-              setFilteredLocations={setFilteredLocations}
-            />
+            <Button
+              className="button location-index-button mt-3 mb-3"
+              onClick={() => navigateToLocationIndex()}
+            >
+              Find a place to stay
+            </Button>
           </div>
         </Row>
         <Row className="top-rated">
@@ -75,7 +94,7 @@ const LandingPage = () => {
             const {
               name,
               flag,
-              ccountryCode,
+              countryCode,
               description,
               freeparking,
               image,
@@ -89,9 +108,7 @@ const LandingPage = () => {
                   <Card className="location-card">
                     <div
                       className="card-image"
-                      style={{
-                        backgroundImage: `url(${image}) alt=(${name})`
-                      }}
+                      style={{ backgroundImage: `url(${image})` }}
                     ></div>
                     <Card.Body className="d-flex flex-column">
                       <h4>
