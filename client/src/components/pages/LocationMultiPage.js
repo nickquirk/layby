@@ -20,7 +20,6 @@ const LocationMultiPage = () => {
       try {
         const { data } = await axios.get('/api/locations')
         setLocations(data)
-        console.log(data)
       } catch (err) {
         console.log(err.message)
         setErrors(true)
@@ -51,7 +50,7 @@ const LocationMultiPage = () => {
                 water,
                 id
               } = loc
-              return (
+              return ( 
                 <Col key={id} sm="6" md="3" className="char-card mb-4">
                   <Link className="text-decoration-none" to={`/locations/${id}`}>
                     <Card className="location-card">

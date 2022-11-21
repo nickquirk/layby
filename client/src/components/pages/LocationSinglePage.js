@@ -34,7 +34,7 @@ const LocationSinglePage = () => {
       <Container className='mt-4'>
         <Row>
           { location ?
-            <>
+            <>  
               <h1>{location.name}</h1>
               <div className='header-image'></div>
               <img src={location.image} alt={location.name} />
