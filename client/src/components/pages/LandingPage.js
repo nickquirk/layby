@@ -15,6 +15,8 @@ import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+// import RandomCarousel from '../common/Carousel'
+// import LocationCard from '../common/LocationCard'
 
 const LandingPage = () => {
   const navigate = useNavigate()
@@ -47,44 +49,15 @@ const LandingPage = () => {
   const navigateToLocationIndex = () => {
     navigate('/locations')
   }
-  
-  
+
   useEffect(() => {
     const getRandomLocations = () => {
-      for (let i = locations.length - 1; i > 0; i--) {
-        const shuffled = (Math.floor(Math.random() * (i + 1))[
-          (locations[i], locations[shuffled])
-        ] = [locations[shuffled], locations[i]])
-      }
+      const shuffled = locations.sort((a, b) => 0.5 - Math.random())
       setShuffled(shuffled)
       console.log('This is shuffled', shuffled)
     }
     getRandomLocations()
   }, [locations])
-
-  // useEffect(() => {
-  //   const getRandomLocations = () => {
-  //     for (let i = locations.length - 1; i > 0; i--) {
-  //       const shuffled = (Math.floor(Math.random() * (i + 1))[
-  //         (locations[i], locations[shuffled])
-  //       ] = [locations[shuffled], locations[i]])
-  //     }
-  //     setShuffled(shuffled)
-  //     console.log('This is shuffled', shuffled)
-  //   }
-  //   getRandomLocations()
-  // }, [locations])
-
-  // useEffect(() => {
-  //   const getRandomLocations = () => {
-  //     const shuffledArray = [...locations].sort(() =>
-  //       Math.floor(Math.random() * locations.length)
-  //     )
-  //     setShuffled(shuffledArray)
-  //     console.log('This is shuffled', shuffled)
-  //   }
-  //   getRandomLocations()
-  // }, [locations])
 
   return (
     <main className="landing-page">
@@ -104,10 +77,11 @@ const LandingPage = () => {
           </div>
         </Row>
         <Row className="top-rated">
+          {/* <LocationCard location={locations} /> */}
           <div className="display-top-rated text-center">
             <h2 className="m-5">Discover Top Rated Spots</h2>
           </div>
-          {locations.slice(0, 4).map((loc) => {
+          {shuffled.slice(0, 4).map((loc) => {
             console.log('Hello')
             const {
               name,

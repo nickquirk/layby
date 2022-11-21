@@ -12,11 +12,11 @@ $primary: #158bc6;
 
 .sitewrapper {
   // min-height: 100vh;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .navbar {
-  background-color: white;
+  background-color: whitesmoke;
 
   .nav-link {
     color: rgb(0, 0, 0);
@@ -95,7 +95,7 @@ $primary: #158bc6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
 .form-container {
@@ -106,7 +106,7 @@ $primary: #158bc6;
   width: 300px;
   padding: 40px 10px 20px 10px;
   border-radius: 18px;
-  background-color: white;
+  background-color: whitesmoke;
 
   form {
     width: 80%;
@@ -147,6 +147,7 @@ $primary: #158bc6;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  background-color: whitesmoke;
 
   .card-image {
     background-size: cover;
