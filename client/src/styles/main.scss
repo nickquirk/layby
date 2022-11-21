@@ -205,6 +205,13 @@
   padding: 0px;
   margin: 0px;
 
+  .single-page-container {
+    margin: 0 auto;
+  }
+
+  .mt-4 {
+    margin-top: 0 !important;
+  }
 
   .header-image {
     height: 100%;
@@ -237,6 +244,7 @@
       right: 0;
       height: fit-content;
       margin: auto;
+      max-width: 200px; // increase when going up screen size
     }
   }
 
@@ -247,9 +255,29 @@
   }
 
   .widget-container {
-    height: 50px;
+    display: flex;
+    flex-direction: column;
+    block-size: fit-content;
     max-width: 100%;
-    background-color: rgb(131, 170, 221);
+    background-color: white;
+    padding: 12px;
+    padding-left: 40px; // needs more padding above mobile screen size / change orientation to row
+
+    .ifg {
+      display: flex;
+      margin-bottom: 15px;
+
+      svg {
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+  }
+
+  hr {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 12px;
   }
 
   .review-form {

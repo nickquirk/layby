@@ -2,7 +2,10 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-
+import { MdOutlineLocalGasStation, MdOutlineWaterDrop } from 'react-icons/md'
+import { BiPound, BiEuro } from 'react-icons/bi'
+import { IoMdWater } from 'react-icons/io'
+import { GrRestroom } from 'react-icons/gr'
 // Bootstrap components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -29,8 +32,8 @@ const LocationSinglePage = () => {
   }, [locationId])
 
   return (
-    <main className="single-page">
-      <Container className=" fluid mt-4">
+    <main className='single-page'>
+      <Container className='fluid mt-4 single-page-container'>
         <Row>
           {location ?
             <>
@@ -41,7 +44,26 @@ const LocationSinglePage = () => {
                 </picture>
                 <h1 className='single-page-header'>{location.name}</h1>
               </div>
-              <div className='widget-container'>Widget container</div>
+              <div className='widget-container'>
+                {location.currency === '£' ?
+                  <div className='ifg' id='pound-ifg'><BiPound /></div>
+                  :
+                  <></>}
+                {location.currency === '€' ?
+                  <div className='ifg' id='euro-ifg'><BiEuro /></div>
+                  :
+                  <></>}
+                {location.water === true ?
+                  <div className='ifg' id='water-ifg'><MdOutlineWaterDrop /></div>
+                  :
+                  <></>}
+                {location.toilets === true ?
+                  <div className='ifg' id='restroom-ifg'><GrRestroom /></div>
+                  :
+                  <></>}
+                <div className='ifg' id='gas-ifg'><MdOutlineLocalGasStation /></div>
+              </div>
+              <hr className='hr'></hr>
               <Col md="6">
                 <h2>Description</h2>
                 <p>{location.description}</p>
