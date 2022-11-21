@@ -12,9 +12,11 @@ import Container from 'react-bootstrap/Container'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
-//
+// Imports
 import ReviewField from '../common/ReviewField'
 import Infographic from '../common/Infographic'
+import CarouselController from '../common/Carousel'
+
 const LocationSinglePage = () => {
   // ! State
   const [location, setLocation] = useState([])
@@ -42,13 +44,11 @@ const LocationSinglePage = () => {
         <Row>
           {location ?
             <>
-              <div className='header-image col-xs-1' id='hero'>
-                <picture className='single-page-hero'>
-                  <source media="(min-width: 0px)" srcSet={location.image} />
-                  <img className='single-page-hero' src={location.image} alt={location.name} />
-                </picture>
-                <h1 className='single-page-header'>{location.name}</h1>
+              <div className='single-page-header'>
+                <h1 className='single-page-title'>{location.name}</h1>
+                <p className='single-page-code'>{location.countryCode}</p>
               </div>
+              <CarouselController location={location} />
               <Infographic location={location} />
               <hr className='hr'></hr>
               <Tabs
