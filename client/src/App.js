@@ -31,7 +31,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/locations' element={<LocationMultiPage />} />
-          <Route path='/locations/:id' element={<LocationSinglePage />} />
+          <Route path='/locations/:locationId' element={<LocationSinglePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
           {/* Just changed this to work on the profile page, will change it back :) */}

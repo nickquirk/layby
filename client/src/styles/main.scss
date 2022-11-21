@@ -106,7 +106,7 @@
     margin-top: 30px;
   }
 }
-
+// User profile page
 .profile-main {
   display: flex;
   flex-direction: column;
@@ -124,11 +124,11 @@
     flex-direction: column;
     align-items: center;
   }
-
+// User profile reviews section
   .user-reviews {
     width: 100%;
 
-    S .user-card {
+    .user-card {
       max-width: 100%;
     }
 
@@ -137,7 +137,7 @@
       margin: 5px 0;
     }
   }
-
+// User profile favourites 
   .user-favourites {
     width: 100%;
 
@@ -199,4 +199,32 @@
   min-height: 100vh;
   text-align: center;
   margin-top: 100px;
+}
+
+// Location Single Page
+.single-page{
+  display:flex;
+  max-width: 100%;
+  img {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .widget-container{
+    height: 50px;
+    max-width: 100%;
+    background-color: rgb(131, 170, 221);
+  }
+  .review-form{
+    display: flex;
+  }
+
+  .btn{
+    background-color: bisque;
+    align-self: flex-end;
+    }
+  textarea{
+    width: 100%;
+  }
 }

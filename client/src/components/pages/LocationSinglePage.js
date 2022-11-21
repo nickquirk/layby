@@ -13,21 +13,20 @@ const LocationSinglePage = () => {
   const [location, setLocation] = useState([])
 
   // ! Location
-  const { id } = useParams()
+  const { locationId } = useParams()
 
   // ! Execution
   useEffect(() => {
     const getLocation = async () => {
       try {
-        console.log(id)
-        const { data } = await axios.get(`/api/locations/${id}`)
+        const { data } = await axios.get(`/api/locations/${locationId}`)
         setLocation(data)
       } catch (err) {
         console.log(err)
       }
     }
     getLocation()
-  }, [id])
+  }, [locationId])
 
 
   return (
@@ -36,13 +35,19 @@ const LocationSinglePage = () => {
         <Row>
           { location ?
             <>
-              <h1>{location[0].name}</h1>
-              <Col md="6">
-                <img src={location[0].image} alt={location[0].name} />
-              </Col>
+              <h1>{location.name}</h1>
+              <div className='header-image' background-image={location.image}></div>
+              <img src={location.image} alt={location.name} />
+              <div className='widget-container'>Widget container</div>
               <Col md="6">
                 <h2>Description</h2>
-                <p>{location[0].description}</p>
+                <p>{location.description}</p>
+                <h2>Leave a Review</h2>
+                <form id="review-form">
+                  <textarea form="review-form" id="review" name="user-review"rows="5"></textarea>
+                  <Link className='btn btn-main'>Submit</Link>
+                </form>
+                <h2>Reviews</h2>
               </Col>
             </>
             : 
@@ -50,7 +55,6 @@ const LocationSinglePage = () => {
           }
         </Row>
       </Container>
-      
     </main>
 
   )
