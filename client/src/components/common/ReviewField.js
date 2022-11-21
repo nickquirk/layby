@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
+import { isAuthenticated } from './Auth'
 
 
 const ReviewField = () => {
@@ -39,19 +38,26 @@ const ReviewField = () => {
 
   return (
     <Col md="6">
-      <form onSubmit={handleSubmit}>
-        <p>Leave Review:</p>
-        <input
-          required
-          className='form-control'
-          type="text"
-          name="review"
-          onChange={handleChange}
-          placeholder="Type your review here"
-          value={formFields.review}
-        />
-        <button className='btn btn-primary'>Submit</button>
-      </form>
+      {isAuthenticated() ?
+        <form onSubmit={handleSubmit}>
+          <p>Leave Review:</p>
+          <input
+            required
+            className='form-control'
+            type="text"
+            name="review"
+            onChange={handleChange}
+            placeholder="Type your review here"
+            value={formFields.review}
+          />
+          <button className='btn btn-primary'>Submit</button>
+        </form>
+        :
+        <></>
+      }
+      <div className='current-reviews'>
+        Reviews
+      </div>
     </Col>
   )
 }

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
+import { setToken } from '../common/Auth'
 //TODO
 // Error handling
 // Display errors
@@ -13,7 +14,7 @@ const LoginPage = () => {
 
   // ! State 
   // Track state of following variables
-  const [ formFields, setFormFields ] = useState({
+  const [formFields, setFormFields] = useState({
     email: '',
     password: '',
   })
@@ -23,7 +24,9 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/login', formFields)
+      const { data } = await axios.post('/api/login', formFields)
+      console.log(data.token)
+      setToken(data.token)
       // navigate to home after successful login
       navigate('/')
     } catch (err) {
@@ -49,22 +52,22 @@ const LoginPage = () => {
       <h1>Login</h1>
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input 
-            required 
-            className='form-control' 
-            type="email" name="email" 
-            onChange={handleChange} 
+          <input
+            required
+            className='form-control'
+            type="email" name="email"
+            onChange={handleChange}
             placeholder="Email"
-            value={formFields.username} 
+            value={formFields.username}
           />
-          <input 
-            required 
-            className='form-control' 
-            type="password" 
-            name="password" 
-            onChange={handleChange} 
+          <input
+            required
+            className='form-control'
+            type="password"
+            name="password"
+            onChange={handleChange}
             placeholder="Password"
-            value={formFields.password} 
+            value={formFields.password}
           />
           <button to={'/'} className='btn btn-main'>Login</button>
         </form>
