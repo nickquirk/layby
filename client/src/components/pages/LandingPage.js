@@ -3,6 +3,7 @@
 /* eslint-disable no-undef */
 import axios from 'axios'
 import van from '../images/van.jpeg'
+import login from '../images/login.jpg'
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { MdOutlineWaterDrop } from 'react-icons/md'
@@ -81,7 +82,7 @@ const LandingPage = () => {
             style={{ backgroundImage: `url(${van})` }}
           >
             <Button
-              className="button location-index-button mt-3 mb-3"
+              className="btn  btn-lg mt-3 mb-3"
               onClick={() => navigateToLocationIndex()}
             >
               Find a place to stay
@@ -90,7 +91,7 @@ const LandingPage = () => {
         </Row>
         <Row className="top-rated">
           <div className="display-top-rated text-center">
-            <h2 className="mt-3 mb-6">Discover Top Rated Spots</h2>
+            <h2 className="m-5">Discover Top Rated Spots</h2>
           </div>
           {locations.slice(0, 4).map((loc) => {
             const {
@@ -162,26 +163,30 @@ const LandingPage = () => {
             )
           })}
         </Row>
-        <Row id="login-register">
-          <h4 className="text-center mt-3">Review or Post a New Van Spot</h4>
-          <div
-            id="login-register-buttons"
-            className="col border-end d-flex justify-content-center align-items-center"
-          >
-            <Button
-              type="button"
-              className="btn mt-3 mb-3"
-              onClick={() => navigateToLogin()}
+        <Row>
+          <div id="login-register" style={{ backgroundImage: `url(${login})` }}>
+            <h2 className=" m-5 text-center text-white">
+              Review or Post a New Van Spot
+            </h2>
+            <div
+              id="login-register-buttons"
+              className="col border-end d-flex justify-content-center align-items-center"
             >
-              Login
-            </Button>
-            <Button
-              type="button"
-              className="btn  mt-3 mb-3"
-              onClick={() => navigateToRegister()}
-            >
-              Register
-            </Button>
+              <Button
+                type="button"
+                className="btn btn-lg mt-5 mb-4"
+                onClick={() => navigateToLogin()}
+              >
+                Login
+              </Button>
+              <Button
+                type="button"
+                className="btn  btn-lg mt-5 mb-4"
+                onClick={() => navigateToRegister()}
+              >
+                Register
+              </Button>
+            </div>
           </div>
         </Row>
         <Row id="tickertape">
