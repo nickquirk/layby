@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap');
+$primary: #158bc6;
+
 
 * {
   font-family: 'Roboto Slab', serif;
@@ -34,6 +36,12 @@
   }
 }
 
+.btn {
+  background-color: white;
+  border:1px grey solid;
+  color: black;
+}
+
 .landing-page {
   min-height: 100vh;
 
@@ -55,12 +63,20 @@
   }
 
   #login-register {
-    background-color: #2494d9;
+    width: 100%;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    height: 200px;
   }
-
+  .row {
+    padding:0;
+  }
   .btn {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 
     #login-register-buttons {
       align-content: center;
@@ -101,70 +117,24 @@
 
   .btn {
     width: 60%;
-    background-color: bisque;
+    // background-color: bisque;
     margin-top: 30px;
   }
 }
 
 // User profile page
-.profile-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  img {
-    max-width: 50%;
-  }
-
-  .user-details,
-  .user-content,
-  .user-reviews,
-  .user-favourites {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  // User profile reviews section
-  .user-reviews {
-    width: 100%;
-
-    .user-card {
-      max-width: 100%;
-    }
-
-    img {
-      max-width: 400px;
-      margin: 5px 0;
-    }
-  }
-
-  // User profile favourites 
-  .user-favourites {
-    width: 100%;
-
-    .favourite-card-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      max-width: 100%;
-    }
-
-    .favourite-card {
-      max-width: 50%;
-    }
-
-    img {
-      max-width: 100px;
-      margin: 5px 0;
-    }
-  }
+.profile-pic{
+  max-width: 200px;
+}
+.review-card, .favourite-card {
+  margin: 10px 0;
 }
 
-.user-content {
-  max-width: 600px;
+.user-details{
+  p{
+    margin-top: 20px;
+  }
 }
-
 
 // Cards
 .location-card {
@@ -181,6 +151,11 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     background-position: top;
+    width: 100%;
+    // height: 15vw;
+      object-fit: cover;
+
+
   }
 }
 
