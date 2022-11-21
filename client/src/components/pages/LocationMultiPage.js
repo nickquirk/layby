@@ -2,6 +2,9 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { MdOutlineWaterDrop } from 'react-icons/md'
+import { GrRestroom } from 'react-icons/gr'
+import { TbParking } from 'react-icons/tb'
 
 import FilterSearch from '../common/FilterSearch'
 
@@ -55,9 +58,18 @@ const LocationMultiPage = () => {
                 <Col key={id} sm="6" md="3" className="char-card mb-4">
 =======
               return (
-                <Col key={id} sm="6" md="3" lg='3' xl='3' className="char-card mb-4">
->>>>>>> development
-                  <Link className="text-decoration-none" to={`/locations/${id}`}>
+                <Col
+                  key={id}
+                  sm="6"
+                  md="6"
+                  lg="3"
+                  xl="3"
+                  className="char-card mb-4"
+                >
+                  <Link
+                    className="text-decoration-none"
+                    to={`/locations/${id}`}
+                  >
                     <Card className="location-card">
                       <div
                         className="card-image"
@@ -73,20 +85,30 @@ const LocationMultiPage = () => {
                         <div className="icon-container d-flex justify-content-evenly">
                           <div className="icon">
                             {toilets === false ? (
-                              <span></span>
+                              <></>
                             ) : (
-                              <span>🚾</span>
+                              <div className="ifg" id="restroom-ifg">
+                                <GrRestroom />
+                              </div>
                             )}
                           </div>
                           <div className="icon">
                             {freeparking === false ? (
-                              <span></span>
+                              <></>
                             ) : (
-                              <span>🅿️</span>
+                              <div className="ifg" id="parking-ifg">
+                                <TbParking />
+                              </div>
                             )}
                           </div>
                           <div className="icon">
-                            {water === false ? <span></span> : <span>💧</span>}
+                            {water === false ? (
+                              <></>
+                            ) : (
+                              <div className="ifg" id="water-ifg">
+                                <MdOutlineWaterDrop />
+                              </div>
+                            )}
                           </div>
                         </div>
                       </Card.Body>
