@@ -55,7 +55,7 @@ const LoginPage = () => {
             type="email"
             name="email"
             onChange={handleChange}
-            placeholder="Email"
+            placeholder="Email *"
             value={formFields.username}
           />
           <input
@@ -64,7 +64,7 @@ const LoginPage = () => {
             type="password"
             name="password"
             onChange={handleChange}
-            placeholder="Password"
+            placeholder="Password *"
             value={formFields.password}
           />
           <button to={'/'} className="btn btn-main">

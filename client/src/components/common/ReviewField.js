@@ -1,7 +1,11 @@
-
+/* eslint-disable comma-dangle */
+//React
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate , useParams } from 'react-router-dom'
+
+// imports
 import axios from 'axios'
+import { getToken } from '../common/Auth'
 
 
 import Col from 'react-bootstrap/Col'
@@ -12,18 +16,33 @@ const ReviewField = () => {
 
   const navigate = useNavigate()
 
+  // State
   const [formFields, setFormFields] = useState({
-    review: '',
-    rating: null,
+    text: '',
+    // rating: null,
   })
 
+  const [errors, setErrors] = useState(null)
+
+
+  // Location 
+  const { locationId } = useParams()
+
+  //Execution
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/login', formFields)
-      navigate('/')
+      console.log('GET TOKEN -->', getToken())
+      const { data } = await axios.post(`/api/locations/${locationId}/review`, formFields, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      console.log('Success -->', data)
+      navigate(`/api/locations/${locationId}/review`)
     } catch (err) {
-      console.log(err)
+      console.log('hello ->', err.response.data)
+      setErrors(err.response.data)
     }
     console.log('form submitted')
   }
@@ -32,7 +51,7 @@ const ReviewField = () => {
     const updatedFormFields = { ...formFields }
     updatedFormFields[e.target.name] = e.target.value
     setFormFields(updatedFormFields)
-    // ! if there's an error, set to an empty string
+    setErrors({ ...errors, [e.target.name]: '', message: '' })
   }
 
 
@@ -45,11 +64,12 @@ const ReviewField = () => {
             required
             className='form-control'
             type="text"
-            name="review"
+            name="text"
             onChange={handleChange}
-            placeholder="Type your review here"
-            value={formFields.review}
+            placeholder="Type your review here *"
+            value={formFields.text}
           />
+          {errors && errors.text && <small className ="text-danger">{errors.text}</small>}
           <button className='btn btn-primary'>Submit</button>
         </form>
         :

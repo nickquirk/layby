@@ -58,7 +58,7 @@ const RegisterPage = () => {
             type="text" 
             name="username" 
             onChange={handleChange} 
-            placeholder="Username"
+            placeholder="Username *"
             value={formFields.username} 
           />
           <input 
@@ -67,7 +67,7 @@ const RegisterPage = () => {
             type="email" 
             name="email" 
             onChange={handleChange} 
-            placeholder="Email"
+            placeholder="Email *"
             value={formFields.email} 
           />
           <input 
@@ -76,7 +76,7 @@ const RegisterPage = () => {
             type="password" 
             name="password" 
             onChange={handleChange} 
-            placeholder="Password"
+            placeholder="Password *"
             value={formFields.password} 
           />
           <input 
@@ -85,7 +85,7 @@ const RegisterPage = () => {
             type="password" 
             name="passwordConfirmation" 
             onChange={handleChange} 
-            placeholder="Confirm password"
+            placeholder="Confirm password *"
             value={formFields.passwordConfirmation} 
           />
           <button className='btn btn-main'>Submit</button>
