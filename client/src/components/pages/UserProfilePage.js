@@ -19,14 +19,14 @@ const UserProfilePage = () => {
   const [user, setUser] = useState([])
 
   // ! Location
-  const { id } = useParams()
+  const { userId } = useParams()
 
   // ! Execution
   useEffect(() => {
-    console.log(id)
+    console.log(userId)
     const getUser = async (req, res) => {
       try {
-        const { data } = await axios.get(`/api/profile/${id}`, {
+        const { data } = await axios.get(`/api/profile/${userId}`, {
           headers: {
             Authorization: `Bearer ${getToken()}`,
           },
@@ -39,7 +39,7 @@ const UserProfilePage = () => {
       }
     }
     getUser()
-  }, [])
+  }, [userId])
 
   // ! JSX
   return (

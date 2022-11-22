@@ -5,13 +5,24 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 
-import { isAuthenticated, handleLogout } from './Auth'
+import { isAuthenticated, handleLogout, getUserId } from './Auth'
 import Logo from '../images/van-logo.png'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+
+//Custom imports 
 
 const NavBar = () => {
+  // ! State
+  const [userId, setUserId] = useState([])
+
+  // ! Navigation
   const navigate = useNavigate()
-  const { id } = useParams()
+
+  useEffect(() => {
+    setUserId(getUserId())
+    console.log(userId)
+  }, [userId])
 
 
   return (
@@ -36,7 +47,7 @@ const NavBar = () => {
               </Nav.Link>
               {isAuthenticated() ?
                 <>
-                  <Nav.Link as={Link} to={`/profile/${id}`}>
+                  <Nav.Link as={Link} to={`/profile/${userId}`}>
                     Profile
                   </Nav.Link>
                   <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>

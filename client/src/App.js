@@ -27,7 +27,7 @@ const App = () => {
           <Route path='/register' element={<RegisterPage />} />
           <Route path='/addLocation' element={<AddLocation />} />
           {/* Just changed this to work on the profile page, will change it back :) */}
-          <Route path='/profile/:id' element={<UserProfilePage />} />
+          <Route path='/profile/:userId' element={<UserProfilePage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />
