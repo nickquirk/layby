@@ -6,7 +6,10 @@ import {
   getSingleLocation,
   addReview,
   deleteReview,
-  editReview
+  editReview,
+  addLocation,
+  updateLocation,
+  deleteLocation
 } from '../controllers/vanSpots.js'
 import secureRoute from './secureRoute.js'
 
@@ -22,6 +25,12 @@ router.route('/locations').get(getAllLocations)
 router.route('/register').post(registerUser)
 
 router.route('/login').post(loginUser)
+
+router.route('/addLocation').post(secureRoute, addLocation)
+
+router.route('/:locationId/editLocation').put(secureRoute, updateLocation)
+
+router.route('/:locationId/deleteLocation').delete(secureRoute, deleteLocation)
 
 router.route('/locations/:locationId/review').post(secureRoute, addReview)
 

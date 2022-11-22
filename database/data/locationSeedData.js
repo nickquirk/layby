@@ -5,7 +5,6 @@ export default [
     latitude: 38.965563,
     longitude: -0.495071,
     countryCode: 'ESP',
-    country: 'Spain',
     flag: '🇪🇸',
     currency: '€',
     description:
@@ -29,7 +28,6 @@ export default [
     longitude: -1.34933,
     countryCode: 'ESP',
     flag: '🇪🇸',
-    country: 'Spain',
     currency: '€',
     description:
       'A very difficult drive down uneaven dirt tracks. For those that persevere theres a large areas of flat ground with access to thermal hot springs. Its worth the drive',
@@ -51,7 +49,6 @@ export default [
     longitude: -2.00701,
     countryCode: 'ESP',
     flag: '🇪🇸',
-    country: 'Spain',
     currency: '€',
     description:
       'A stunning beach with lots of space to park and regularly frequented by vanlifers and locals. A cliff-top track takes you to the small town of Las-Negras.',
@@ -72,7 +69,6 @@ export default [
     latitude: 37.806104,
     longitude: -8.796337,
     countryCode: 'PT',
-    country: 'Portugal',
     flag: '🇵🇹',
     currency: '€',
     description:
@@ -95,7 +91,6 @@ export default [
     longitude: -8.796337,
     countryCode: 'PT',
     flag: '🇵🇹',
-    country: 'Portugal',
     currency: '€',
     description:
       'Parking on dirt in a huge Eucalyptus forest. Loads of places to hide away and be unoticed if you want some quiet. Toilets and water are available',
@@ -118,7 +113,6 @@ export default [
     longitude: -8.796337,
     countryCode: 'PT',
     flag: '🇵🇹',
-    country: 'Portugal',
     currency: '€',
     description: 'A large parking area in the center of the city of Lagos. Pretty ugly but functional, full camper service, great for exploring the city',
     parking: true,
@@ -136,7 +130,6 @@ export default [
     longitude: 10.07138,
     countryCode: 'DE',
     flag: '🇩🇪',
-    country: 'Germany',
     currency: '€',
     description:
       'A beautiful wild swimming lake near to the tiny town of Speilbach. Off-road parking, really quiet at night!',
@@ -155,7 +148,6 @@ export default [
     longitude: 8.678115,
     countryCode: 'DE',
     flag: '🇩🇪',
-    country: 'Germany',
     currency: '€',
     description:
       'Free roadside parking in the center of Heidelberg near to a skate park.',
@@ -177,7 +169,6 @@ export default [
     longitude: 9.867367,
     countryCode: 'DE',
     flag: '🇩🇪',
-    country: 'Germany',
     currency: '€',
     description:
       'Parking in a forest by the Aschbachsee. Quiet, secluded spot with access to wild swimming lake ',
@@ -199,7 +190,6 @@ export default [
     longitude: -5.261952,
     countryCode: 'MA',
     flag: '🇲🇦',
-    country: 'Morocco',
     currency: 'DH',
     description:
       'A small carpark about 10 minutes walk to the stunning blue city of Chefchaoen.',
@@ -222,7 +212,6 @@ export default [
     longitude: -9.801938,
     countryCode: 'MA',
     flag: '🇲🇦',
-    country: 'Morocco',
     currency: 'DH',
     description:
       'A well known surf spot 5km from the town of Immi Oudar and 8km from the famous surf town of Tagahzout. Off-road parking with access to rocky coastline and fantastic surf',
@@ -244,7 +233,6 @@ export default [
     longitude: -8.983702,
     countryCode: 'MA',
     flag: '🇲🇦',
-    country: 'Morocco',
     currency: 'DH',
     description:
       'A huge area of land walking distance from the mountain city of Tafraoute. Walking routes to see the famous Blue Rocks.',
@@ -266,7 +254,6 @@ export default [
     longitude: -8.796337,
     countryCode: 'UK',
     flag: '🇬🇧',
-    country: 'United Kingdom',
     currency: '£',
     description: 'xxxx',
     parking: true,
@@ -284,7 +271,6 @@ export default [
     longitude: -8.796337,
     countryCode: 'UK',
     flag: '🇬🇧',
-    country: 'United Kingdom',
     currency: '£',
     description: 'xxxx',
     parking: true,
@@ -302,7 +288,6 @@ export default [
     longitude: -8.796337,
     countryCode: 'UK',
     flag: '🇬🇧',
-    country: 'United Kingdom',
     currency: '£',
     description: 'xxxx',
     parking: true,
