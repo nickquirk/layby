@@ -12,9 +12,6 @@ import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
 import UserProfilePage from './components/pages/UserProfilePage'
 
-
-
-
 const App = () => {
   // useEffect(() => {
   //   const getData = async () => {
@@ -34,8 +31,7 @@ const App = () => {
           <Route path='/locations/:locationId' element={<LocationSinglePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
-          {/* Just changed this to work on the profile page, will change it back :) */}
-          <Route path='/profile' element={<UserProfilePage />} />
+          <Route path='/profile/:id' element={<UserProfilePage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
         <Footer />

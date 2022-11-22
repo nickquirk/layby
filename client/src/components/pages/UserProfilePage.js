@@ -11,25 +11,36 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 import axios from 'axios'
 
+//Custom imports 
+import { getToken } from '../common/Auth.js'
 
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
+
   // ! Location
-  const { userId } = useParams()
+  const { id } = useParams()
+
   // ! Execution
   useEffect(() => {
-    const getUser = async () => {
+    console.log(id)
+    const getUser = async (req, res) => {
       try {
-        const { data } = await axios.get(`/api/profile/${userId}`)
+        const { data } = await axios.get(`/api/profile/${id}`, {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        })
         setUser(data)
-        console.log('user logged in ->', userId)
+        console.log(data)
+        console.log('user logged in ->', data._id)
       } catch (err) {
         console.log(err)
       }
     }
     getUser()
-  }, [userId])
+  }, [])
+
   // ! JSX
   return (
     <>
@@ -40,7 +51,7 @@ const UserProfilePage = () => {
               <h3>Username</h3>
               <img className='img-thumbnail profile-pic' src="https://tinyurl.com/2p8e3n27"></img>
               <Link className='btn mt-3 align-self-center'>Upload Pic</Link>
-              <textarea className='mt-3'  rows="">User info will go here...</textarea>
+              <textarea className='mt-3'  rows="3">User info will go here...</textarea>
               <Link className='btn mt-3 align-self-center'>Save</Link>
             </div>
           </Col>
