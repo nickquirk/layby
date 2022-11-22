@@ -1,3 +1,6 @@
+// Imports
+import { useState, useEffect } from 'react'
+
 // Bootstrap imports
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
@@ -9,6 +12,13 @@ import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
 
 
 const UserProfilePage = () => {
+  // ! State
+  const [user, setUser] = useState([])
+  // ! Location
+
+  // ! Execution
+
+  // ! JSX
   return (
     <>
       <Container className='profile-page-container'>
@@ -17,7 +27,9 @@ const UserProfilePage = () => {
             <div className='user-details'>
               <h3>Username</h3>
               <img className='img-thumbnail profile-pic' src="https://tinyurl.com/2p8e3n27"></img>
+              <Link className='btn mt-3'>Upload Pic</Link>
               <p>User info will go here...</p>
+              <Link className='btn mt-3'>Edit Info</Link>
             </div>
           </Col>
           <Col md="8">
