@@ -1,7 +1,7 @@
 /* eslint-disable comma-dangle */
 //React
 import { useEffect, useState } from 'react'
-import { useNavigate , useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 // imports
 import axios from 'axios'
@@ -39,7 +39,7 @@ const ReviewField = () => {
         },
       })
       console.log('Success -->', data)
-      navigate(`/api/locations/${locationId}/review`)
+      navigate(`/locations/${locationId}`)
     } catch (err) {
       console.log('hello ->', err.response.data)
       setErrors(err.response.data)
@@ -69,7 +69,7 @@ const ReviewField = () => {
             placeholder="Type your review here *"
             value={formFields.text}
           />
-          {errors && errors.text && <small className ="text-danger">{errors.text}</small>}
+          {errors && errors.text && <small className="text-danger">{errors.text}</small>}
           <button className='btn btn-primary'>Submit</button>
         </form>
         :

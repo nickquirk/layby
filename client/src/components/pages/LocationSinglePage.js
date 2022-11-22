@@ -23,10 +23,11 @@ const LocationSinglePage = () => {
 
   // ! Location
   const { locationId } = useParams()
-
+  console.log('hello')
   // ! Execution
   useEffect(() => {
     const getLocation = async () => {
+      console.log(locationId)
       try {
         const { data } = await axios.get(`/api/locations/${locationId}`)
         setLocation(data)
