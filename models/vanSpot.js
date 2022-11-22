@@ -34,7 +34,6 @@ const locationSchema = new mongoose.Schema({
   toilets: { type: Boolean, required: true },
   water: { type: Boolean, required: true },
   nearestFuel: { type: Number, required: true },
-  otherInfo: { type: String, required: true },
   nearbyActivities: { type: String },
   image: [String],
   owner: {
