@@ -10,6 +10,9 @@ export const getToken = () => {
   return localStorage.getItem(tokenName)
 }
 
+export const getUserId = () => {
+  return getPayload().sub
+}
 
 export const getPayload = () => {
   const token = getToken()
