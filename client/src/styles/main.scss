@@ -209,6 +209,11 @@ p {
 }
 
 
+// Carousel Styling 
+.carousel-indicators {
+  display: none;
+}
+
 //Search and Filter 
 .dropdown {
   border: 0px;
@@ -347,6 +352,13 @@ textarea {
   // bottom: 0;
   // width: 100%;
   // height: 2.5rem;
+}
+
+@media (min-width: 576px) {
+  .top-rated {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (min-width: 768px) {
