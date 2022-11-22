@@ -1,22 +1,45 @@
-// Imports
+// React imports
 import { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
 
 // Bootstrap imports
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
+import axios from 'axios'
 
+//Custom imports 
+import { getToken } from '../common/Auth.js'
 
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
+
   // ! Location
+  const { id } = useParams()
 
   // ! Execution
+  useEffect(() => {
+    console.log(id)
+    const getUser = async (req, res) => {
+      try {
+        const { data } = await axios.get(`/api/profile/${id}`, {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
+        })
+        setUser(data)
+        console.log(data)
+        console.log('user logged in ->', data._id)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getUser()
+  }, [])
 
   // ! JSX
   return (
@@ -24,12 +47,12 @@ const UserProfilePage = () => {
       <Container className='profile-page-container'>
         <Row className='text-center'>
           <Col md="4" className='text-center'>
-            <div className='user-details'>
+            <div className='user-details d-flex flex-column align-items-center'>
               <h3>Username</h3>
               <img className='img-thumbnail profile-pic' src="https://tinyurl.com/2p8e3n27"></img>
-              <Link className='btn mt-3'>Upload Pic</Link>
-              <p>User info will go here...</p>
-              <Link className='btn mt-3'>Edit Info</Link>
+              <Link className='btn mt-3 align-self-center'>Upload Pic</Link>
+              <textarea className='mt-3'  rows="3">User info will go here...</textarea>
+              <Link className='btn mt-3 align-self-center'>Save</Link>
             </div>
           </Col>
           <Col md="8">

@@ -2,7 +2,7 @@
 import { findAllLocations, findLocation, findReview } from '../config/helpers.js'
 import { NotFound, Unauthorised } from '../config/errors.js'
 import { errorHandler } from '../config/helpers.js'
-
+import VanSpot from '../models/vanSpot.js'
 // ? Region index route
 
 // ? Location index route
@@ -30,6 +30,78 @@ export const getSingleLocation = async (req, res) => {
     errorHandler(res, err)
   }
 }
+
+// ? User create location
+// Method: post
+// Endpoint: 'api/createLocation'
+export const addLocation = async (req, res) => {
+  try {
+    const { countryCode } = req.body
+    const country = await VanSpot.find()
+    const targetCountry = country.filter(country => {
+      return country.countryCode === countryCode
+    })
+    if (!targetCountry) {
+      throw new Error('This location does not have a valid country')
+    }
+    const [newTargetCountry] = targetCountry
+    if (newTargetCountry) {
+      const newLocation = { ...req.body, owner: req.currentUser.id }
+      newTargetCountry.locations.push(newLocation)
+      await newTargetCountry.save()
+      return res.status(201).json(targetCountry)
+    }
+  } catch (err) {
+    console.log(err)
+    errorHandler(res, err)
+  }
+}
+
+// ? User edit location
+// Method: put
+// Endpoint: 'api/:locationId/editLocation'
+export const updateLocation = async (req, res) => {
+  try {
+    const targetLocation = await findLocation(req, res)
+    if (targetLocation && req.currentUser._id.equals(targetLocation.owner)) {
+      Object.assign(targetLocation, req.body)
+      const parent = await targetLocation.parent()
+      await parent.save()
+      return res.status(202).json(targetLocation)
+    } else {
+      throw new Unauthorised()
+    }
+  } catch (err) {
+    console.log(err)
+    errorHandler(err)
+  }
+}
+
+
+// ? User delete location
+// Method: delete
+// Endpoint: 'api/:locationId/deleteLocation'
+export const deleteLocation = async (req, res) => {
+  try {
+    const targetLocation = await findLocation(req, res)
+    if (targetLocation && req.currentUser._id.equals(targetLocation.owner)) {
+      targetLocation.remove()
+      const parent = await targetLocation.parent()
+      await parent.save()
+      return res.sendStatus(204)
+    } else {
+      throw new Unauthorised()
+    }
+  } catch (err) {
+    console.log(err)
+    errorHandler(err)
+  }
+}
+
+
+
+
+
 // ? Add review
 // Method: post
 // Endpoint: '/api/locations/:locationId/review'
