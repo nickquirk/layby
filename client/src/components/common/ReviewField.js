@@ -14,7 +14,7 @@ import { isAuthenticated } from './Auth'
 
 const ReviewField = () => {
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   // State
   const [formFields, setFormFields] = useState({
@@ -39,7 +39,7 @@ const ReviewField = () => {
         },
       })
       console.log('Success -->', data)
-      navigate(`/api/locations/${locationId}/review`)
+      // navigate(`/api/locations/${locationId}`)
     } catch (err) {
       console.log('hello ->', err.response.data)
       setErrors(err.response.data)

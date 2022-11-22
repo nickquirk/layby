@@ -15,8 +15,6 @@ import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-// import RandomCarousel from '../common/Carousel'
-// import LocationCard from '../common/LocationCard'
 
 const LandingPage = () => {
   const navigate = useNavigate()
