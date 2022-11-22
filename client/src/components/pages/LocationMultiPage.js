@@ -45,7 +45,6 @@ const LocationMultiPage = () => {
               const {
                 name,
                 countryCode,
-                flag,
                 description,
                 freeparking,
                 image,

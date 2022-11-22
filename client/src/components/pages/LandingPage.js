@@ -6,15 +6,14 @@ import van from '../images/van.jpeg'
 import login from '../images/login.jpg'
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { MdOutlineWaterDrop } from 'react-icons/md'
-import { GrRestroom } from 'react-icons/gr'
-import { TbParking } from 'react-icons/tb'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+
+import Infographic from '../common/Infographic'
 
 const LandingPage = () => {
   const navigate = useNavigate()
@@ -50,9 +49,9 @@ const LandingPage = () => {
 
   useEffect(() => {
     const getRandomLocations = () => {
-      const shuffled = locations.sort((a, b) => 0.5 - Math.random())
-      setShuffled(shuffled)
-      console.log('This is shuffled', shuffled)
+      const shuffler = locations.sort((a, b) => 0.5 - Math.random())
+      console.log('Shuffled locations ->', shuffler)
+      setShuffled(shuffler)
     }
     getRandomLocations()
   }, [locations])
@@ -78,77 +77,55 @@ const LandingPage = () => {
           <div className="display-top-rated text-center">
             <h2 className="m-5">Discover Top Rated Spots</h2>
           </div>
-          {shuffled.slice(0, 4).map((loc) => {
-            console.log('Hello')
-            const {
-              name,
-              flag,
-              countryCode,
-              description,
-              freeparking,
-              image,
-              toilets,
-              water,
-              id
-            } = loc
-            console.log(image)
-            return (
-              <Col
-                key={id}
-                sm="6"
-                md="6"
-                lg="3"
-                xl="3"
-                className="char-card mb-4"
-              >
-                <Link className="text-decoration-none" to={`/location/${id}`}>
-                  <Card className="location-card">
-                    <div
-                      className="card-image"
-                      style={{ backgroundImage: `url(${image})` }}
-                    ></div>
-                    <Card.Body className="d-flex flex-column">
-                      <div className='location-card-header'>
-                        <h4 className='location-card-title'>{name}</h4>
-                        <p className='card-code'>{countryCode}</p>
-                      </div>
-                      <p className="card-text">{description}</p>
-                      <span></span>
-                      <div className="icon-container d-flex justify-content-evenly">
-                        <div className="icon">
-                          {toilets === false ? (
-                            <></>
-                          ) : (
-                            <div className="ifg" id="restroom-ifg">
-                              <GrRestroom />
-                            </div>
-                          )}
+          {shuffled ?
+            shuffled.slice(0, 4).map((loc) => {
+              const {
+                name,
+                countryCode,
+                description,
+                freeparking,
+                currency,
+                parking,
+                image,
+                toilets,
+                water,
+                id
+              } = loc
+              console.log('IDS ->', id)
+              return (
+                <Col
+                  key={id}
+                  sm="6"
+                  md="6"
+                  lg="3"
+                  xl="3"
+                  className="char-card mb-4"
+                >
+                  <Link className="text-decoration-none" to={`/locations/${id}`}>
+                    <Card className="location-card">
+                      <div
+                        className="card-image"
+                        style={{ backgroundImage: `url(${image[0]})` }}
+                      ></div>
+                      <Card.Body className="d-flex flex-column">
+                        <div className='location-card-header'>
+                          <h4 className='location-card-title'>{name}</h4>
+                          <p className='card-code'>{countryCode}</p>
                         </div>
-                        <div className="icon">
-                          {freeparking === false ? (
-                            <></>
-                          ) : (
-                            <div className="ifg" id="parking-ifg">
-                              <TbParking />
-                            </div>
-                          )}
+                        <p className="card-text">{description}</p>
+                        <span></span>
+                        <div className="icon-container d-flex justify-content-evenly">
+                          <Infographic location={loc} />
                         </div>
-                        <div className="icon">
-                          {water === false ? (
-                            <></>
-                          ) : (
-                            <div className="ifg" id="water-ifg">
-                              <MdOutlineWaterDrop />
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </Link>
-              </Col>
-            )
-          })}
+                      </Card.Body>
+                    </Card>
+                  </Link>
+                </Col>
+              )
+            })
+            :
+            <></>
+          }
         </Row>
         <Row>
           <div id="login-register" style={{ backgroundImage: `url(${login})` }}>
