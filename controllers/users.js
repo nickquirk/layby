@@ -19,3 +19,15 @@ export const getAllUsers = async (req, res) => {
     console.log(err)
   }
 }
+
+export const setProfilePic = async (req, res) => {
+  try {
+    const loggedInUser = await User.findById(req.currentUser._id)
+    if (!loggedInUser) throw new NotFound('User not found')
+    Object.assign(loggedInUser, req.body)
+    await loggedInUser.save()
+    return res.json(loggedInUser)
+  } catch (err) {
+    console.log(err)
+  }
+}

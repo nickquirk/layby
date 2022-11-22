@@ -1,7 +1,11 @@
 /* eslint-disable no-undef */
 import express from 'express'
 import { registerUser, loginUser } from '../controllers/auth.js'
-import { getUser, getAllUsers } from '../controllers/users.js'
+import { 
+  getUser, 
+  getAllUsers,
+  setProfilePic 
+} from '../controllers/users.js'
 import {
   getAllLocations,
   getSingleLocation,
@@ -41,6 +45,7 @@ router.route('/locations/:locationId/review/:reviewId')
 
 router.route('/users/:userId')
   .get(secureRoute, getUser)
+  .put(secureRoute, setProfilePic)
 
 router.route('/users')
   .get(getAllUsers)
