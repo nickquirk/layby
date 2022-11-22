@@ -5,14 +5,14 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 // imports
 import axios from 'axios'
-import { getToken } from '../common/Auth'
+import { getToken } from './Auth'
 
 
 import Col from 'react-bootstrap/Col'
 import { isAuthenticated } from './Auth'
 
 
-const ReviewField = () => {
+const ReviewInput = () => {
 
   const navigate = useNavigate()
 
@@ -32,13 +32,13 @@ const ReviewField = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log('GET TOKEN -->', getToken())
       const { data } = await axios.post(`/api/locations/${locationId}/review`, formFields, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      console.log('Success -->', data)
+      console.log('Success -->', data.reviews)
+      setFormFields({ text: '' })
       navigate(`/locations/${locationId}`)
     } catch (err) {
       console.log('hello ->', err.response.data)
@@ -75,11 +75,8 @@ const ReviewField = () => {
         :
         <></>
       }
-      <div className='current-reviews'>
-        Reviews
-      </div>
     </Col>
   )
 }
 
-export default ReviewField
+export default ReviewInput

@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 
-//React Icon Components
-
 // Bootstrap components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -13,7 +11,8 @@ import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
 // Imports
-import ReviewField from '../common/ReviewField'
+import ReviewInput from '../common/ReviewInput'
+import ReviewDisplay from '../common/ReviewDisplay'
 import Infographic from '../common/Infographic'
 import CarouselController from '../common/Carousel'
 
@@ -23,11 +22,10 @@ const LocationSinglePage = () => {
 
   // ! Location
   const { locationId } = useParams()
-  console.log('hello')
+
   // ! Execution
   useEffect(() => {
     const getLocation = async () => {
-      console.log(locationId)
       try {
         const { data } = await axios.get(`/api/locations/${locationId}`)
         setLocation(data)
@@ -64,7 +62,8 @@ const LocationSinglePage = () => {
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
-                  <ReviewField />
+                  <ReviewInput />
+                  <ReviewDisplay location={location} />
                 </Tab>
               </Tabs>
             </>

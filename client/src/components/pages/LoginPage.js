@@ -24,6 +24,7 @@ const LoginPage = () => {
     e.preventDefault()
     try {
       const { data } = await axios.post('/api/login', formFields)
+      console.log('token->', data)
       setToken(data.token)
       // navigate to home after successful login
       navigate('/')
