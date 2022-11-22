@@ -49,6 +49,7 @@ const NavBar = () => {
                   <Nav.Link as={Link} to="/register">
                     Register
                   </Nav.Link>
+                  <Nav.Link as={Link} to="/addLocation">Add your favourite Spots</Nav.Link>
                 </>
               }
             </Nav>

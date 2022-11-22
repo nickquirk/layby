@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { useEffect } from 'react'
-import axios from 'axios'
 import NavBar from './components/common/NavBar'
 import Footer from './components/common/Footer'
 import LandingPage from './components/pages/LandingPage'
@@ -11,15 +9,11 @@ import NotFound from './components/pages/NotFound'
 import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
 import UserProfilePage from './components/pages/UserProfilePage'
+import AddLocation from './components/pages/AddLocation'
+
+
 
 const App = () => {
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const { data } = await axios.get('') // * <-- replace with your endpoint
-  //     console.log(data)
-  //   }
-  //   getData()
-  // })
 
   return (
     <div className='sitewrapper'>
@@ -31,6 +25,8 @@ const App = () => {
           <Route path='/locations/:locationId' element={<LocationSinglePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
+          <Route path='/addLocation' element={<AddLocation />} />
+          {/* Just changed this to work on the profile page, will change it back :) */}
           <Route path='/profile/:id' element={<UserProfilePage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
