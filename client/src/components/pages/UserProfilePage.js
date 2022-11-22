@@ -2,6 +2,7 @@
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
@@ -21,22 +22,24 @@ const UserProfilePage = () => {
           </Col>
           <Col md="8">
             <div className='user-reviews'>
-              <h3>User Reviews</h3>
-              <ListGroup>
-                <ListGroupItem>Review 1</ListGroupItem>
-                <ListGroupItem>Review 2</ListGroupItem>
+              <h3>Your Reviews</h3>
+              <ListGroup className='ms-1'>
+                <ListGroupItem className='d-flex review-list list-group-item-action'>
+                  <div>
+                    <img className='list-group-img' src='https://tinyurl.com/5atpj5f8'></img>
+                  </div>
+                  <div className='d-flex flex-column align-items-start ms-3'>
+                    <h4>Location</h4>
+                    <p className='d-none d-sm-block'>Some paragraph text</p>
+                  </div>
+                  <div className='d-flex flex-column buttons align-self-start'>
+                    <Link className='btn'>Edit</Link>
+                    <Link className='btn'>Delete</Link>
+                  </div>
+                </ListGroupItem>
               </ListGroup>
-              <Card className='review-card sm-4'>
-                <Card.Body>
-                  <Card.Img className='card-image' variant='top' src='https://tinyurl.com/5atpj5f8'/>
-                  <Card.Title>Location Name</Card.Title>
-                  <Card.Subtitle>Country here</Card.Subtitle>
-                  <Card.Text>Review text here...</Card.Text>
-                  <Card.Link>Link to review</Card.Link>
-                </Card.Body>
-              </Card>
             </div> 
-            <div className='user-favourites'>
+            <div className='user-favourites mt-4'>
               <h3>Favourite Places</h3>
               <div className='favourite-card-container'>
                 <Row>
