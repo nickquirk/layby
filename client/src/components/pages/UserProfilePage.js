@@ -23,6 +23,7 @@ const UserProfilePage = () => {
       try {
         const { data } = await axios.get(`/api/profile/${userId}`)
         setUser(data)
+        console.log('user logged in ->', userId)
       } catch (err) {
         console.log(err)
       }
