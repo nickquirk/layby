@@ -21,7 +21,6 @@ const NavBar = () => {
 
   useEffect(() => {
     setUserId(getUserId())
-    console.log(userId)
   }, [userId])
 
 
