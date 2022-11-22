@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import express from 'express'
 import { registerUser, loginUser } from '../controllers/auth.js'
+import { getUser } from '../controllers/users.js'
 import {
   getAllLocations,
   getSingleLocation,
@@ -29,6 +30,6 @@ router.route('/locations/:locationId/review/:reviewId')
   .delete(secureRoute, deleteReview)
   .put(secureRoute, editReview)
 
-// router.route('/profile').get(secureRoute, getProfile)
+router.route('/profile').get(secureRoute, getUser)
 
 export default router

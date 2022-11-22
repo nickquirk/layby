@@ -1,7 +1,7 @@
 import { NotFound } from '../config/errors.js'
 import User from '../models/user.js'
 
-export const getProfile = async (req, res) => {
+export const getUser = async (req, res) => {
   try {
     const loggedInUser = await User.findById(req.currentUser._id).populate('createdReview')
     if (!loggedInUser) throw new NotFound('User not found')
