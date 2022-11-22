@@ -9,6 +9,8 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
 import ListGroupItem from 'react-bootstrap/esm/ListGroupItem'
+
+//Imports
 import axios from 'axios'
 
 //Custom imports 
@@ -19,27 +21,25 @@ const UserProfilePage = () => {
   const [user, setUser] = useState([])
 
   // ! Location
-  const { id } = useParams()
+  const { userId } = useParams()
 
   // ! Execution
   useEffect(() => {
-    console.log(id)
-    const getUser = async (req, res) => {
+    const getUser = async () => {
       try {
-        const { data } = await axios.get(`/api/profile/${id}`, {
+        const { data } = await axios.get(`/api/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${getToken()}`,
           },
         })
         setUser(data)
-        console.log(data)
-        console.log('user logged in ->', data._id)
+        
       } catch (err) {
         console.log(err)
       }
     }
     getUser()
-  }, [])
+  }, [userId])
 
   // ! JSX
   return (
@@ -48,10 +48,10 @@ const UserProfilePage = () => {
         <Row className='text-center'>
           <Col md="4" className='text-center'>
             <div className='user-details d-flex flex-column align-items-center'>
-              <h3>Username</h3>
+              <h3>{user.username}</h3>
               <img className='img-thumbnail profile-pic' src="https://tinyurl.com/2p8e3n27"></img>
               <Link className='btn mt-3 align-self-center'>Upload Pic</Link>
-              <textarea className='mt-3'  rows="3">User info will go here...</textarea>
+              <textarea className='mt-3'  rows="3"></textarea>
               <Link className='btn mt-3 align-self-center'>Save</Link>
             </div>
           </Col>

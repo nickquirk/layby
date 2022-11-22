@@ -50,7 +50,6 @@ const LandingPage = () => {
   useEffect(() => {
     const getRandomLocations = () => {
       const shuffler = locations.sort((a, b) => 0.5 - Math.random())
-      console.log('Shuffled locations ->', shuffler)
       setShuffled(shuffler)
     }
     getRandomLocations()
@@ -91,7 +90,6 @@ const LandingPage = () => {
                 water,
                 id
               } = loc
-              console.log('IDS ->', id)
               return (
                 <Col
                   key={id}
