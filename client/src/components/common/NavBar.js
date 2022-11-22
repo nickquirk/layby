@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 
 const NavBar = () => {
   const navigate = useNavigate()
-  const { id } = useParams()
+  const { userId } = useParams()
 
 
   return (
@@ -36,7 +36,7 @@ const NavBar = () => {
               </Nav.Link>
               {isAuthenticated() ?
                 <>
-                  <Nav.Link as={Link} to={`/profile/${id}`}>
+                  <Nav.Link as={Link} to={`/profile/${userId}`}>
                     Profile
                   </Nav.Link>
                   <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>
