@@ -23,7 +23,6 @@ const UserProfilePage = () => {
 
   // ! Execution
   useEffect(() => {
-    console.log(userId)
     const getUser = async (req, res) => {
       try {
         const { data } = await axios.get(`/api/profile/${userId}`, {
@@ -32,7 +31,6 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-        console.log(data)
         console.log('user logged in ->', data._id)
       } catch (err) {
         console.log(err)
