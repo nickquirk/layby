@@ -252,6 +252,12 @@ p {
     display: flex;
     flex-direction: row;
 
+    .single-page-name {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
     .single-page-title {
       margin: 8px;
     }
@@ -345,6 +351,24 @@ textarea {
 }
 
 
+.map-container {
+  height: 400px;
+  display: flex;
+  align-items: top;
+
+}
+
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  z-index: 5;
+  position: absolute;
+  top: 0.5;
+  left: 1;
+  margin: 12px;
+  border-radius: 4px;
+}
 
 .footer {
   background-color: white;
@@ -395,6 +419,11 @@ textarea {
 
 /* Desktop up - once gets above phone screen size of 992 then apply this */
 @media (min-width: 992px) {
+
+  .landing-page {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
 
   .container {
     max-width: 800px;
