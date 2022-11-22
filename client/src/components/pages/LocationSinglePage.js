@@ -12,7 +12,6 @@ import Tabs from 'react-bootstrap/Tabs'
 
 // Imports
 import ReviewInput from '../common/ReviewInput'
-import ReviewDisplay from '../common/ReviewDisplay'
 import Infographic from '../common/Infographic'
 import CarouselController from '../common/Carousel'
 
@@ -62,8 +61,7 @@ const LocationSinglePage = () => {
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
-                  <ReviewInput />
-                  <ReviewDisplay location={location} />
+                  <ReviewInput location={location} />
                 </Tab>
               </Tabs>
             </>
