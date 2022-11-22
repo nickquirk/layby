@@ -14,7 +14,7 @@ import { isAuthenticated } from './Auth'
 
 const ReviewField = () => {
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   // State
   const [formFields, setFormFields] = useState({
