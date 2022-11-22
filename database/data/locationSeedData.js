@@ -34,7 +34,6 @@ export default [
     nearestFuel: 3,
     nearbyActivities: 'Thermal hot springs, trecking',
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027305/Pics/Spain/Mazzaron/DSC_0925_EDIT_wmudpq.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027348/Pics/Spain/Mazzaron/DSC_0950_wbfkka.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027348/Pics/Spain/Mazzaron/DSC_0950_wbfkka.jpg']
   },
   {

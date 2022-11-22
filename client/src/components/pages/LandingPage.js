@@ -14,7 +14,8 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
 import Infographic from '../common/Infographic'
-
+import CarouselImageController from '../common/CarouselImage'
+import CarouselCardController from '../common/CarouselCard'
 const LandingPage = () => {
   const navigate = useNavigate()
 
@@ -72,59 +73,10 @@ const LandingPage = () => {
             </Button>
           </div>
         </Row>
-        <Row className="top-rated">
-          <div className="display-top-rated text-center">
-            <h2 className="m-5">Discover Top Rated Spots</h2>
-          </div>
-          {shuffled ?
-            shuffled.slice(0, 4).map((loc) => {
-              const {
-                name,
-                countryCode,
-                description,
-                freeparking,
-                currency,
-                parking,
-                image,
-                toilets,
-                water,
-                id
-              } = loc
-              return (
-                <Col
-                  key={id}
-                  sm="6"
-                  md="6"
-                  lg="3"
-                  xl="3"
-                  className="char-card mb-4"
-                >
-                  <Link className="text-decoration-none" to={`/locations/${id}`}>
-                    <Card className="location-card">
-                      <div
-                        className="card-image"
-                        style={{ backgroundImage: `url(${image[0]})` }}
-                      ></div>
-                      <Card.Body className="d-flex flex-column">
-                        <div className='location-card-header'>
-                          <h4 className='location-card-title'>{name}</h4>
-                          <p className='card-code'>{countryCode}</p>
-                        </div>
-                        <p className="card-text">{description}</p>
-                        <span></span>
-                        <div className="icon-container d-flex justify-content-evenly">
-                          <Infographic location={loc} />
-                        </div>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              )
-            })
-            :
-            <></>
-          }
-        </Row>
+        <div className="display-top-rated text-center">
+          <h2 className="m-5">Plan Your Next Adventure:</h2>
+        </div>
+        <CarouselCardController shuffled={shuffled} locations={locations} />
         <Row>
           <div id="login-register" style={{ backgroundImage: `url(${login})` }}>
             <h2 className=" m-5 text-center text-white">
@@ -156,8 +108,8 @@ const LandingPage = () => {
             <div data-mc-src="359dbd97-d501-4e1d-8a2f-8e00870bd464#instagram"></div>
           </div>
         </Row>
-      </Container>
-    </main>
+      </Container >
+    </main >
   )
 }
 
