@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 
-const CarouselController = ({ location }) => {
+const CarouselImageController = ({ location }) => {
   const [index, setIndex] = useState(0)
   const [images, setImages] = useState([])
 
@@ -39,4 +39,4 @@ const CarouselController = ({ location }) => {
   )
 }
 
-export default CarouselController
+export default CarouselImageController

@@ -13,9 +13,8 @@ import Tabs from 'react-bootstrap/Tabs'
 
 // Imports
 import ReviewInput from '../common/ReviewInput'
-import ReviewDisplay from '../common/ReviewDisplay'
 import Infographic from '../common/Infographic'
-import CarouselController from '../common/Carousel'
+import CarouselImageController from '../common/CarouselImage'
 
 const LocationSinglePage = () => {
   // ! State
@@ -47,7 +46,7 @@ const LocationSinglePage = () => {
                 <h1 className='single-page-title'>{location.name}</h1>
                 <p className='card-code'>{location.countryCode}</p>
               </div>
-              <CarouselController location={location} />
+              <CarouselImageController location={location} />
               <Infographic location={location} />
               <hr className='hr'></hr>
               <Tabs
@@ -63,8 +62,7 @@ const LocationSinglePage = () => {
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
-                  <ReviewInput />
-                  <ReviewDisplay location={location} />
+                  <ReviewInput location={location} />
                 </Tab>
               </Tabs>
             </>
