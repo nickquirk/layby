@@ -5,7 +5,7 @@ import { TbParking, TbCurrencyDirham } from 'react-icons/tb'
 
 
 const Infographic = ({ location }) => {
-
+  console.log('shuffled->', location)
   return (
     <div className='widget-container'>
       {location.currency === '£' ?
