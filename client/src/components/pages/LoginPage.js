@@ -47,12 +47,12 @@ const LoginPage = () => {
 
   return (
     <div className="hero-page text-center form-main">
-      <h1>Login</h1>
+      <h1 className="mt-5">Login</h1>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
           <input
             required
-            className="form-control"
+            className="form-control mt-3 mb-3"
             type="email"
             name="email"
             onChange={handleChange}
@@ -61,7 +61,7 @@ const LoginPage = () => {
           />
           <input
             required
-            className="form-control"
+            className="form-control mt-3 mb-5"
             type="password"
             name="password"
             onChange={handleChange}

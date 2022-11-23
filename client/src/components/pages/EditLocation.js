@@ -20,8 +20,8 @@ const EditLocation = () => {
   // Track state of following variables
   const [formFields, setFormFields] = useState({
     name: '',
-    latitude: 0,
-    longitude: 0,
+    latitude: undefined,
+    longitude: undefined,
     countryCode: '',
     currency: '',
     description: '',
@@ -29,7 +29,7 @@ const EditLocation = () => {
     freeParking: false,
     toilets: false,
     water: false,
-    nearestFuel: 0,
+    nearestFuel: undefined,
     nearbyActivities: '',
     image: ''
   })
@@ -71,7 +71,7 @@ const EditLocation = () => {
   // ! JSX
   return (
     <div className="hero-page text-center form-main">
-      <h1 className="mt-5">Edit Location</h1>
+      <h1 className="mt-5">Edit a Location</h1>
       <LocationForm 
         handleSubmit={handleSubmit} 
         formFields={formFields}

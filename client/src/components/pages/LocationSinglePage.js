@@ -81,19 +81,16 @@ const LocationSinglePage = () => {
                 fill
               >
                 <Tab eventKey="details" title="Details">
-                  <Col sm="12" md="6" className='tab-display-single-page'>
-                    <div className='info-singlepage'>
-                      <Infographic location={location} />
-                      <hr className='hr'></hr>
-                      <h2>Description</h2>
-                      <p>{location.description}</p>
-                    </div>
+                  <Col sm="12" md="6">
+                    <Infographic location={location} />
+                    {/* <hr className='hr'></hr> */}
+                    <h3 className='mt-3 mb-3'>Description</h3>
+                    <p>{location.description}</p>
                     <MapBox location={location} />
-                    <button onClick={deleteLocation} className='btn  btn-danger'>Delete</button>
-                    <button to={(`/locations/${locationId}/edit`)} className='btn  btn-warning'>Edit</button>
                   </Col>
-                  <div className='sngl-del-btn-container'>
-                    <button onClick={deleteLocation} className='btn  btn-danger' id='del-btn'>Delete</button>
+                  <div className='edit-delete-buttons d-flex justify-content-evenly'>
+                    <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 '>Delete Location</button>
+                    <button to={(`/locations/${locationId}/edit`)} className='btn  btn-warning btn-lg mt-3 mb-3'>Edit Location</button>
                   </div>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
