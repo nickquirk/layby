@@ -3,7 +3,7 @@ import User from '../models/user.js'
 
 export const getUser = async (req, res) => {
   try {
-    const loggedInUser = await User.findById(req.currentUser._id)
+    const loggedInUser = await User.findById(req.currentUser._id).populate('reviews')
     if (!loggedInUser) throw new NotFound('User not found')
     return res.json(loggedInUser)
   } catch (err) {
@@ -32,5 +32,14 @@ export const setProfilePic = async (req, res) => {
   } catch (err) {
     console.log(err.message)
     return res.status(304).json({ message: err.message })
+  }
+}
+
+export const getUserReviews = async (req, res) => {
+  try {
+    const loggedInUser = await User.findById(req.currentUser._id)
+    if (!loggedInUser) throw new NotFound('User not found')
+  } catch (err) {
+    console.log(err.message)
   }
 }

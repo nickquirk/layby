@@ -21,14 +21,13 @@ export const MapBox = ({ location }) => {
 
 
   useEffect(() => {
-    if (map.current) return
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [lng, lat],
       zoom: zoom,
     })
-  }, [lng, lat])
+  }, [])
 
   // useEffect(() => {
   //   if (!map.current) return // wait for map to initialize

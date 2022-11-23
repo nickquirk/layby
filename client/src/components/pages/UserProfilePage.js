@@ -58,6 +58,7 @@ const UserProfilePage = () => {
 
 
   const handleSubmit = async (event) => {
+    event.preventDefault()
     try {
       const { data } = await axios.put(`/api/users/${userId}`, formData, {
         headers: {
