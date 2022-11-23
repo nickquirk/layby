@@ -86,7 +86,7 @@ const UserProfilePage = () => {
           <Col md="4" className='text-center'>
             <div className='user-details d-flex flex-column align-items-center'>
               <h3>{user.username}</h3>
-              <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
+              <img className='img-thumbnail profile-pic' key={user.id} src={`${user.profileImage}`}></img>
               <UploadImage 
                 imageFormData={formData}
                 setFormData={setFormData}
