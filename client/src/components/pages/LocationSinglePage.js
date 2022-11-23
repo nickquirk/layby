@@ -1,7 +1,11 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable react/no-unknown-property */
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
+
 import axios from 'axios'
+import { getToken } from '../common/Auth.js'
+
 import { useRef } from 'react'
 import mapboxgl from '!mapbox-gl'
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWp4cmgiLCJhIjoiY2xhc29zdWM1MjUyODNxbm01c2J3ZGRvYSJ9.YwGdljVH2McOr7cavCOd7Q'
@@ -12,6 +16,7 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
+import Button from 'react-bootstrap/Button'
 
 // Imports
 import ReviewInput from '../common/ReviewInput'
@@ -27,6 +32,7 @@ const LocationSinglePage = () => {
 
   // ! Location
   const { locationId } = useParams()
+  const navigate = useNavigate()
 
   // ! Execution
   useEffect(() => {
@@ -41,6 +47,18 @@ const LocationSinglePage = () => {
     getLocation()
   }, [locationId])
 
+
+  const deleteLocation = async (e) => {
+    try {
+      const response = await axios.delete(`/api/locations/${locationId}`, { headers: {  Authorization: `Bearer ${ getToken()}`,
+      }, 
+      })
+      navigate('/api/locations')
+      console.log(response)
+    } catch (err){
+      console.log(err)
+    }
+  }
 
 
   return (
@@ -76,6 +94,7 @@ const LocationSinglePage = () => {
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
                   <ReviewInput location={location} />
+                  <button OnClick={deleteLocation} className='btn  btn-danger'>Delete</button>
                 </Tab>
               </Tabs>
             </>

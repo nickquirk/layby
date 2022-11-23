@@ -36,7 +36,7 @@ router.route('/locations/:locationId')
   .get(getSingleLocation)
   // ! add in secureRoute after testing
   .put(updateLocation)
-  .delete(secureRoute, deleteLocation)
+  .delete(deleteLocation)
 
 router.route('/register')
   .post(registerUser)
