@@ -30,7 +30,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             value={formFields.name}
           />
           {errors && errors.name && <small className='text-danger'>{errors.name}</small>}
-          <label htmlFor="latitude">Latitude (e.g. 51.510357):<span> *</span></label>
+          <label className="text-left justify-content-start" htmlFor="latitude">Latitude (e.g. 51.510357):<span> *</span></label>
           <input
             required
             className="form-control mt-1 mb-3 "
@@ -42,7 +42,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             value={formFields.latitude}
           />
           {errors && errors.latitude && <small className='text-danger'>{errors.latitude}</small>}
-          <label htmlFor="longitude">Longitude (e.g. -0.116773):<span> *</span></label>
+          <label className="text-left justify-content-start" htmlFor="longitude">Longitude (e.g. -0.116773):<span> *</span></label>
           <input
             required
             className="form-control mt-1 mb-3 "
@@ -98,39 +98,43 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
           />
           {errors && errors.description && <small className='text-danger'>{errors.description}</small>}
           <div className="radio-buttons d-flex flex-column">
-            <label className='radio-buttons-legend mb-2 '>Select all that apply:</label>
+            <label className='radio-buttons-legend mb-2 text-left justify-content-start"'>Select all that apply:</label>
             <div className="all-radion-buttons d-flex flex-row justify-content-around">
               <div className="top-radio-buttons ">
-                <fieldset>
-                  <div>
-                    <label htmlFor="parking">Parking</label>
-                    <input type="radio" id="parking" name="parking" value={formFields.parking} />
+                <fieldset >
+                  <div className="radio-buttons-large">
+                    <div className="button-large">
+                      <label htmlFor="parking">Parking</label>
+                      <input type="radio" id="parking" name="parking" value={formFields.parking} />
+                    </div>
+                    {errors && errors.parking && <small className='text-danger'>{errors.parking}</small>}
+                    <div className="button-large">
+                      <label htmlFor="toilets">Toilets</label>
+                      <input type="radio" id="toilets" name="toilets" value={formFields.toilets} />
+                    </div>
+                    {errors && errors.freeParking && <small className='text-danger'>{errors.freeParking}</small>}
                   </div>
-                  {errors && errors.parking && <small className='text-danger'>{errors.parking}</small>}
-                  <div>
-                    <label htmlFor="toilets">Toilets</label>
-                    <input type="radio" id="toilets" name="toilets" value={formFields.toilets} />
-                  </div>
-                  {errors && errors.freeParking && <small className='text-danger'>{errors.freeParking}</small>}
                 </fieldset>
               </div>
               <div className="bottom-radio-buttons">
                 <fieldset>
-                  <div>
-                    <label htmlFor="freeParking">Free Parking</label>
-                    <input type="radio" id="freeParking" name="freeParking" value={formFields.freeParking} />
+                  <div className="radio-buttons-large">
+                    <div className="button-large">
+                      <label htmlFor="freeParking">Free Parking</label>
+                      <input type="radio" id="freeParking" name="freeParking" value={formFields.freeParking} />
+                    </div>
+                    {errors && errors.toilets && <small className='text-danger'>{errors.toilets}</small>}
+                    <div className="button-large">
+                      <label htmlFor="water">Water</label>
+                      <input type="radio" id="water" name="water" value={formFields.water} />
+                    </div>
+                    {errors && errors.water && <small className='text-danger'>{errors.water}</small>}
                   </div>
-                  {errors && errors.toilets && <small className='text-danger'>{errors.toilets}</small>}
-                  <div>
-                    <label htmlFor="water">Water</label>
-                    <input type="radio" id="water" name="water" value={formFields.water} />
-                  </div>
-                  {errors && errors.water && <small className='text-danger'>{errors.water}</small>}
                 </fieldset>
               </div>
             </div>
           </div>
-          <label className="mt-2" htmlFor="fuel">Nearest Fuel Station(km):<span> *</span></label>
+          <label id="fuel"className="mt-2 mb-2" htmlFor="fuel">Nearest Fuel (km):<span> *</span></label>
           <input type="number" id="fuel" name="fuel" min="1" max="100" value={formFields.fuel} />
           {errors && errors.fuel && <small className='text-danger'>{errors.fuel}</small>}
           <input

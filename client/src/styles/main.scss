@@ -121,24 +121,23 @@ $secondary: #be3144;
     width: 80%;
   }
 
-
-
   input {
     width: 100%;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: hidden;
     background-color: white;
     border-color: 1px grey solid !important;
+
+    select {
+      border-color: 1px grey solid !important;
+    }
   }
 
-  select {
+  #fuel {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
     border-color: 1px grey solid !important;
-    border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: hidden;
+
   }
 
   .no-outline:focus {
@@ -147,7 +146,6 @@ $secondary: #be3144;
 
   // border: 1px solid $secondary;
   // border-radius: 4px;
-
 
   span {
     color: #be3144;
@@ -158,12 +156,17 @@ $secondary: #be3144;
     margin-top: 30px;
     align-self: flex-end;
   }
+
+
 }
 
 legend {
   font-weight: 10px;
 }
 
+label {
+  text-align: left;
+}
 
 // User profile page
 .profile-page-container {
@@ -485,6 +488,10 @@ textarea {
 /* Desktop up - once gets above phone screen size of 992 then apply this */
 @media (min-width: 992px) {
 
+
+
+
+
   .landing-page {
     margin-left: 100px;
     margin-right: 100px;
@@ -507,6 +514,9 @@ textarea {
     max-height: 500px;
   }
 
+  #location-form {
+    width: 500px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -514,6 +524,24 @@ textarea {
   .container {
     max-width: 1000px;
     padding: 0px !important;
+  }
+
+  .radio-buttons-large {
+    display: flex;
+  }
+
+  #location-form {
+    width: 800px;
+  }
+
+  .button-large {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+  }
+
+  #fuel {
+    margin-top: 30px;
   }
 }
 

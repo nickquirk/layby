@@ -52,7 +52,7 @@ const LoginPage = () => {
         <form onSubmit={handleSubmit}>
           <input
             required
-            className="form-control"
+            className="form-control mt-3 mb-3"
             type="email"
             name="email"
             onChange={handleChange}
@@ -61,7 +61,7 @@ const LoginPage = () => {
           />
           <input
             required
-            className="form-control"
+            className="form-control mt-3 mb-5"
             type="password"
             name="password"
             onChange={handleChange}

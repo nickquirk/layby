@@ -71,7 +71,7 @@ const EditLocation = () => {
   // ! JSX
   return (
     <div className="hero-page text-center form-main">
-      <h1 className="mt-5">Edit Location</h1>
+      <h1 className="mt-5">Edit a Location</h1>
       <LocationForm 
         handleSubmit={handleSubmit} 
         formFields={formFields}

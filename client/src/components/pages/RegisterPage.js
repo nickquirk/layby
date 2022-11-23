@@ -54,7 +54,7 @@ const RegisterPage = () => {
         <form onSubmit={handleSubmit}>
           <input 
             required 
-            className='form-control' 
+            className='form-control mt-3 mb-3' 
             type="text" 
             name="username" 
             onChange={handleChange} 
@@ -72,7 +72,7 @@ const RegisterPage = () => {
           />
           <input 
             required
-            className='form-control' 
+            className='form-control mt-3 mb-3' 
             type="password" 
             name="password" 
             onChange={handleChange} 
@@ -81,7 +81,7 @@ const RegisterPage = () => {
           />
           <input 
             required
-            className='form-control' 
+            className='form-control mb-5' 
             type="password" 
             name="passwordConfirmation" 
             onChange={handleChange} 

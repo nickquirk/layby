@@ -60,7 +60,7 @@ const AddLocation = () => {
 
   return (
     <div className="hero-page text-center form-main">
-      <h1 className="mt-5">Add Location</h1>
+      <h1 className="mt-5">Add a Location</h1>
       <LocationForm
         handleSubmit={handleSubmit}
         formFields={formFields}
