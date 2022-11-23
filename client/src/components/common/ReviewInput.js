@@ -16,34 +16,13 @@ import Col from 'react-bootstrap/Col'
 const ReviewInput = ({ location, setLocation }) => {
 
   const { locationId } = useParams()
-  const userId = getUserId()
 
-  // ! State
-  // const [reviews, setReviews] = useState([])
   const [formFields, setFormFields] = useState({
     text: '',
     rating: '',
   })
   const [errors, setErrors] = useState(null)
 
-
-  // ! Submit Review Functions
-  // useEffect(() => {
-  //   const getUser = async () => {
-  //     try {
-  //       const { data } = await axios.get(`/api/users/${userId}`, {
-  //         headers: {
-  //           Authorization: `Bearer ${getToken()}`,
-  //         },
-  //       })
-  //       const username = data.username
-  //       setFormFields({ ...formFields, username: username })
-  //     } catch (err) {
-  //       console.log('Get my token error->', err)
-  //     }
-  //   }
-  //   getUser()
-  // }, [])
 
 
   const handleSubmit = async (e) => {
@@ -71,12 +50,6 @@ const ReviewInput = ({ location, setLocation }) => {
     setFormFields(updatedFormFields)
     setErrors({ ...errors, [e.target.name]: '', message: '' })
   }
-
-
-  // ! Display Review Executions
-  // useEffect(() => {
-  //   setReviews(location.reviews)
-  // }, [location])
 
 
 
