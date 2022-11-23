@@ -121,9 +121,36 @@ $secondary: #be3144;
     width: 80%;
   }
 
+
+
   input {
-    margin-bottom: 15px;
     width: 100%;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    background-color: white;
+    border-color: 1px grey solid !important;
+  }
+
+  select {
+    border-color: 1px grey solid !important;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+  }
+
+  .no-outline:focus {
+    outline: none;
+  }
+
+  // border: 1px solid $secondary;
+  // border-radius: 4px;
+
+
+  span {
+    color: #be3144;
   }
 
   .btn {
@@ -131,6 +158,10 @@ $secondary: #be3144;
     margin-top: 30px;
     align-self: flex-end;
   }
+}
+
+legend {
+  font-weight: 10px;
 }
 
 
@@ -394,6 +425,21 @@ textarea {
   margin: 12px;
   border-radius: 4px;
 }
+
+// location form (add and edit locations)
+// #location-form {
+// .form{
+//   border-color: $secondary;
+// }
+
+
+
+// }
+
+
+
+
+
 
 
 

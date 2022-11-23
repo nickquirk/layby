@@ -88,7 +88,7 @@ const RegisterPage = () => {
             placeholder="Confirm password *"
             value={formFields.passwordConfirmation} 
           />
-          <button className='btn btn-main'>Submit</button>
+          <button to={'/login'} className="btn btn-danger btn-lg mt-3 mb-3">Register</button>
         </form>
       </div>
     </div>
