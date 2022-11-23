@@ -20,6 +20,7 @@ import UploadImage from '../../helpers/UploadImage.js'
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
+  const [profileImage, setProfileImage] = useState()
   const [ formData, setFormData ] = useState({
     profileImage: '',
     userBio: '',
@@ -49,7 +50,7 @@ const UserProfilePage = () => {
       }
     }
     getUser()
-  }, [userId, formData])
+  }, [userId])
 
   const handleChange = async (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
@@ -63,12 +64,19 @@ const UserProfilePage = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
+      setProfileImage(user.profileImage)
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => console.log(formData))
+
+  useEffect(() => {
+    console.log('profile image updated')
+  }, [profileImage])
+
+
 
   // ! JSX
   return (
