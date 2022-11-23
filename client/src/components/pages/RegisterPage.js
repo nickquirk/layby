@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import RegisterImage from '../images/Van-Login-Image.jpeg'
+
 //TODO
 // Error handling
 // Display errors
@@ -50,7 +50,7 @@ const RegisterPage = () => {
   return (
     <div className='register-page-container'>
       <div className='register-login-image-container'><img
-        src={RegisterImage}
+        src=""
         width="400"
         height="400"
         className="register-login-image"
