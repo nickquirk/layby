@@ -80,14 +80,14 @@ const ReviewInput = ({ location, setLocation }) => {
         <></>
       }
       <>
-        <h1 className='community-reviews'>Community Reviews:</h1>
+        <h3 className='community-reviews mb-3'>Community Reviews</h3>
         {location ? location.reviews.map(rev => {
           const { _id } = rev
           console.log('REv->', rev.owner.username)
           return (
             <div className='review-display' key={_id}>
               <h4>{rev.owner.username}</h4>
-              <span>Rating: {rev.rating} /10</span>
+              <span>Rating:{rev.rating} /10</span>
               <p>{rev.text}</p>
             </div>
           )

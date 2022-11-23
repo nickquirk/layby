@@ -49,7 +49,7 @@ const RegisterPage = () => {
   // Display register form 
   return (
     <div className='hero-page text-center form-main'>
-      <h1>Register</h1>
+      <h1 className="mt-5">Register</h1>
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
           <input 

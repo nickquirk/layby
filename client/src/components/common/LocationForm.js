@@ -26,11 +26,11 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             name="name"
             id="name"
             onChange={handleChange}
-            placeholder="Location name*"
+            placeholder="Location name *"
             value={formFields.name}
           />
           {errors && errors.name && <small className='text-danger'>{errors.name}</small>}
-          <label className="text-left justify-content-start" htmlFor="latitude">Latitude (e.g. 51.510357):<span> *</span></label>
+          {/* <label className="text-left justify-content-start" htmlFor="latitude">Latitude (e.g. 51.510357):<span> *</span></label> */}
           <input
             required
             className="form-control mt-1 mb-3 "
@@ -38,11 +38,11 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             name="latitude"
             id="latitude"
             onChange={handleChange}
-            placeholder="Latitude* e.g. 51.510357 "
+            placeholder="Latitude * e.g. 51.510357 "
             value={formFields.latitude}
           />
           {errors && errors.latitude && <small className='text-danger'>{errors.latitude}</small>}
-          <label className="text-left justify-content-start" htmlFor="longitude">Longitude (e.g. -0.116773):<span> *</span></label>
+          {/* <label className="text-left justify-content-start" htmlFor="longitude">Longitude (e.g. -0.116773):<span> *</span></label> */}
           <input
             required
             className="form-control mt-1 mb-3 "
@@ -50,7 +50,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             id="longitude"
             name="longitude"
             onChange={handleChange}
-            placeholder="Longitude* "
+            placeholder="Longitude * e.g. -0.116773"
             value={formFields.longitude}
           />
           {errors && errors.longitude && <small className='text-danger'>{errors.longitude}</small>}
@@ -62,7 +62,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             className="dropdown-addLoc "
             value={formFields.countryCode}
           >
-            <option value="All">Select country:<span> *</span></option>
+            <option value="All">Select country *</option>
             <option value="DE">Germany 🇩🇪</option>
             <option value="MA">Morocco 🇲🇦</option>
             <option value="PT">Portugal 🇵🇹</option>
@@ -78,9 +78,9 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             className="dropdown-addLoc mt-3 mb-3 text-center"
             value={formFields.currency}
           >
-            <option value="All">Select currency<span> *</span></option>
+            <option value="All">Select currency *</option>
             <option value="Euro">€ Euro</option>
-            <option value="GBP">£ GBP</option>
+            <option value="GBP">£ Pound</option>
             <option value="PT">Dirham</option>
           </select>
           {errors && errors.currency && <small className='text-danger'>{errors.currency}</small>}
@@ -134,8 +134,16 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
               </div>
             </div>
           </div>
-          <label id="fuel"className="mt-2 mb-2" htmlFor="fuel">Nearest Fuel (km):<span> *</span></label>
-          <input type="number" id="fuel" name="fuel" min="1" max="100" value={formFields.fuel} />
+          <input
+            required
+            className="form-control mt-3 mb-3 "
+            type="number"
+            name="fuel"
+            id="fuel"
+            onChange={handleChange}
+            placeholder="Nearest fuel* (km) "
+            value={formFields.fuel}
+          />
           {errors && errors.fuel && <small className='text-danger'>{errors.fuel}</small>}
           <input
             className="form-control mt-3 mb-3"
@@ -143,7 +151,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             name="nearbyActivities"
             id="nearbyActivities"
             onChange={handleChange}
-            placeholder="Nearby activities"
+            placeholder="Nearby activities e.g. Hiking, swimming..."
             value={formFields.nearbyActivities}
           />
           {errors && errors.nearbyActivities && <small className='text-danger'>{errors.nearbyActivities}</small>}
@@ -154,7 +162,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             name="image"
             id="image"
             onChange={handleChange}
-            placeholder="Image URL*  e.g https://..."
+            placeholder="Image URL*  e.g. https://..."
             value={formFields.image}
           />
           {errors && errors.image && <small className='text-danger'>{errors.image}</small>}

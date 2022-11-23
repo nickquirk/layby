@@ -46,11 +46,8 @@ const CarouselCardController = ({ shuffled, locations }) => {
                       className="char-card mb-4"
                     >
                       <Link className="text-decoration-none" to={`/locations/${id}`}>
-                        <Card className="location-card">
-                          <div
-                            className="card-image"
-                            style={{ backgroundImage: `url(${image[0]})` }}
-                          ></div>
+                        <Card className="landing-location-card d-flex">
+                          <div className="landing-card-image" style={{ backgroundImage: `url(${image[0]})` }}></div>
                           {/* <CarouselImageController location={loc} /> */}
                           <Card.Body className="d-flex flex-column">
                             <div className='location-card-header'>
