@@ -76,7 +76,7 @@ const LocationMultiPage = () => {
                           <h4 className='location-card-title'>{name}</h4>
                           <p className='card-code'>{countryCode}</p>
                         </div>
-                        <p className="card-text">{description}</p>
+                        {/* <p className="card-text">{description}</p> */}
                         <span></span>
                         <div className="icon-container d-flex justify-content-evenly">
                           <div className="icon">
