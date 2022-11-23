@@ -18,7 +18,7 @@ import ReviewInput from '../common/ReviewInput'
 import Infographic from '../common/Infographic'
 import CarouselImageController from '../common/CarouselImage'
 import MapBox from '../common/MapBox'
-
+import { getToken } from '../common/Auth'
 
 
 const LocationSinglePage = () => {
