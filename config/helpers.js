@@ -37,6 +37,9 @@ export const findReview = async (req, _res, location) => {
 export const findAllLocations = async (req, _res) => {
   try {
     const locations = await VanSpot.find()
+    for (const location of locations) {
+      await location.populate('locations.reviews.owner')
+    }
     const filteredLocations = locations.map(loc => {
       return loc.locations
     })

@@ -23,7 +23,7 @@ import { getToken } from '../common/Auth'
 
 const LocationSinglePage = () => {
   // ! State
-  const [location, setLocation] = useState([])
+  const [location, setLocation] = useState(null)
 
   // ! Location
   const { locationId } = useParams()
@@ -87,11 +87,11 @@ const LocationSinglePage = () => {
                     <h2>Description</h2>
                     <p>{location.description}</p>
                     <MapBox location={location} />
+                    <button onClick={deleteLocation} className='btn  btn-danger'>Delete</button>
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
-                  <ReviewInput location={location} />
-                  <button OnClick={deleteLocation} className='btn  btn-danger'>Delete</button>
+                  <ReviewInput location={location} setLocation={setLocation} />
                 </Tab>
               </Tabs>
             </>
