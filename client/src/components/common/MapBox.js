@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useState, useEffect } from 'react'
 import mapboxgl from '!mapbox-gl'
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWp4cmgiLCJhIjoiY2xhc29zdWM1MjUyODNxbm01c2J3ZGRvYSJ9.YwGdljVH2McOr7cavCOd7Q'
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_AUTH_KEY
 
 
 export const MapBox = ({ location }) => {
