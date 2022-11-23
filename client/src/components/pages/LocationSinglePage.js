@@ -81,14 +81,18 @@ const LocationSinglePage = () => {
                 fill
               >
                 <Tab eventKey="details" title="Details">
-                  <Col sm="12" md="6">
-                    <Infographic location={location} />
-                    <hr className='hr'></hr>
-                    <h2>Description</h2>
-                    <p>{location.description}</p>
+                  <Col sm="12" md="6" className='tab-display-single-page'>
+                    <div className='info-singlepage'>
+                      <Infographic location={location} />
+                      <hr className='hr'></hr>
+                      <h2>Description</h2>
+                      <p>{location.description}</p>
+                    </div>
                     <MapBox location={location} />
-                    <button onClick={deleteLocation} className='btn  btn-danger'>Delete</button>
                   </Col>
+                  <div className='sngl-del-btn-container'>
+                    <button onClick={deleteLocation} className='btn  btn-danger' id='del-btn'>Delete</button>
+                  </div>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
                   <ReviewInput location={location} setLocation={setLocation} />

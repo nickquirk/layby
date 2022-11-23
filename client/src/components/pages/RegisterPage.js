@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-
+import RegisterImage from '../images/Van-Login-Image.jpeg'
 //TODO
 // Error handling
 // Display errors
@@ -13,7 +13,7 @@ const RegisterPage = () => {
 
   // ! State 
   // Track state of following variables
-  const [ formFields, setFormFields ] = useState({
+  const [formFields, setFormFields] = useState({
     username: '',
     email: '',
     password: '',
@@ -48,48 +48,57 @@ const RegisterPage = () => {
   // ! JSX
   // Display register form 
   return (
-    <div className='hero-page text-center form-main'>
-      <h1>Register</h1>
-      <div className='form-container'>
-        <form onSubmit={handleSubmit}>
-          <input 
-            required 
-            className='form-control' 
-            type="text" 
-            name="username" 
-            onChange={handleChange} 
-            placeholder="Username *"
-            value={formFields.username} 
-          />
-          <input 
-            required
-            className='form-control' 
-            type="email" 
-            name="email" 
-            onChange={handleChange} 
-            placeholder="Email *"
-            value={formFields.email} 
-          />
-          <input 
-            required
-            className='form-control' 
-            type="password" 
-            name="password" 
-            onChange={handleChange} 
-            placeholder="Password *"
-            value={formFields.password} 
-          />
-          <input 
-            required
-            className='form-control' 
-            type="password" 
-            name="passwordConfirmation" 
-            onChange={handleChange} 
-            placeholder="Confirm password *"
-            value={formFields.passwordConfirmation} 
-          />
-          <button className='btn btn-main'>Submit</button>
-        </form>
+    <div className='register-page-container'>
+      <div className='register-login-image-container'><img
+        src={RegisterImage}
+        width="400"
+        height="400"
+        className="register-login-image"
+        alt="Register/Login Page Image"
+      /></div>
+      <div className='hero-page text-center form-main'>
+        <h1>Register</h1>
+        <div className='form-container'>
+          <form onSubmit={handleSubmit}>
+            <input
+              required
+              className='form-control'
+              type="text"
+              name="username"
+              onChange={handleChange}
+              placeholder="Username *"
+              value={formFields.username}
+            />
+            <input
+              required
+              className='form-control'
+              type="email"
+              name="email"
+              onChange={handleChange}
+              placeholder="Email *"
+              value={formFields.email}
+            />
+            <input
+              required
+              className='form-control'
+              type="password"
+              name="password"
+              onChange={handleChange}
+              placeholder="Password *"
+              value={formFields.password}
+            />
+            <input
+              required
+              className='form-control'
+              type="password"
+              name="passwordConfirmation"
+              onChange={handleChange}
+              placeholder="Confirm password *"
+              value={formFields.passwordConfirmation}
+            />
+            <button className='btn btn-main'>Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   )

@@ -15,7 +15,7 @@ $secondary: #be3144;
   background-color: white;
 }
 
-
+// NavBar
 .navbar {
   background-color: whitesmoke;
 
@@ -43,6 +43,8 @@ $secondary: #be3144;
   color: black;
 }
 
+
+// Landing Page
 .landing-page {
   min-height: 100vh;
 
@@ -91,7 +93,7 @@ $secondary: #be3144;
   }
 }
 
-
+// Forms + Register/Login Page
 .form-main {
   display: flex;
   flex-direction: column;
@@ -99,31 +101,43 @@ $secondary: #be3144;
   background-color: white;
 }
 
-.form-container {
+.register-page-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px;
-  width: 300px;
-  padding: 40px 10px 20px 10px;
-  border-radius: 18px;
-  background-color: whitesmoke;
+  justify-content: center;
+  flex: 1;
+  margin-top: 45px;
+  box-sizing: border-box;
 
-  form {
-    width: 80%;
+  .register-login-image-container {
+    display: none;
   }
 
-  input {
-    margin-bottom: 15px;
-    width: 100%;
-  }
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+    width: 300px;
+    padding: 40px 10px 20px 10px;
+    border-radius: 18px;
+    background-color: whitesmoke;
 
-  .btn {
-    width: 60%;
-    // background-color: bisque;
-    margin-top: 30px;
+    form {
+      width: 80%;
+    }
+
+    input {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .btn {
+      width: 60%;
+      margin-top: 30px;
+    }
   }
 }
+
 
 
 // User profile page
@@ -332,6 +346,13 @@ hr {
   margin-bottom: 12px;
 }
 
+.sngl-del-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .review-form {
   display: flex;
 
@@ -341,9 +362,26 @@ hr {
   }
 }
 
+
+// Buttons
 .btn {
   background-color: bisque;
   align-self: flex-end;
+}
+
+#del-btn {
+  background-color: $secondary;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 70px;
+  padding-right: 70px;
+  border-radius: 5px;
+}
+
+#del-btn:hover {
+  background-color: white;
+  color: $secondary;
 }
 
 textarea {
@@ -355,7 +393,7 @@ textarea {
   height: 400px;
   display: flex;
   align-items: top;
-
+  width: 800px;
 }
 
 .sidebar {
@@ -372,10 +410,13 @@ textarea {
 
 .footer {
   background-color: white;
-  // position: absolute;
-  // bottom: 0;
-  // width: 100%;
-  // height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
 }
 
 @media (min-width: 576px) {
@@ -415,6 +456,25 @@ textarea {
       }
     }
   }
+
+  .tab-display-single-page {
+    display: flex;
+
+    .info-single-page {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .map-display-container {
+      display: flex;
+      width: 400px;
+
+
+      .map-container {
+        width: 800px;
+      }
+    }
+  }
 }
 
 /* Desktop up - once gets above phone screen size of 992 then apply this */
@@ -442,6 +502,12 @@ textarea {
     max-height: 500px;
   }
 
+
+  .register-login-image-container {
+    display: flex;
+    // min-width: 400px;
+    // margin: 30px 10px 150px;
+  }
 }
 
 @media (min-width: 1200px) {
