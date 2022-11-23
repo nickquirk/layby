@@ -30,6 +30,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             value={formFields.name}
           />
           {errors && errors.name && <small className='text-danger'>{errors.name}</small>}
+          <label htmlFor="latitude">Latitude (e.g. 51.510357):<span> *</span></label>
           <input
             required
             className="form-control"
@@ -41,6 +42,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             value={formFields.latitude}
           />
           {errors && errors.latitude && <small className='text-danger'>{errors.latitude}</small>}
+          <label htmlFor="longitude">Longitude (e.g. -0.116773):<span> *</span></label>
           <input
             required
             className="form-control"
@@ -48,7 +50,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             id="longitude"
             name="longitude"
             onChange={handleChange}
-            placeholder="Longitude* e.g. -0.116773"
+            placeholder="Longitude* "
             value={formFields.longitude}
           />
           {errors && errors.longitude && <small className='text-danger'>{errors.longitude}</small>}
@@ -60,7 +62,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             className="dropdown-addLoc"
             value={formFields.countryCode}
           >
-            <option value="All">Select country:</option>
+            <option value="All">Select country:<span> *</span></option>
             <option value="DE">Germany 🇩🇪</option>
             <option value="MA">Morocco 🇲🇦</option>
             <option value="PT">Portugal 🇵🇹</option>
@@ -98,7 +100,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
           <fieldset>
             <legend>Select all that apply:</legend>
             <div>
-              <label htmlFor="parking">Parking<span> *</span></label>
+              <label htmlFor="parking">Parking</label>
               <input type="radio" id="parking" name="parking" value={formFields.parking} />
             </div>
             {errors && errors.parking && <small className='text-danger'>{errors.parking}</small>}
@@ -108,12 +110,12 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             </div>
             {errors && errors.freeParking && <small className='text-danger'>{errors.freeParking}</small>}
             <div>
-              <label htmlFor="toilets">Toilet Facilities<span> *</span></label>
+              <label htmlFor="toilets">Toilet Facilities</label>
               <input type="radio" id="toilets" name="toilets" value={formFields.toilets} />
             </div>
             {errors && errors.toilets && <small className='text-danger'>{errors.toilets}</small>}
             <div>
-              <label htmlFor="water">Water Available<span> *</span></label>
+              <label htmlFor="water">Water Available</label>
               <input type="radio" id="water" name="water" value={formFields.water} />
             </div>
             {errors && errors.water && <small className='text-danger'>{errors.water}</small>}
@@ -145,7 +147,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
           {/* Generic Message Error */}
           {errors && errors.message && <small className='text-danger'>{errors.message}</small>}
           {/* <Button type="button" className="btn  btn-lg mt-5 mb-4" onClick={() => handleSubmit()}>Submit</Button> */}
-          <button to={'/'} className="btn btn-main">Submit</button>
+          <button to={'/'} className="btn btn-danger btn-lg mt-3 mb-3">Submit</button>
         </form>
       </div>
     </>

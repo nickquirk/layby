@@ -68,9 +68,7 @@ const LoginPage = () => {
             placeholder="Password *"
             value={formFields.password}
           />
-          <button to={'/'} className="btn btn-main">
-            Login
-          </button>
+          <button to={'/'} className="btn btn-danger btn-lg mt-3 mb-3">Login</button>
         </form>
       </div>
     </div>

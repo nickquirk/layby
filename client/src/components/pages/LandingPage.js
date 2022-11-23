@@ -66,7 +66,7 @@ const LandingPage = () => {
             style={{ backgroundImage: `url(${van})` }}
           >
             <Button
-              className="btn  btn-lg mt-3 mb-3"
+              className="btn btn-danger btn-lg mt-3 mb-3"
               onClick={() => navigateToLocationIndex()}
             >
               Find a place to stay
@@ -88,14 +88,14 @@ const LandingPage = () => {
             >
               <Button
                 type="button"
-                className="btn btn-lg mt-5 mb-4"
+                className="btn btn-danger btn-lg mt-3 mb-3"
                 onClick={() => navigateToLogin()}
               >
                 Login
               </Button>
               <Button
                 type="button"
-                className="btn  btn-lg mt-5 mb-4"
+                className="btn btn-danger btn-lg mt-3 mb-3"
                 onClick={() => navigateToRegister()}
               >
                 Register

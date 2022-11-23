@@ -70,7 +70,7 @@ const EditLocation = () => {
 
   // ! JSX
   return (
-    <main className="form-page">
+    <div className="hero-page text-center form-main">
       <h1>Edit Location</h1>
       <LocationForm 
         handleSubmit={handleSubmit} 
@@ -80,7 +80,7 @@ const EditLocation = () => {
         setErrors={setErrors}
         formName="Edit Location" 
       />
-    </main>
+    </div>
   )
 }
 

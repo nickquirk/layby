@@ -88,6 +88,7 @@ const LocationSinglePage = () => {
                     <p>{location.description}</p>
                     <MapBox location={location} />
                     <button onClick={deleteLocation} className='btn  btn-danger'>Delete</button>
+                    <button to={(`/locations/${locationId}/edit`)} className='btn  btn-warning'>Edit</button>
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
