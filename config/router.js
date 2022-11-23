@@ -24,20 +24,12 @@ const router = express.Router()
 
 router.route('/locations')
   .get(getAllLocations)
-  // ! add in secureRoute after testing
-  .post(secureRoute, addLocation)//i think this is the correct route for adding
-
-//router.route('/locations/add').post(addLocation)
-
-// router.route('/:locationId/edit').put( updateLocation)
-
-// router.route('/:locationId/deleteLocation').delete( deleteLocation)
+  .post(secureRoute, addLocation)
 
 router.route('/locations/:locationId')
   .get(getSingleLocation)
-  // ! add in secureRoute after testing
-  .put(updateLocation)
-  .delete(deleteLocation)
+  .put(secureRoute, updateLocation)
+  .delete(secureRoute, deleteLocation)
 
 router.route('/register')
   .post(registerUser)

@@ -50,7 +50,7 @@ const LocationSinglePage = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      navigate('/api/locations')
+      navigate('/')
       console.log(response)
     } catch (err) {
       console.log(err)
@@ -87,11 +87,11 @@ const LocationSinglePage = () => {
                     <h2>Description</h2>
                     <p>{location.description}</p>
                     <MapBox location={location} />
+                    <button onClick={deleteLocation} className='btn  btn-danger'>Delete</button>
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
                   <ReviewInput location={location} />
-                  <button OnClick={deleteLocation} className='btn  btn-danger'>Delete</button>
                 </Tab>
               </Tabs>
             </>
