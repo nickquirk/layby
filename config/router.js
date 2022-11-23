@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
 import express from 'express'
 import { registerUser, loginUser } from '../controllers/auth.js'
-import { 
-  getUser, 
+import {
+  getUser,
   getAllUsers,
-  setProfilePic 
+  setProfilePic
 } from '../controllers/users.js'
 import {
   getAllLocations,
@@ -23,8 +23,8 @@ const router = express.Router()
 
 router.route('/locations')
   .get(getAllLocations)
-// ! add in secureRoute after testing
-  .post(addLocation)//i think this is the correct route for adding
+  // ! add in secureRoute after testing
+  .post(secureRoute, addLocation)//i think this is the correct route for adding
 
 //router.route('/locations/add').post(addLocation)
 

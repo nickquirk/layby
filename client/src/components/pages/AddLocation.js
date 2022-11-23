@@ -26,7 +26,7 @@ const AddLocation = () => {
     currency: '',
     description: '',
     parking: true,
-    freeParking: false,
+    freeparking: false,
     toilets: false,
     water: false,
     nearestFuel: 0,
@@ -34,7 +34,7 @@ const AddLocation = () => {
     image: ''
   })
 
-  const [ errors, setErrors ] = useState(null)
+  const [errors, setErrors] = useState(null)
 
   // ! Execution
   // send off form data to API
@@ -43,9 +43,13 @@ const AddLocation = () => {
     try {
       console.log('FORM FIELDS', formFields)
       console.log('GET TOKEN ->', getToken())
-      const { locationId } = await axios.post('/api/locations', formFields, { headers: {  Authorization: `Bearer ${getToken()}`, }, })
-      console.log('SUCCESS -->', locationId)
-      navigate(`/locations/${locationId}`)
+      await axios.post('/api/locations/', formFields, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      // console.log('SUCCESS -->', locationId)
+      // navigate(`/locations/${locationId}`)
     } catch (err) {
       console.log('hello ->', err.response.data)
       setErrors(err.response.data)
@@ -57,13 +61,13 @@ const AddLocation = () => {
   return (
     <div className="hero-page text-center form-main">
       <h1>Add Location</h1>
-      <LocationForm 
-        handleSubmit={handleSubmit} 
+      <LocationForm
+        handleSubmit={handleSubmit}
         formFields={formFields}
         setFormFields={setFormFields}
         errors={errors}
         setErrors={setErrors}
-        formName="Add Location" 
+        formName="Add Location"
       />
     </div>
   )

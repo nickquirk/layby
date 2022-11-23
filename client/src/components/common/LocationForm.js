@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button'
 import { BiPound, BiEuro } from 'react-icons/bi'
 import { TbCurrencyDirham } from 'react-icons/tb'
 
-const LocationForm = ({ handleSubmit, formFields ,setFormFields, errors, setErrors }) => {
+const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErrors }) => {
 
 
   const handleChange = (e) => {
@@ -60,7 +60,7 @@ const LocationForm = ({ handleSubmit, formFields ,setFormFields, errors, setErro
             className="dropdown-addLoc"
             value={formFields.countryCode}
           >
-            <option value="All">Select country<span> *</span></option>
+            <option value="All">Select country:</option>
             <option value="DE">Germany 🇩🇪</option>
             <option value="MA">Morocco 🇲🇦</option>
             <option value="PT">Portugal 🇵🇹</option>
@@ -103,7 +103,7 @@ const LocationForm = ({ handleSubmit, formFields ,setFormFields, errors, setErro
             </div>
             {errors && errors.parking && <small className='text-danger'>{errors.parking}</small>}
             <div>
-              <label htmlFor="freeParking">Free Parking<span> *</span></label>
+              <label htmlFor="freeParking">Free Parking</label>
               <input type="radio" id="freeParking" name="freeParking" value={formFields.freeParking} />
             </div>
             {errors && errors.freeParking && <small className='text-danger'>{errors.freeParking}</small>}

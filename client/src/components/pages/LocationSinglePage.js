@@ -2,9 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-import { useRef } from 'react'
-import mapboxgl from '!mapbox-gl'
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWp4cmgiLCJhIjoiY2xhc29zdWM1MjUyODNxbm01c2J3ZGRvYSJ9.YwGdljVH2McOr7cavCOd7Q'
+
 
 // Bootstrap components
 import Row from 'react-bootstrap/Row'
@@ -40,7 +38,6 @@ const LocationSinglePage = () => {
     }
     getLocation()
   }, [locationId])
-
 
 
   return (
@@ -84,7 +81,7 @@ const LocationSinglePage = () => {
           )}
         </Row>
       </Container>
-    </main>
+    </main >
   )
 }
 

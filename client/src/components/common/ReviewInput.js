@@ -23,8 +23,8 @@ const ReviewInput = ({ location }) => {
   const [updatedReviews, setUpdatedReviews] = useState([])
   const [formFields, setFormFields] = useState({
     text: '',
-    username: '',
     rating: '',
+    username: '',
   })
   const [errors, setErrors] = useState(null)
 
@@ -51,12 +51,19 @@ const ReviewInput = ({ location }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      const { data } = await axios.get(`/api/users/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      const username = data.username
+      setFormFields({ ...formFields, username: username })
       await axios.post(`/api/locations/${locationId}/review`, formFields, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      setFormFields({ text: '', rating: '' })
+      setFormFields({ text: '', rating: '', username: username, })
       console.log(formFields)
     } catch (err) {
       console.log('hello ->', err.response.data)
@@ -83,7 +90,7 @@ const ReviewInput = ({ location }) => {
     const checkLocation = async () => {
       try {
         const { data } = await axios.get(`/api/locations/${locationId}`)
-        setReviews(data.reviews)
+        setUpdatedReviews(data.reviews)
       } catch (err) {
         console.log(err)
       }
@@ -130,12 +137,12 @@ const ReviewInput = ({ location }) => {
       }
       <>
         <h1 className='community-reviews'>Community Reviews:</h1>
-        {reviews ? updatedReviews.map(rev => {
+        {reviews ? reviews.map(rev => {
           const { _id } = rev
           return (
             <div className='review-display' key={_id}>
               <h4>{rev.username}</h4>
-              <span>Ratingfdfg: {rev.rating}/10</span>
+              <span>Rating: {rev.rating} /10</span>
               <p>{rev.text}</p>
             </div>
           )
