@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
+import { useRef } from 'react'
+import mapboxgl from '!mapbox-gl'
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWp4cmgiLCJhIjoiY2xhc29zdWM1MjUyODNxbm01c2J3ZGRvYSJ9.YwGdljVH2McOr7cavCOd7Q'
 
 // Bootstrap components
 import Row from 'react-bootstrap/Row'
@@ -14,6 +17,9 @@ import Tabs from 'react-bootstrap/Tabs'
 import ReviewInput from '../common/ReviewInput'
 import Infographic from '../common/Infographic'
 import CarouselImageController from '../common/CarouselImage'
+import MapBox from '../common/MapBox'
+
+
 
 const LocationSinglePage = () => {
   // ! State
@@ -35,6 +41,8 @@ const LocationSinglePage = () => {
     getLocation()
   }, [locationId])
 
+
+
   return (
     <main className="single-page">
       <Container className="fluid mt-4 single-page-container">
@@ -42,12 +50,15 @@ const LocationSinglePage = () => {
           {location ? (
             <>
               <div className='single-page-header'>
-                <h1 className='single-page-title'>{location.name}</h1>
-                <p className='card-code'>{location.countryCode}</p>
+                <div className='single-page-name'>
+                  <h1 className='single-page-title'>{location.name}</h1>
+                  <p className='card-code'>{location.countryCode}</p>
+                </div>
+                <div className='single-page-rating'>
+                  <p className='card-code card-avg'>Rating: {location.avgRating}</p>
+                </div>
               </div>
               <CarouselImageController location={location} />
-              <Infographic location={location} />
-              <hr className='hr'></hr>
               <Tabs
                 defaultActiveKey="details"
                 id="fill-tab-example"
@@ -55,9 +66,12 @@ const LocationSinglePage = () => {
                 fill
               >
                 <Tab eventKey="details" title="Details">
-                  <Col md="6">
+                  <Col sm="12" md="6">
+                    <Infographic location={location} />
+                    <hr className='hr'></hr>
                     <h2>Description</h2>
                     <p>{location.description}</p>
+                    <MapBox location={location} />
                   </Col>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">

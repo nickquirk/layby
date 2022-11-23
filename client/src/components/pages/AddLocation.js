@@ -2,16 +2,17 @@
 
 // React
 import { useState } from 'react'
-import { useNavigate, useParams  } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 // Imports
 import axios from 'axios'
-import { getToken } from '../common/Auth'
+import { getToken } from '../common/Auth.js'
 
 // Custom Components
-import LocationForm from '../common/LocationForm'
+import LocationForm from '../common/LocationForm.js'
 
 const AddLocation = () => {
+
   // ! Location Variables
   const navigate = useNavigate()
 
@@ -19,49 +20,43 @@ const AddLocation = () => {
   // Track state of following variables
   const [formFields, setFormFields] = useState({
     name: '',
-    latitude: null,
-    longitude: null,
+    latitude: 0,
+    longitude: 0,
     countryCode: '',
-    country: '',
     currency: '',
     description: '',
     parking: true,
-    freeparking: false,
+    freeParking: false,
     toilets: false,
     water: false,
-    nearestFuel: null,
+    nearestFuel: 0,
     nearbyActivities: '',
     image: ''
   })
 
   const [ errors, setErrors ] = useState(null)
 
-  // Location 
-  const { locationId } = useParams()
-
-  // ! Executions
-  // send off form data to our API
+  // ! Execution
+  // send off form data to API
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      console.log('FORM FIELDS', formFields)
       console.log('GET TOKEN ->', getToken())
-      const { data } = await axios.post('/api/locations', formFields, {
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      })
-      console.log('SUCCESS -->', data)
+      const { locationId } = await axios.post('/api/locations', formFields, { headers: {  Authorization: `Bearer ${getToken()}`, }, })
+      console.log('SUCCESS -->', locationId)
       navigate(`/locations/${locationId}`)
     } catch (err) {
       console.log('hello ->', err.response.data)
       setErrors(err.response.data)
+      console.log(err)
     }
-    console.log('form submitted')
+
   }
 
-  
   return (
     <div className="hero-page text-center form-main">
+      <h1>Add Location</h1>
       <LocationForm 
         handleSubmit={handleSubmit} 
         formFields={formFields}

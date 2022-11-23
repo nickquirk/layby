@@ -18,13 +18,13 @@ const ReviewInput = ({ location }) => {
   const { locationId } = useParams()
   const userId = getUserId()
 
-
   // ! State
   const [reviews, setReviews] = useState([])
   const [updatedReviews, setUpdatedReviews] = useState([])
   const [formFields, setFormFields] = useState({
     text: '',
     username: '',
+    rating: '',
   })
   const [errors, setErrors] = useState(null)
 
@@ -33,38 +33,35 @@ const ReviewInput = ({ location }) => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const { data } = await axios.get(`/api/profile/${userId}`, {
+        const { data } = await axios.get(`/api/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${getToken()}`,
           },
         })
         const username = data.username
-        setFormFields({ username: username })
-        console.log('User Data->', data)
+        setFormFields({ ...formFields, username: username })
       } catch (err) {
-        console.log(err)
+        console.log('Get my token error->', err)
       }
     }
     getUser()
-  }, [reviews])
+  }, [])
 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post(`/api/locations/${locationId}/review`, formFields, {
+      await axios.post(`/api/locations/${locationId}/review`, formFields, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      console.log('Success -->', data.reviews)
-      setFormFields({ text: '' })
-      console.log('Form fields->', formFields)
+      setFormFields({ text: '', rating: '' })
+      console.log(formFields)
     } catch (err) {
       console.log('hello ->', err.response.data)
       setErrors(err.response.data)
     }
-    console.log('form submitted')
   }
 
   const handleChange = (e) => {
@@ -86,7 +83,6 @@ const ReviewInput = ({ location }) => {
     const checkLocation = async () => {
       try {
         const { data } = await axios.get(`/api/locations/${locationId}`)
-        console.log(data.reviews)
         setReviews(data.reviews)
       } catch (err) {
         console.log(err)
@@ -100,7 +96,6 @@ const ReviewInput = ({ location }) => {
     const updateDisplay = async () => {
       try {
         const { data } = await axios.get(`/api/locations/${locationId}`)
-        console.log(data.reviews)
         setUpdatedReviews(data.reviews)
       } catch (err) {
         console.log(err)
@@ -120,10 +115,14 @@ const ReviewInput = ({ location }) => {
             type="text"
             name="text"
             onChange={handleChange}
-            placeholder="Type your review here *"
+            placeholder="Type your review here: "
             value={formFields.text}
           />
           {errors && errors.text && <small className="text-danger">{errors.text}</small>}
+          <span>Rating:</span>
+          <input type='number' name='rating' min="1" max="5" onChange={handleChange} value={formFields.rating}></input>
+          {errors && errors.text && <small className="text-danger">{errors.text}</small>}
+          <hr></hr>
           <button className='btn btn-primary' onClick={handleClick}>Submit</button>
         </form>
         :
@@ -136,7 +135,7 @@ const ReviewInput = ({ location }) => {
           return (
             <div className='review-display' key={_id}>
               <h4>{rev.username}</h4>
-              <span>Star Rating</span>
+              <span>Ratingfdfg: {rev.rating}/10</span>
               <p>{rev.text}</p>
             </div>
           )

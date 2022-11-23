@@ -10,6 +10,7 @@ import LoginPage from './components/pages/LoginPage'
 import RegisterPage from './components/pages/RegisterPage'
 import UserProfilePage from './components/pages/UserProfilePage'
 import AddLocation from './components/pages/AddLocation'
+import EditLocation from './components/pages/EditLocation'
 
 
 
@@ -25,7 +26,8 @@ const App = () => {
           <Route path='/locations/:locationId' element={<LocationSinglePage />} />
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegisterPage />} />
-          <Route path='/addLocation' element={<AddLocation />} />
+          <Route path='/locations/add' element={<AddLocation />} />
+          <Route path='/locations/:locationId/edit' element={<EditLocation />} />
           {/* Just changed this to work on the profile page, will change it back :) */}
           <Route path='/profile/:userId' element={<UserProfilePage />} />
           <Route path='*' element={<NotFound />} />

@@ -14,6 +14,7 @@ const reviewSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, unique: false },
     owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    rating: { type: Number, required: true },
     username: { type: String, required: true }
   },
   {
