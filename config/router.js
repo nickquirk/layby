@@ -4,7 +4,8 @@ import { registerUser, loginUser } from '../controllers/auth.js'
 import {
   getUser,
   getAllUsers,
-  setProfilePic
+  setProfilePic,
+  getUserReviews
 } from '../controllers/users.js'
 import {
   getAllLocations,
@@ -36,7 +37,7 @@ router.route('/locations/:locationId')
   .get(getSingleLocation)
   // ! add in secureRoute after testing
   .put(updateLocation)
-  .delete(secureRoute, deleteLocation)
+  .delete(deleteLocation)
 
 router.route('/register')
   .post(registerUser)
@@ -46,6 +47,7 @@ router.route('/login')
 
 router.route('/locations/:locationId/review')
   .post(secureRoute, addReview)
+  .get(secureRoute, getUserReviews)
 
 router.route('/locations/:locationId/review/:reviewId')
   .delete(secureRoute, deleteReview)

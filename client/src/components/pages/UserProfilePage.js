@@ -20,6 +20,7 @@ import UploadImage from '../../helpers/UploadImage.js'
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
+  const [profileImage, setProfileImage] = useState()
   const [ formData, setFormData ] = useState({
     profileImage: '',
     userBio: '',
@@ -49,7 +50,7 @@ const UserProfilePage = () => {
       }
     }
     getUser()
-  }, [userId, formData])
+  }, [userId])
 
   const handleChange = async (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value })
@@ -57,18 +58,26 @@ const UserProfilePage = () => {
 
 
   const handleSubmit = async (event) => {
+    event.preventDefault()
     try {
       const { data } = await axios.put(`/api/users/${userId}`, formData, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
       })
+      setProfileImage(user.profileImage)
     } catch (err) {
       console.log(err)
     }
   }
 
   useEffect(() => console.log(formData))
+
+  useEffect(() => {
+    console.log('profile image updated')
+  }, [profileImage])
+
+
 
   // ! JSX
   return (
@@ -78,7 +87,7 @@ const UserProfilePage = () => {
           <Col md="4" className='text-center'>
             <div className='user-details d-flex flex-column align-items-center'>
               <h3>{user.username}</h3>
-              <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
+              <img className='img-thumbnail profile-pic' key={user.id} src={`${user.profileImage}`}></img>
               <UploadImage 
                 imageFormData={formData}
                 setFormData={setFormData}
