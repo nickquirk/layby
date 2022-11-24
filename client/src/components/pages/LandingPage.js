@@ -66,21 +66,22 @@ const LandingPage = () => {
             style={{ backgroundImage: `url(${van})` }}
           >
             <Button
-              className="btn  btn-lg mt-3 mb-3"
+              id="hero-btn"
+              className="btn btn-danger btn-lg"
               onClick={() => navigateToLocationIndex()}
             >
-              Find a place to stay
+              Start Exploring Locations
             </Button>
           </div>
         </Row>
         <div className="display-top-rated text-center">
-          <h2 className="m-5">Plan Your Next Adventure:</h2>
+          <h2 id="hero-text">Plan Your Next Adventure</h2>
         </div>
         <CarouselCardController shuffled={shuffled} locations={locations} />
         <Row>
           <div id="login-register" style={{ backgroundImage: `url(${login})` }}>
-            <h2 className=" m-5 text-center text-white">
-              Review or Post a New Van Spot
+            <h2 id="post-text" className=" text-center text-white">
+              Review and Post Spots
             </h2>
             <div
               id="login-register-buttons"
@@ -88,14 +89,14 @@ const LandingPage = () => {
             >
               <Button
                 type="button"
-                className="btn btn-lg mt-5 mb-4"
+                className="btn btn-danger btn-lg mt-3 mb-3"
                 onClick={() => navigateToLogin()}
               >
                 Login
               </Button>
               <Button
                 type="button"
-                className="btn  btn-lg mt-5 mb-4"
+                className="btn btn-danger btn-lg mt-3 mb-3"
                 onClick={() => navigateToRegister()}
               >
                 Register
@@ -104,7 +105,7 @@ const LandingPage = () => {
           </div>
         </Row>
         <Row id="tickertape">
-          <div className="ticker-tape-div text-center">
+          <div className="ticker-tape-div text-center mt-3">
             <div data-mc-src="359dbd97-d501-4e1d-8a2f-8e00870bd464#instagram"></div>
           </div>
         </Row>

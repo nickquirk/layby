@@ -73,51 +73,51 @@ userSchema.methods.validatePassword = function (plainTextPassword) {
 
 // ? create Reviews field 
 //a virtual field that is returned with the JSON
-userSchema.virtual('reviews', {
-  ref: 'VanSpot',
-  localField: '_id',
-  foreignField: 'locations.reviews.owner',
-  get: function(res){
-    // res[country]
-    const userReviews = res.map(country => {
-      let reviewObject = {
-        countryId: '',
-        locationId: '',
-        reviews: []
-      }
-      const countryId = country._id
-      const locationIds = country.locations.map(loc => {
-        return loc.name
-      })
-      console.log('location ids ->', locationIds)
-      reviewObject = locationIds.map(id => {
-        const reviewObjectTemp = {
-          countryId: '',
-          locationId: '',
-          reviews: []
-        }
-        reviewObjectTemp.countryId = countryId
-        reviewObjectTemp.locationId = id
-        return reviewObjectTemp
-      })
-      // country.locations.forEach(loc => {
-      //   reviewObject.reviews(loc.reviews)
-      // })
+// userSchema.virtual('reviews', {
+//   ref: 'VanSpot',
+//   localField: '_id',
+//   foreignField: 'locations.reviews.owner',
+//   get: function(res){
+//     // res[country]
+//     const userReviews = res.map(country => {
+//       let reviewObject = {
+//         countryId: '',
+//         locationId: '',
+//         reviews: []
+//       }
+//       const countryId = country._id
+//       const locationIds = country.locations.map(loc => {
+//         return loc.name
+//       })
+//       console.log('location ids ->', locationIds)
+//       reviewObject = locationIds.map(id => {
+//         const reviewObjectTemp = {
+//           countryId: '',
+//           locationId: '',
+//           reviews: []
+//         }
+//         reviewObjectTemp.countryId = countryId
+//         reviewObjectTemp.locationId = id
+//         return reviewObjectTemp
+//       })
+//       // country.locations.forEach(loc => {
+//       //   reviewObject.reviews(loc.reviews)
+//       // })
 
-      reviewObject.reviews
-      console.log(userReviews)
-      return reviewObject
-    })
+//       reviewObject.reviews
+//       console.log(userReviews)
+//       return reviewObject
+//     })
     
 
-    //console.log('User reviews object ->', userReviews)
+//     //console.log('User reviews object ->', userReviews)
 
 
 
 
-    // must return here: 
-    return userReviews
-  }
-})
+//     // must return here: 
+//     return userReviews
+//   }
+// })
 
 export default mongoose.model('User', userSchema)

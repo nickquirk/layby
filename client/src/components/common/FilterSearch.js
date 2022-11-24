@@ -24,6 +24,15 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
   return (
     <>
       <div className="search-filter-input">
+        <input
+          onChange={handleChange}
+          type="text"
+          placeholder="Search location name"
+          name="search"
+          id="filter"
+          value={input.search}
+        />
+      
         <select
           onChange={handleChange}
           name="countryCode"
@@ -38,14 +47,6 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
           <option value="ESP">Spain 🇪🇸</option>
           <option value="UK">United Kingdom 🇬🇧</option>
         </select>
-        <input
-          onChange={handleChange}
-          type="text"
-          placeholder="Find a spot"
-          name="search"
-          id="filter"
-          value={input.search}
-        />
       </div>
     </>
   )

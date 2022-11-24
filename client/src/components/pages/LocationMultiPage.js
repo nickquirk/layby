@@ -73,10 +73,10 @@ const LocationMultiPage = () => {
                       ></div>
                       <Card.Body className="d-flex flex-column">
                         <div className='location-card-header'>
-                          <h4 className='location-card-title'>{name}</h4>
-                          <p className='card-code'>{countryCode}</p>
+                          <h4 className='location-card-title mb-4'>{name}</h4>
+                          <p className='card-code-multi'>{countryCode}</p>
                         </div>
-                        <p className="card-text">{description}</p>
+                        {/* <p className="card-text">{description}</p> */}
                         <span></span>
                         <div className="icon-container d-flex justify-content-evenly">
                           <div className="icon">
