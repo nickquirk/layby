@@ -25,7 +25,7 @@ const NavBar = () => {
 
 
   return (
-    <div className='navbar-container'>
+    <div className='navbar-container sticky-top'>
       <Navbar expand="sm" className="navbar sticky-top">
         <Container>
           <Navbar.Brand as={Link} to='/' className='intro-navbar'><img
@@ -59,7 +59,7 @@ const NavBar = () => {
                   <Nav.Link as={Link} to="/register">
                     Register
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/addLocation">Add your favourite Spots</Nav.Link>
+                  <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link>
                 </>
               }
             </Nav>

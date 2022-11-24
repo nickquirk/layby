@@ -49,12 +49,12 @@ const RegisterPage = () => {
   // Display register form 
   return (
     <div className='hero-page text-center form-main'>
-      <h1>Register</h1>
+      <h1 className="mt-5">Register</h1>
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
           <input 
             required 
-            className='form-control' 
+            className='form-control mt-3 mb-3' 
             type="text" 
             name="username" 
             onChange={handleChange} 
@@ -72,7 +72,7 @@ const RegisterPage = () => {
           />
           <input 
             required
-            className='form-control' 
+            className='form-control mt-3 mb-3' 
             type="password" 
             name="password" 
             onChange={handleChange} 
@@ -81,14 +81,14 @@ const RegisterPage = () => {
           />
           <input 
             required
-            className='form-control' 
+            className='form-control mb-5' 
             type="password" 
             name="passwordConfirmation" 
             onChange={handleChange} 
             placeholder="Confirm password *"
             value={formFields.passwordConfirmation} 
           />
-          <button className='btn btn-main'>Submit</button>
+          <button to={'/login'} className="btn btn-danger btn-lg mt-3 mb-3">Register</button>
         </form>
       </div>
     </div>
