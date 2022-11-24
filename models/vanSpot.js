@@ -76,6 +76,7 @@ countrySchema.methods.getOwnedReviews = function (fieldValue, user) {
   this.locations.forEach(location => {
     const locationWithReviews = {
       locationId: location._id,
+      locationName: location.name,
       reviews: []
     }
     location.reviews.forEach(review => {

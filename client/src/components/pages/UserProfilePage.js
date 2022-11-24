@@ -69,6 +69,19 @@ const UserProfilePage = () => {
     }
   }
 
+  const deleteReview = async (e) => {
+    try {
+      const response = await axios.delete('/locations/:locationId/review', {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      console.log(response)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   //useEffect(() => console.log('user useEffect ->',user))
 
   // ! JSX
@@ -104,11 +117,26 @@ const UserProfilePage = () => {
                 {user.reviews ? (
                   <ListGroup className='ms-1'>
                     {user.reviews.map(location => {
-                      const { reviews } = location
+                      const { reviews, locationId, locationName } = location
                       console.log(reviews)
                       return reviews.map(review => {
                         return (
-                          <p key={review._id}>{review.text}</p>
+                          <Link 
+                            className="text-decoration-none" 
+                            key={review.id} to={`/locations/${locationId}`}>
+                            <ListGroupItem className='d-flex review-list list-group-item-action'>
+                              <div>
+                                {/* <img className='list-group-img' src='https://tinyurl.com/5atpj5f8'></img> */}
+                              </div>
+                              <div className='d-flex flex-column align-items-start ms-3'>
+                                <h4>{locationName}</h4>
+                                <p className='d-none d-sm-block'>{review.text}</p>
+                              </div>
+                              <div className='d-flex flex-column buttons align-self-start'>
+                                <Link className='btn'>Delete</Link>
+                              </div>
+                            </ListGroupItem>
+                          </Link>
                         )
                       })
                     })}
