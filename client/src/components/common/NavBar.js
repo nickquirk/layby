@@ -26,7 +26,7 @@ const NavBar = () => {
 
   return (
     <div className='navbar-container sticky-top'>
-      <Navbar expand="sm" className="navbar sticky-top">
+      <Navbar expand="md" className="navbar sticky-top">
         <Container>
           <Navbar.Brand as={Link} to='/' className='intro-navbar'><img
             src={Logo}
