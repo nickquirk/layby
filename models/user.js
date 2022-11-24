@@ -86,7 +86,7 @@ userSchema.virtual('reviews', {
         country.getOwnedReviews(fieldValue, user)
       })
     } else {
-      res.getOwnedReviews(fieldValue, user)
+      //res.getOwnedReviews(fieldValue, user)
     }
 
     

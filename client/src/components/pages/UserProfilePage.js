@@ -66,6 +66,7 @@ const UserProfilePage = () => {
         },
       })
       setUser(data)
+      setFormData({ ...formData, [event.target.name]: event.target.value })
     } catch (err) {
       console.log(err)
     }
@@ -101,19 +102,20 @@ const UserProfilePage = () => {
                 <UploadImage 
                   imageFormData={formData}
                   setFormData={setFormData}
+                  handleSubmit={handleSubmit}
                 />
               </div>
               
               <Link onClick={handleSubmit} className='btn align-self-center btn-warning btn-lg mt-3 mb-3'>Upload Pic</Link>
-              <textarea
+              {/* <textarea
                 className='mt-3 user-bio field'  
                 name="userBio"
                 rows="3"
                 value={formData.userBio}
                 onChange={handleChange}
               >
-              </textarea>
-              <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link>
+              </textarea> */}
+              {/* <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link> */}
             </div>
             <div className='mt-4 d-flex align-self-end'>
               <Link className='btn align-self-start' to="/login" onClick={() => handleLogout(navigate)}>Logout</Link>
