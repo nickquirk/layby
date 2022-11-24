@@ -1,8 +1,8 @@
 /* eslint-disable comma-dangle */
 
 // React
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 // Imports
 import axios from 'axios'
@@ -12,9 +12,11 @@ import { getToken } from '../common/Auth.js'
 import LocationForm from '../common/LocationForm.js'
 
 const AddLocation = () => {
+  
 
   // ! Location Variables
   const navigate = useNavigate()
+  const { locationId } = useParams()
 
   // ! State
   // Track state of following variables
@@ -35,6 +37,7 @@ const AddLocation = () => {
   })
 
   const [errors, setErrors] = useState(null)
+  const [location, setLocation] = useState(null)
 
   // ! Execution
   // send off form data to API
@@ -48,15 +51,16 @@ const AddLocation = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      // console.log('SUCCESS -->', locationId)
-      // navigate(`/locations/${locationId}`)
+      console.log('SUCCESS -->', locationId)
+      navigate('/locations')
+      console.log('this is location id --> ', locationId)
     } catch (err) {
       console.log('hello ->', err.response.data)
       setErrors(err.response.data)
       console.log(err)
     }
-
   }
+
 
   return (
     <div className="hero-page text-center form-main">
