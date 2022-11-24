@@ -71,7 +71,6 @@ locationSchema.set('toJSON', {
 })
 
 countrySchema.methods.getOwnedReviews = function (fieldValue, user) {
-  console.log('this- -> ', this)
   // put in if locations
   this.locations.forEach(location => {
     const locationWithReviews = {

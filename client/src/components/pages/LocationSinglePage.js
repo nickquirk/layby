@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 
 import axios from 'axios'
-
+import { isOwner, getToken } from '../common/Auth'
 // Bootstrap components
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -18,7 +18,6 @@ import ReviewInput from '../common/ReviewInput'
 import InfographicSingle from '../common/InfographicSingle'
 import CarouselImageController from '../common/CarouselImage'
 import MapBox from '../common/MapBox'
-import { getToken } from '../common/Auth'
 import SpinnerItem from '../common/SpinnerItem'
 
 
@@ -58,6 +57,14 @@ const LocationSinglePage = () => {
     }
   }
 
+  // useEffect(() => {
+  //   if (location){
+  //     console.log(isOwner(location.addedBy._id))
+  //     console.log()
+  //   }
+  // },[location] )
+
+
 
   return (
     <main className="single-page">
@@ -92,12 +99,15 @@ const LocationSinglePage = () => {
                     <hr className='single-page-hr'></hr>
                     <MapBox location={location} />
                   </Col>
+                  {/* if owner show edit and delete*/}
+                  {isOwner(location._id) && 
                   <div className='edit-delete-buttons d-flex justify-content-evenly'>
                     <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 ' id='del-btn'>Delete Location</button>
                     <Link to={`/locations/${locationId}/edit`}>
                       <button className='btn  btn-warning btn-lg mt-3 mb-3' id='edit-btn'>Edit Location</button>
                     </Link>
                   </div>
+                  }
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">
                   <ReviewInput location={location} setLocation={setLocation} />
