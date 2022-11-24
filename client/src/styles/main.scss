@@ -240,6 +240,18 @@ p {
     }
   }
 
+  #imageupload {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Roboto Slab', serif;
+    color: grey;
+    border: 1px lightgrey solid;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+  }
+
   .btn {
     width: 60%;
     margin-top: 30px;
@@ -285,9 +297,10 @@ legend {
   }
 }
 
-.upload-image-div{
+.upload-image-div {
   display: flex;
-  input{
+
+  input {
     width: 100%;
   }
 }

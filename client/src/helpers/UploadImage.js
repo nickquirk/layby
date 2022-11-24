@@ -24,7 +24,7 @@ const UploadImage = ({ imageFormData, setFormData }) => {
   }
 
   return (
-    <div className='field'>
+    <div id ="imageupload" className='field'>
       <input
         className="input"
         name="image"
