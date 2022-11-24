@@ -266,6 +266,13 @@ legend {
   background-color: whitesmoke;
 }
 
+.user-reviews {
+  overflow-y: scroll;
+  min-height: 150px;
+  max-height: 540px;
+
+}
+
 // ? Cards
 .location-card {
   font-weight: 300;

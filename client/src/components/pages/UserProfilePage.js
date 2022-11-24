@@ -111,22 +111,22 @@ const UserProfilePage = () => {
             </div>
           </Col>
           <Col md="8">
+            <h3>Your Reviews</h3>
             <div className='user-reviews'>
-              <h3>Your Reviews</h3>
               <>
                 {user.reviews ? (
                   <ListGroup className='ms-1'>
                     {user.reviews.map(location => {
-                      const { reviews, locationId, locationName } = location
+                      const { reviews, locationId, locationName, locationImage } = location
                       console.log(reviews)
                       return reviews.map(review => {
                         return (
                           <Link 
                             className="text-decoration-none" 
                             key={review.id} to={`/locations/${locationId}`}>
-                            <ListGroupItem className='d-flex review-list list-group-item-action'>
+                            <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
                               <div>
-                                {/* <img className='list-group-img' src='https://tinyurl.com/5atpj5f8'></img> */}
+                                <img className='list-group-img' src={locationImage}></img>
                               </div>
                               <div className='d-flex flex-column align-items-start ms-3'>
                                 <h4>{locationName}</h4>
