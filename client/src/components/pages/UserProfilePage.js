@@ -39,9 +39,6 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-        console.log(data.reviews)
-        console.log('This is data ->', data)
-        console.log('user.reviews ->', data.reviews[0])
       } catch (err) {
         console.log(err)
         setErrors(true)
@@ -64,6 +61,20 @@ const UserProfilePage = () => {
         },
       })
       setUser(data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const deleteReview = async (e, locationId, reviewId) => {
+    try {
+      console.log(locationId, reviewId)
+      const response = await axios.delete(`/locations/${locationId}/${reviewId}/`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      console.log(response)
     } catch (err) {
       console.log(err)
     }
@@ -98,17 +109,32 @@ const UserProfilePage = () => {
             </div>
           </Col>
           <Col md="8">
+            <h3>Your Reviews</h3>
             <div className='user-reviews'>
-              <h3>Your Reviews</h3>
               <>
                 {user.reviews ? (
                   <ListGroup className='ms-1'>
                     {user.reviews.map(location => {
-                      const { reviews } = location
+                      const { reviews, locationId, locationName, locationImage } = location
                       console.log(reviews)
                       return reviews.map(review => {
                         return (
-                          <p key={review._id}>{review.text}</p>
+                          <Link 
+                            className="text-decoration-none" 
+                            key={review.id} to={`/locations/${locationId}`}>
+                            <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
+                              <div>
+                                <img className='list-group-img' src={locationImage}></img>
+                              </div>
+                              <div className='d-flex flex-column align-items-start ms-3'>
+                                <h4>{locationName}</h4>
+                                <p className='d-none d-sm-block'>{review.text}</p>
+                              </div>
+                              <div className='d-flex flex-column buttons align-self-start'>
+                                <Link onClick={deleteReview(locationId, review.id)} className='btn'>Delete</Link>
+                              </div>
+                            </ListGroupItem>
+                          </Link>
                         )
                       })
                     })}
