@@ -20,8 +20,8 @@ const AddLocation = () => {
   // Track state of following variables
   const [formFields, setFormFields] = useState({
     name: '',
-    latitude: null,
-    longitude: null,
+    latitude: undefined,
+    longitude: undefined,
     countryCode: '',
     currency: '',
     description: '',
@@ -29,7 +29,7 @@ const AddLocation = () => {
     freeparking: false,
     toilets: false,
     water: false,
-    nearestFuel: null,
+    nearestFuel: undefined,
     nearbyActivities: '',
     image: ''
   })

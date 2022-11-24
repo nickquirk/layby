@@ -34,7 +34,7 @@ const EditLocation = () => {
     image: ''
   })
 
-  const [ errors, setErrors ] = useState(null)
+  const [errors, setErrors] = useState(null)
 
   // ! Execution
   useEffect(() => {
@@ -42,8 +42,9 @@ const EditLocation = () => {
       try {
         const { data } = await axios.get(`/api/locations/${locationId}`)
         //populate for fields with single location info
-        console.log('Location owner => ', data.addedBy._id)
+        // console.log('Location owner => ', data.addedBy.id)
         console.log('Payload --> ', getPayload())
+        console.log(data)
         setFormFields(data)
       } catch (err) {
         console.log(err)
@@ -55,15 +56,16 @@ const EditLocation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.put(`/api/locations/${locationId}`, formFields, 
-        { headers: {
-          Authorization: `Bearer ${getToken()}`, 
-        },
+      const { data } = await axios.put(`/api/locations/${locationId}`, formFields,
+        {
+          headers: {
+            Authorization: `Bearer ${getToken()}`,
+          },
         })
       console.log('Location edited ->', data)
       navigate(`/locations/${locationId}`)
     } catch (err) {
-      console.log('Edit failed ->', err)  
+      console.log('Edit failed ->', err)
       setErrors(err.response.data)
     }
   }
@@ -72,13 +74,13 @@ const EditLocation = () => {
   return (
     <div className="hero-page text-center form-main">
       <h1 className="mt-5">Edit a Location</h1>
-      <LocationForm 
-        handleSubmit={handleSubmit} 
+      <LocationForm
+        handleSubmit={handleSubmit}
         formFields={formFields}
         setFormFields={setFormFields}
         errors={errors}
         setErrors={setErrors}
-        formName="Edit Location" 
+        formName="Edit Location"
       />
     </div>
   )
