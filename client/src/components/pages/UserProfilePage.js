@@ -39,6 +39,7 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
+        console.log(user)
       } catch (err) {
         console.log(err)
         setErrors(true)
