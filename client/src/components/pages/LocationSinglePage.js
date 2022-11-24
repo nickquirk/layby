@@ -90,7 +90,9 @@ const LocationSinglePage = () => {
                   </Col>
                   <div className='edit-delete-buttons d-flex justify-content-evenly'>
                     <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 '>Delete Location</button>
-                    <button to={(`/locations/${locationId}/edit`)} className='btn  btn-warning btn-lg mt-3 mb-3'>Edit Location</button>
+                    <Link to={`/locations/${locationId}/edit`}>
+                      <button className='btn  btn-warning btn-lg mt-3 mb-3'>Edit Location</button>
+                    </Link>
                   </div>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">

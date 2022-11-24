@@ -13,7 +13,7 @@ const RegisterPage = () => {
 
   // ! State 
   // Track state of following variables
-  const [ formFields, setFormFields ] = useState({
+  const [formFields, setFormFields] = useState({
     username: '',
     email: '',
     password: '',
@@ -52,41 +52,41 @@ const RegisterPage = () => {
       <h1 className="mt-5">Register</h1>
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input 
-            required 
-            className='form-control mt-3 mb-3' 
-            type="text" 
-            name="username" 
-            onChange={handleChange} 
+          <input
+            required
+            className='form-control mt-3 mb-3'
+            type="text"
+            name="username"
+            onChange={handleChange}
             placeholder="Username *"
-            value={formFields.username} 
+            value={formFields.username}
           />
-          <input 
+          <input
             required
-            className='form-control' 
-            type="email" 
-            name="email" 
-            onChange={handleChange} 
+            className='form-control'
+            type="email"
+            name="email"
+            onChange={handleChange}
             placeholder="Email *"
-            value={formFields.email} 
+            value={formFields.email}
           />
-          <input 
+          <input
             required
-            className='form-control mt-3 mb-3' 
-            type="password" 
-            name="password" 
-            onChange={handleChange} 
+            className='form-control mt-3 mb-3'
+            type="password"
+            name="password"
+            onChange={handleChange}
             placeholder="Password *"
-            value={formFields.password} 
+            value={formFields.password}
           />
-          <input 
+          <input
             required
-            className='form-control mb-5' 
-            type="password" 
-            name="passwordConfirmation" 
-            onChange={handleChange} 
+            className='form-control mb-5'
+            type="password"
+            name="passwordConfirmation"
+            onChange={handleChange}
             placeholder="Confirm password *"
-            value={formFields.passwordConfirmation} 
+            value={formFields.passwordConfirmation}
           />
           <button to={'/login'} className="btn btn-danger btn-lg mt-3 mb-3">Register</button>
         </form>

@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap');
 $primary: white;
-$secondary: #be3144;
+$secondary: #BE3144;
 $tertiary: grey;
-
 
 * {
   font-family: 'Roboto Slab', serif;
   color: black;
   // box-sizing: border-box;
-
 }
 
 .sitewrapper {
   background-color: white;
 }
 
-// ! Common 
+// ! Common
 .navbar {
   background-color: whitesmoke;
 
@@ -25,7 +23,6 @@ $tertiary: grey;
     font-size: 20px;
     margin: 10px;
   }
-
 }
 
 .footer {
@@ -47,13 +44,12 @@ $tertiary: grey;
   align-self: flex-end;
 
   .button:hover {
-    background-color: #002ead;
+    background-color: #002EAD;
     transition: 0.7s;
   }
-
 }
 
-//! Pages 
+//! Pages
 // ? Landing
 .landing-page {
   min-height: 100vh;
@@ -92,7 +88,6 @@ $tertiary: grey;
   .btn {
     margin-left: 25px;
     margin-right: 25px;
-
   }
 
   #login-register-buttons {
@@ -102,7 +97,6 @@ $tertiary: grey;
   // .search-filter-input {
   //   // padding-top: 250px;
   // }
-
   #hero-btn {
     margin-bottom: 100px;
   }
@@ -127,9 +121,7 @@ $tertiary: grey;
       // height: 15vw;
       object-fit: cover;
     }
-
   }
-
 }
 
 #post-text {
@@ -167,7 +159,7 @@ $tertiary: grey;
     select {
       margin-left: 20px;
       margin-right: 20px;
-      font-family: 'Roboto Slab', serif;
+      font-family: ‘Roboto Slab’, serif;
       color: grey;
       border: 1px lightgrey solid;
       line-height: 1;
@@ -186,7 +178,6 @@ $tertiary: grey;
       text-align: center;
       color: $tertiary;
     }
-
   }
 
   .btn {
@@ -194,14 +185,11 @@ $tertiary: grey;
     margin-top: 30px;
     align-self: flex-end;
   }
-
 }
 
 legend {
   font-weight: 10px;
 }
-
-
 
 // ? User profile page
 .profile-page-container {
@@ -215,7 +203,6 @@ legend {
 .favourite-card {
   margin: 10px 0;
   background-color: whitesmoke;
-
 }
 
 .list-group-img {
@@ -276,7 +263,6 @@ legend {
     font-weight: 800;
   }
 
-
   .card-text {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -291,18 +277,17 @@ p {
   margin-top: 18px;
 }
 
-
-// ? Carousel Styling 
+// ? Carousel Styling
 .carousel-indicators {
   display: none;
 }
 
-// ?Search and Filter 
+// ?Search and Filter
 .dropdown {
   border: 1px lightgrey solid;
   padding: 10px;
   font-size: 18px;
-  font-family: 'Roboto Slab', serif;
+  font-family: ‘Roboto Slab’, serif;
   color: grey;
   line-height: 1;
   padding: 10px;
@@ -310,7 +295,7 @@ p {
 }
 
 #filter {
-  font-family: 'Roboto Slab', serif;
+  font-family: ‘Roboto Slab’, serif;
   border: 1px lightgrey solid;
   padding: 10px;
   font-size: 18px;
@@ -358,7 +343,7 @@ p {
   }
 
   .tab-content {
-    border: 1px solid #dee2e6;
+    border: 1px solid #DEE2E6;
     border-top: transparent;
     padding: 15px;
   }
@@ -412,9 +397,7 @@ p {
     padding: 0px;
     border: 2px, solid, grey;
   }
-
 }
-
 
 img {
   max-width: 100%;
@@ -441,12 +424,12 @@ img {
     svg {
       width: 1.5em;
       height: 1.5em;
-      color: #be3144;
+      color: #BE3144;
       margin: 15px;
     }
 
     #ifg {
-      color: #be3144;
+      color: #BE3144;
     }
   }
 }
@@ -466,17 +449,14 @@ hr {
   }
 }
 
-
 textarea {
   width: 100%;
 }
-
 
 .map-container {
   height: 400px;
   display: flex;
   align-items: top;
-
 }
 
 .sidebar {
@@ -491,18 +471,12 @@ textarea {
   border-radius: 4px;
 }
 
-
-
-
 @media (min-width: 576px) {
   .top-rated {
     display: flex;
     justify-content: center;
   }
 }
-
-
-
 
 @media (min-width: 768px) {
   .header-image {
@@ -553,9 +527,6 @@ textarea {
 
 /* Desktop up - once gets above phone screen size of 992 then apply this */
 @media (min-width: 992px) {
-
-
-
   .landing-page {
     margin-left: 100px;
     margin-right: 100px;
@@ -585,7 +556,6 @@ textarea {
 }
 
 @media (min-width: 1200px) {
-
   .container {
     max-width: 1000px;
     padding: 0px !important;
@@ -619,5 +589,7 @@ textarea {
     margin-top: 30px;
   }
 }
+
+// @media (min-width: 1400px){}
 
 // @media (min-width: 1400px){}
