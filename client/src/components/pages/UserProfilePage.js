@@ -39,9 +39,6 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-        console.log(data.reviews)
-        console.log('This is data ->', data)
-        console.log('user.reviews ->', data.reviews[0])
       } catch (err) {
         console.log(err)
         setErrors(true)
@@ -69,9 +66,10 @@ const UserProfilePage = () => {
     }
   }
 
-  const deleteReview = async (e) => {
+  const deleteReview = async (e, locationId, reviewId) => {
     try {
-      const response = await axios.delete('/locations/:locationId/review', {
+      console.log(locationId, reviewId)
+      const response = await axios.delete(`/locations/${locationId}/${reviewId}/`, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
@@ -133,7 +131,7 @@ const UserProfilePage = () => {
                                 <p className='d-none d-sm-block'>{review.text}</p>
                               </div>
                               <div className='d-flex flex-column buttons align-self-start'>
-                                <Link className='btn'>Delete</Link>
+                                <Link onClick={deleteReview(locationId, review.id)} className='btn'>Delete</Link>
                               </div>
                             </ListGroupItem>
                           </Link>
