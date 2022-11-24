@@ -59,7 +59,7 @@ const countrySchema = new mongoose.Schema({
 
 // ? Rating
 locationSchema.virtual('avgRating').get(function () {
-  if (!this.reviews.length) return 'None'
+  if (!this.reviews.length) return 'No Rating'
   const sum = this.reviews.reduce((prev, next) => {
     return prev + next.rating
   }, 0)
@@ -79,11 +79,11 @@ countrySchema.methods.getOwnedReviews = function (fieldValue, user) {
       reviews: []
     }
     location.reviews.forEach(review => {
-      if (review.owner.equals(user._id)){
+      if (review.owner.equals(user._id)) {
         locationWithReviews.reviews.push(review)
       }
     })
-    if (locationWithReviews.reviews.length){
+    if (locationWithReviews.reviews.length) {
       fieldValue.push(locationWithReviews)
     }
   })

@@ -42,6 +42,11 @@ $tertiary: #f5f5f5;
   font-family: 'Roboto Slab', serif;
 }
 
+.spinner {
+  margin: 40px 0px 40px;
+  display: flex;
+  justify-content: center;
+}
 
 .btn {
   background-color: whitesmoke;
@@ -419,6 +424,10 @@ p {
       font-size: 12px; /// change font sizes above 776px!
     }
 
+    .rating {
+      color: $secondary;
+    }
+
   }
 
   .location-description {
@@ -611,6 +620,11 @@ p {
 
     .individual-review {
       padding: 5px;
+
+      #rev-name {
+        color: $secondary;
+        font-size: 20px;
+      }
     }
   }
 }
@@ -746,6 +760,20 @@ textarea {
     }
   }
 
+  .single-page-title {
+    font-size: 35px !important;
+  }
+
+  .card-code {
+    margin-top: 24px;
+    font-weight: 800;
+    font-size: 20px !important; /// change font sizes above 776px!
+  }
+
+  .rating {
+    font-size: 20px;
+  }
+
   .widget-container {
     display: flex;
     flex-direction: row;
@@ -832,6 +860,7 @@ textarea {
     min-height: 200px !important;
     max-height: 200px !important;
     min-width: 400px !important;
+    max-width: 400px !important;
     overflow-y: scroll;
 
     .individual-review {
@@ -842,8 +871,13 @@ textarea {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1000px;
+    // max-width: 1200px !important;
     padding: 0px !important;
+  }
+
+  .landing-page {
+    margin-left: 200px;
+    margin-right: 200px;
   }
 
   .radio-buttons-large {
@@ -875,6 +909,9 @@ textarea {
   }
 }
 
-// @media (min-width: 1400px){}
-
-// @media (min-width: 1400px){}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1000px;
+    padding: 0px !important;
+  }
+}
