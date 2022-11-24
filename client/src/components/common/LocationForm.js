@@ -138,7 +138,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             required
             className="form-control mt-3 mb-3 "
             type="number"
-            name="fuel"
+            name="nearestFuel"
             id="fuel"
             onChange={handleChange}
             placeholder="Nearest fuel* (km) "
