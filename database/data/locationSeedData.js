@@ -8,7 +8,7 @@ export default [
     currency: '€',
     description:
       'A Palaeolithic site in the mountains about 45 minutes drive from Valencia. The roads can be tricky in larger in a van but it’s worth the ride. You’ll find a lovely quiet forest to camp in and various trails to explore. If you’re in to climbing there’s a fantastic rock face to climb too. Dirt parking within the forest, shaded in the day and quite bumpy.',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: false,
@@ -27,7 +27,7 @@ export default [
     currency: '€',
     description:
       'A very difficult drive down uneaven dirt tracks. For those that persevere theres a large areas of flat ground with access to thermal hot springs. It is worth the drive. About 20 minute walk from the nearby town of Mazzaron. Has supermarkets, fuel and other amenities.',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: false,
@@ -44,7 +44,7 @@ export default [
     currency: '€',
     description:
       'A stunning beach with lots of space to park and regularly frequented by vanlifers and locals. A cliff-top track takes you to the small town of Las-Negras.Lots of walking routes, great for sea swimming.',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: false,
@@ -63,12 +63,12 @@ export default [
     currency: '€',
     description:
       'This beach is breathtaking! Parking on compacted sand about 20m from the beach. Sea great for swimming. Can sometimes get very windy here.',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: false,
     nearestFuel: 2,
-    nearbyActivities: 'Surfing, trecking',
+    nearbyActivities: 'Surfing, trekking',
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027472/Pics/Portugal/Aviados/DSC_6751_imakw7.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027421/Pics/Portugal/Aviados/DSC_6729_zyo8iz.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027441/Pics/Portugal/Aviados/DSC_6736_ajbtfq.jpg'
@@ -82,7 +82,7 @@ export default [
     currency: '€',
     description:
       'Parking on dirt in a huge Eucalyptus forest. Loads of places to hide away and be unoticed if you want some quiet. Toilets and water are available. Just a few km from the town of Barao de Sao Joao which has a supermarket and other amenities',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: true,
     water: true,
@@ -116,7 +116,7 @@ export default [
     currency: '€',
     description:
       'A beautiful wild swimming lake near to the tiny town of Speilbach. Off-road parking, really quiet at night! BBQ facilities.',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: false,
@@ -132,7 +132,7 @@ export default [
     currency: '€',
     description:
       'Free roadside parking in the center of Heidelberg near to a skate park. Wifi from nearby cafe',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: true,
     water: false,
@@ -151,7 +151,7 @@ export default [
     currency: '€',
     description:
       'Parking in a forest by the Aschbachsee. Quiet, secluded spot with access to wild swimming lake. About 2km from town of Herrenzimmern ',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: false,
@@ -189,7 +189,7 @@ export default [
     currency: 'DH',
     description:
       'A well known surf spot 5km from the town of Immi Oudar and 8km from the famous surf town of Tagahzout. Off-road parking with access to rocky coastline and fantastic surf. Water from a nearby well.',
-    parking: true,
+    parking: false,
     freeparking: true,
     toilets: false,
     water: true,

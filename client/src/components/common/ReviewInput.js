@@ -59,7 +59,7 @@ const ReviewInput = ({ location, setLocation }) => {
     <Col md="6">
       {isAuthenticated() ?
         <form onSubmit={handleSubmit}>
-          <p>Leave Review:</p>
+          <p className='leave-review-title'>Leave a Review:</p>
           <textarea
             required
             className='form-control'
@@ -70,8 +70,8 @@ const ReviewInput = ({ location, setLocation }) => {
             value={formFields.text}
           />
           {errors && errors.text && <small className="text-danger">{errors.text}</small>}
-          <span>Rating:</span>
-          <input type='number' name='rating' min="1" max="5" onChange={handleChange} value={formFields.rating}></input>
+          <p>Rating:</p>
+          <input type='range' name='rating' id='rating-range' min="1" max="5" onChange={handleChange} value={formFields.rating}></input>
           {errors && errors.text && <small className="text-danger">{errors.text}</small>}
           <hr></hr>
           <button className='btn btn-primary'>Submit</button>

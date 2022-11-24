@@ -59,7 +59,7 @@ const countrySchema = new mongoose.Schema({
 
 // ? Rating
 locationSchema.virtual('avgRating').get(function () {
-  if (!this.reviews.length) return 'No ratings yet'
+  if (!this.reviews.length) return 'None'
   const sum = this.reviews.reduce((prev, next) => {
     return prev + next.rating
   }, 0)

@@ -104,7 +104,7 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
                 <fieldset >
                   <div className="radio-buttons-large">
                     <div className="button-large">
-                      <label htmlFor="parking">Parking</label>
+                      <label htmlFor="parking">Paid Parking</label>
                       <input type="checkbox" id="parking" name="parking" value={formFields.parking} />
                     </div>
                     {errors && errors.parking && <small className='text-danger'>{errors.parking}</small>}
