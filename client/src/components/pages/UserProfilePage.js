@@ -1,6 +1,6 @@
 // React imports
 import { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 
 // Bootstrap imports
 import Card from 'react-bootstrap/Card'
@@ -16,6 +16,7 @@ import axios from 'axios'
 //Custom imports 
 import { getToken } from '../common/Auth.js'
 import UploadImage from '../../helpers/UploadImage.js'
+import { handleLogout } from '../common/Auth.js'
 
 const UserProfilePage = () => {
   // ! State
@@ -28,6 +29,9 @@ const UserProfilePage = () => {
 
   // ! Location
   const { userId } = useParams()
+
+  // ! Navigation
+  const navigate = useNavigate()
 
   // ! Execution
   useEffect(() => {
@@ -67,10 +71,12 @@ const UserProfilePage = () => {
     }
   }
 
-  const deleteReview = async (e, locationId, reviewId) => {
+  const deleteReview = async (locationId, reviewId) => {
     try {
-      console.log(locationId, reviewId)
-      const response = await axios.delete(`/locations/${locationId}/${reviewId}/`, {
+      console.log('locationId -> ', locationId)
+      console.log('reviewId -> ', reviewId)
+      console.log('user Id ->', user.id)
+      const response = await axios.delete(`/api/locations/${locationId}/review/${reviewId}/`, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
@@ -87,17 +93,19 @@ const UserProfilePage = () => {
     <>
       <Container className='profile-page-container'>
         <Row className='text-center'>
-          <Col md="4" className='text-center'>
+          <Col md="4" className='text-center '>
             <div className='user-details d-flex flex-column align-items-center'>
-              <h3 className="mt-3 mb-5">Your Details</h3>
               <h3>{user.username}</h3>
               <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
-              <UploadImage 
-                imageFormData={formData}
-                setFormData={setFormData}
-              />
+              <div className="upload-image-div d-flex mt-2">
+                <UploadImage 
+                  imageFormData={formData}
+                  setFormData={setFormData}
+                />
+              </div>
+              
               <Link onClick={handleSubmit} className='btn align-self-center btn-warning btn-lg mt-3 mb-3'>Upload Pic</Link>
-              <textarea
+              {/* <textarea
                 className='mt-3 user-bio field'  
                 name="userBio"
                 rows="3"
@@ -105,7 +113,11 @@ const UserProfilePage = () => {
                 onChange={handleChange}
               >
               </textarea>
-              <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link>
+  <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link> */}
+            </div>
+            <div className='mt-4 d-flex align-self-end'>
+              <Link className='btn align-self-start' to="/login" onClick={() => handleLogout(navigate)}>Logout</Link>
+              <Link className='btn align-self-end' to="/locations/add">Add Location</Link>
             </div>
           </Col>
           <Col md="8">
@@ -116,22 +128,22 @@ const UserProfilePage = () => {
                   <ListGroup className='ms-1'>
                     {user.reviews.map(location => {
                       const { reviews, locationId, locationName, locationImage } = location
-                      console.log(reviews)
                       return reviews.map(review => {
                         return (
                           <Link 
                             className="text-decoration-none" 
-                            key={review.id} to={`/locations/${locationId}`}>
+                            key={review._id} 
+                            to={`/locations/${locationId}`}>
                             <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
                               <div>
-                                <img className='list-group-img' src={locationImage}></img>
+                                <img className='list-group-img img-thumbnail' src={locationImage}></img>
                               </div>
                               <div className='d-flex flex-column align-items-start ms-3'>
                                 <h4>{locationName}</h4>
                                 <p className='d-none d-sm-block'>{review.text}</p>
                               </div>
                               <div className='d-flex flex-column buttons align-self-start'>
-                                <Link onClick={deleteReview(locationId, review.id)} className='btn' to="">Delete</Link>
+                                <Link onClick={() => deleteReview(locationId, review._id)} className='btn btn-warning' to="">Delete</Link>
                               </div>
                             </ListGroupItem>
                           </Link>
