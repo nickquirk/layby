@@ -48,10 +48,6 @@ const CarouselCardController = ({ locations }) => {
                       <Link className="text-decoration-none" to={`/locations/${id}`}>
                         <Card className="landing-location-card d-flex">
                           <div className="landing-card-image" style={{ backgroundImage: `url(${image[0]})` }}></div>
-<<<<<<< HEAD
-                          {/* <CarouselImageController location={loc} /> */}
-=======
->>>>>>> development
                           <Card.Body className="d-flex flex-column">
                             <div className='landing-card-header'>
                               <h4 className='landing-card-title'>{name}</h4>
