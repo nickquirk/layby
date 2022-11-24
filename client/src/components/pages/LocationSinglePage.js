@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button'
 
 // Imports
 import ReviewInput from '../common/ReviewInput'
-import Infographic from '../common/Infographic'
+import InfographicSingle from '../common/InfographicSingle'
 import CarouselImageController from '../common/CarouselImage'
 import MapBox from '../common/MapBox'
 import { getToken } from '../common/Auth'
@@ -82,7 +82,7 @@ const LocationSinglePage = () => {
               >
                 <Tab eventKey="details" title="Details">
                   <Col sm="12" >
-                    <Infographic location={location} />
+                    <InfographicSingle location={location} />
                     <hr className='single-page-hr'></hr>
                     <h3 className='mt-3 mb-3'>Description:</h3>
                     <p className='location-description'>{location.description}</p>

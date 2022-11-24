@@ -2,25 +2,21 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable no-undef */
 import axios from 'axios'
-import van from '../images/van.jpeg'
-import login from '../images/login.jpg'
+
 import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/row'
-import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 
-import Infographic from '../common/Infographic'
-import CarouselImageController from '../common/CarouselImage'
 import CarouselCardController from '../common/CarouselCard'
+import van from '../images/van.jpeg'
+import login from '../images/login.jpg'
 const LandingPage = () => {
   const navigate = useNavigate()
 
   const [locations, setLocations] = useState([])
-  let [shuffled, setShuffled] = useState([])
   const [errors, setErrors] = useState(false)
 
   useEffect(() => {
@@ -36,25 +32,17 @@ const LandingPage = () => {
     getData()
   }, [])
 
+
   const navigateToLogin = () => {
     navigate('/login')
   }
-
   const navigateToRegister = () => {
     navigate('/register')
   }
-
   const navigateToLocationIndex = () => {
     navigate('/locations')
   }
 
-  useEffect(() => {
-    const getRandomLocations = () => {
-      const shuffler = locations.sort((a, b) => 0.5 - Math.random())
-      setShuffled(shuffler)
-    }
-    getRandomLocations()
-  }, [locations])
 
   return (
     <main className="landing-page">
@@ -77,7 +65,7 @@ const LandingPage = () => {
         <div className="display-top-rated text-center">
           <h2 id="hero-text">Plan Your Next Adventure</h2>
         </div>
-        <CarouselCardController shuffled={shuffled} locations={locations} />
+        <CarouselCardController locations={locations} />
         <Row>
           <div id="login-register" style={{ backgroundImage: `url(${login})` }}>
             <h2 id="post-text" className=" text-center text-white">

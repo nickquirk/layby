@@ -5,11 +5,11 @@ import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/esm/Col'
 import Row from 'react-bootstrap/esm/Row'
-import Infographic from './Infographic'
-import CarouselImageController from './CarouselImage'
+import InfographicMulti from './InfographicMulti'
 
 
-const CarouselCardController = ({ shuffled, locations }) => {
+
+const CarouselCardController = ({ locations }) => {
   const [index, setIndex] = useState(0)
 
   const handleSelect = (selectedIndex, e) => {
@@ -48,16 +48,14 @@ const CarouselCardController = ({ shuffled, locations }) => {
                       <Link className="text-decoration-none" to={`/locations/${id}`}>
                         <Card className="landing-location-card d-flex">
                           <div className="landing-card-image" style={{ backgroundImage: `url(${image[0]})` }}></div>
-                          {/* <CarouselImageController location={loc} /> */}
                           <Card.Body className="d-flex flex-column">
-                            <div className='location-card-header'>
-                              <h4 className='location-card-title'>{name}</h4>
-                              <p className='card-code'>{countryCode}</p>
+                            <div className='landing-card-header'>
+                              <h4 className='landing-card-title'>{name}</h4>
+                              <p id='card-code'>{countryCode}</p>
                             </div>
-                            <p className="card-text">{description}</p>
-                            <span></span>
-                            <div className="icon-container d-flex justify-content-evenly">
-                              <Infographic location={loc} />
+                            <p className="card-text-lp">{description}</p>
+                            <div className="icon-container d-flex justify-content-evenly" id='landing-page-icon-container'>
+                              <InfographicMulti location={loc} />
                             </div>
                           </Card.Body>
                         </Card>
