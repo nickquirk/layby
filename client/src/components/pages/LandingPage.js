@@ -45,7 +45,7 @@ const LandingPage = () => {
 
 
   return (
-    <main className="landing-page">
+    <div className="site-wrapper"><main className="landing-page">
       <Container fluid className="char-container">
         <Row>
           <div
@@ -99,6 +99,8 @@ const LandingPage = () => {
         </Row>
       </Container >
     </main >
+    </div>
+    
   )
 }
 
