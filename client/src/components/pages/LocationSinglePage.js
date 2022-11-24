@@ -81,7 +81,7 @@ const LocationSinglePage = () => {
                 fill
               >
                 <Tab eventKey="details" title="Details">
-                  <Col sm="12" md="6">
+                  <Col sm="12" >
                     <Infographic location={location} />
                     <hr className='single-page-hr'></hr>
                     <h3 className='mt-3 mb-3'>Description:</h3>
