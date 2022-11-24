@@ -14,7 +14,6 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   profileImage: { type: String },
-  reviews: [String]
 })
 
 // ? Removing password field from lookup of the users collection
@@ -71,5 +70,54 @@ userSchema.pre('save', function (next) {
 userSchema.methods.validatePassword = function (plainTextPassword) {
   return bcrypt.compareSync(plainTextPassword, this.password)
 }
+
+// ? create Reviews field 
+//a virtual field that is returned with the JSON
+userSchema.virtual('reviews', {
+  ref: 'VanSpot',
+  localField: '_id',
+  foreignField: 'locations.reviews.owner',
+  get: function(res){
+    // res[country]
+    const userReviews = res.map(country => {
+      let reviewObject = {
+        countryId: '',
+        locationId: '',
+        reviews: []
+      }
+      const countryId = country._id
+      const locationIds = country.locations.map(loc => {
+        return loc.name
+      })
+      console.log('location ids ->', locationIds)
+      reviewObject = locationIds.map(id => {
+        const reviewObjectTemp = {
+          countryId: '',
+          locationId: '',
+          reviews: []
+        }
+        reviewObjectTemp.countryId = countryId
+        reviewObjectTemp.locationId = id
+        return reviewObjectTemp
+      })
+      // country.locations.forEach(loc => {
+      //   reviewObject.reviews(loc.reviews)
+      // })
+
+      reviewObject.reviews
+      console.log(userReviews)
+      return reviewObject
+    })
+    
+
+    //console.log('User reviews object ->', userReviews)
+
+
+
+
+    // must return here: 
+    return userReviews
+  }
+})
 
 export default mongoose.model('User', userSchema)

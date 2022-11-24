@@ -1,5 +1,9 @@
 import { NotFound } from '../config/errors.js'
 import User from '../models/user.js'
+import VanSpot from '../models/vanSpot.js'
+
+//TODO
+//Error handling
 
 export const getUser = async (req, res) => {
   try {
@@ -39,7 +43,10 @@ export const getUserReviews = async (req, res) => {
   try {
     const loggedInUser = await User.findById(req.currentUser._id)
     if (!loggedInUser) throw new NotFound('User not found')
+    const userReviews = await VanSpot.find({ country: 'Spain' }).exec()
+    return res.json(userReviews)
   } catch (err) {
     console.log(err.message)
   }
 }
+

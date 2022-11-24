@@ -14,14 +14,14 @@ import axios from 'axios'
 
 const NavBar = () => {
   // ! State
-  const [userId, setUserId] = useState([])
+  const [userId, setUserId] = useState('')
 
   // ! Navigation
   const navigate = useNavigate()
 
-  useEffect(() => {
-    setUserId(getUserId())
-  }, [userId])
+  // useEffect(() => {
+  //   setUserId(getUserId())
+  // },[])
 
 
   return (
@@ -46,7 +46,7 @@ const NavBar = () => {
               </Nav.Link>
               {isAuthenticated() ?
                 <>
-                  <Nav.Link as={Link} to={`/profile/${userId}`}>
+                  <Nav.Link as={Link} to={`/profile/${getUserId()}`}>
                     Profile
                   </Nav.Link>
                   <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>

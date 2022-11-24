@@ -20,7 +20,6 @@ import UploadImage from '../../helpers/UploadImage.js'
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
-  const [profileImage, setProfileImage] = useState()
   const [ formData, setFormData ] = useState({
     profileImage: '',
     userBio: '',
@@ -39,12 +38,7 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-
-        const getReviews = async () => {
-          // get user reviews here
-          const reviews = await axios.get('/api/locations')
-        }
-
+        console.log('This is data ->', data)
       } catch (err) {
         console.log(err)
       }
@@ -65,7 +59,7 @@ const UserProfilePage = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      setProfileImage(user.profileImage)
+      setUser(data)
     } catch (err) {
       console.log(err)
     }
@@ -73,9 +67,6 @@ const UserProfilePage = () => {
 
   useEffect(() => console.log(formData))
 
-  useEffect(() => {
-    console.log('profile image updated')
-  }, [profileImage])
 
 
 
