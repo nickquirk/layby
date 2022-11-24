@@ -222,6 +222,11 @@ $tertiary: #f5f5f5;
     margin-top: 30px;
     align-self: flex-end;
   }
+
+}
+
+legend {
+  font-weight: 10px;
 }
 
 legend {
@@ -297,6 +302,7 @@ legend {
     color: $secondary;
     font-weight: 800;
   }
+
 
   .card-text {
     text-overflow: ellipsis;
