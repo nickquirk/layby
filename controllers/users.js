@@ -1,6 +1,6 @@
 import { NotFound } from '../config/errors.js'
 import User from '../models/user.js'
-import VanSpot from '../models/vanSpot.js'
+
 
 //TODO
 //Error handling
@@ -28,25 +28,14 @@ export const setProfilePic = async (req, res) => {
   try {
     const loggedInUser = await User.findById(req.currentUser._id)
     if (!loggedInUser) throw new NotFound('User not found')
-    else if (req.body.profileImage === loggedInUser.profileImage) throw new Error('Image is the same as current image')
-    else if (!req.body.profileImage) throw new Error('Please select an image to upload')
+    else if (req.body.image === loggedInUser.image) throw new Error('Image is the same as current image')
+    else if (!req.body.image) throw new Error('Please select an image to upload')
     Object.assign(loggedInUser, req.body)
     await loggedInUser.save()
     return res.json(loggedInUser)
   } catch (err) {
     console.log(err.message)
     return res.status(304).json({ message: err.message })
-  }
-}
-
-export const getUserReviews = async (req, res) => {
-  try {
-    const loggedInUser = await User.findById(req.currentUser._id)
-    if (!loggedInUser) throw new NotFound('User not found')
-    const userReviews = await VanSpot.find({ country: 'Spain' }).exec()
-    return res.json(userReviews)
-  } catch (err) {
-    console.log(err.message)
   }
 }
 

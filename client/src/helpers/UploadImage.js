@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 
-const UploadImage = ({ imageFormData, setFormData }) => {
+const UploadImage = ({ imageFormData, setFormData, handleSubmit }) => {
 
   const handleChange = async (event) => {
     try {
@@ -16,7 +16,6 @@ const UploadImage = ({ imageFormData, setFormData }) => {
       const { data } = await axios.post(process.env.REACT_APP_CLOUDINARY_URL, formData)
       // Add profile image to form data
       setFormData({ ...imageFormData, image: data.secure_url })
-      console.log(data)
     } catch (err) {
       console.log(err)
     }
@@ -30,6 +29,7 @@ const UploadImage = ({ imageFormData, setFormData }) => {
         name="image"
         type='file'
         onChange={handleChange}
+        onSubmit={handleSubmit}
       />
     </div>
   )
