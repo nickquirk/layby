@@ -72,17 +72,20 @@ const EditLocation = () => {
 
   // ! JSX
   return (
-    <div className="hero-page text-center form-main">
-      <h1 className="mt-5">Edit a Location</h1>
-      <LocationForm
-        handleSubmit={handleSubmit}
-        formFields={formFields}
-        setFormFields={setFormFields}
-        errors={errors}
-        setErrors={setErrors}
-        formName="Edit Location"
-      />
+    <div className="site-wrapper">
+      <div className="hero-page text-center form-main">
+        <h1 className="mt-5">Edit a Location</h1>
+        <LocationForm
+          handleSubmit={handleSubmit}
+          formFields={formFields}
+          setFormFields={setFormFields}
+          errors={errors}
+          setErrors={setErrors}
+          formName="Edit Location"
+        />
+      </div>
     </div>
+    
   )
 }
 
