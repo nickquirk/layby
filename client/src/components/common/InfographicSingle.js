@@ -4,7 +4,7 @@ import { GrRestroom } from 'react-icons/gr'
 import { TbParking, TbCurrencyDirham } from 'react-icons/tb'
 import { RiParkingBoxFill } from 'react-icons/ri'
 
-const Infographic = ({ location }) => {
+const InfographicSingle = ({ location }) => {
   const style = { fontSize: '1em' }
 
   return (
@@ -19,7 +19,6 @@ const Infographic = ({ location }) => {
         <></>}
       {location.currency === 'DH' ?
         <div className='ifg' id='dirham-ifg'><TbCurrencyDirham style={style} /><p className='widget-text'>Moroccan Dirham</p></div>
-
         :
         <></>}
       {location.water === true ?
@@ -43,4 +42,4 @@ const Infographic = ({ location }) => {
   )
 }
 
-export default Infographic
+export default InfographicSingle

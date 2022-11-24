@@ -20,6 +20,7 @@ import UploadImage from '../../helpers/UploadImage.js'
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
+  const [errors, setErrors] = useState(false)
   const [ formData, setFormData ] = useState({
     profileImage: '',
     userBio: '',
@@ -38,9 +39,9 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-        console.log('This is data ->', data)
       } catch (err) {
         console.log(err)
+        setErrors(true)
       }
     }
     getUser()
@@ -65,10 +66,21 @@ const UserProfilePage = () => {
     }
   }
 
-  useEffect(() => console.log(formData))
+  const deleteReview = async (e, locationId, reviewId) => {
+    try {
+      console.log(locationId, reviewId)
+      const response = await axios.delete(`/locations/${locationId}/${reviewId}/`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      console.log(response)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
-
-
+  //useEffect(() => console.log('user useEffect ->',user))
 
   // ! JSX
   return (
@@ -79,7 +91,7 @@ const UserProfilePage = () => {
             <div className='user-details d-flex flex-column align-items-center'>
               <h3 className="mt-3 mb-5">Your Details</h3>
               <h3>{user.username}</h3>
-              <img className='img-thumbnail profile-pic' key={user.id} src={`${user.profileImage}`}></img>
+              <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
               <UploadImage 
                 imageFormData={formData}
                 setFormData={setFormData}
@@ -97,26 +109,43 @@ const UserProfilePage = () => {
             </div>
           </Col>
           <Col md="8">
+            <h3>Your Reviews</h3>
             <div className='user-reviews'>
-              <h3 className="mt-t mb-5">Your Reviews</h3>
-              <ListGroup className='ms-1'>
-                <ListGroupItem className='d-flex review-list list-group-item-action mt-3 mb-3'>
-                  <div className='image-text-container d-flex'>
-                    <div >
-                      <img className='list-group-img' src='https://tinyurl.com/5atpj5f8'></img>
-                    </div>
-                    <div className='title-text-container d-flex flex-column align-items-start ms-3'>
-                      <h4>Name</h4>
-                      <p className='d-none d-sm-block'>Some paragraph text</p>
-                    </div>
-                  </div>
-                  <div className='btn-container d-flex flex-column buttons align-self-start'>
-                    <Link className='btn btn-warning btn-lg mt-3 mb-3'>Edit</Link>
-                    <Link className='btn btn-danger btn-lg mt-3 mb-3'>Delete</Link>
-                  </div>
-                </ListGroupItem>
-              </ListGroup>
-            </div> 
+              <>
+                {user.reviews ? (
+                  <ListGroup className='ms-1'>
+                    {user.reviews.map(location => {
+                      const { reviews, locationId, locationName, locationImage } = location
+                      console.log(reviews)
+                      return reviews.map(review => {
+                        return (
+                          <Link 
+                            className="text-decoration-none" 
+                            key={review.id} to={`/locations/${locationId}`}>
+                            <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
+                              <div>
+                                <img className='list-group-img' src={locationImage}></img>
+                              </div>
+                              <div className='d-flex flex-column align-items-start ms-3'>
+                                <h4>{locationName}</h4>
+                                <p className='d-none d-sm-block'>{review.text}</p>
+                              </div>
+                              <div className='d-flex flex-column buttons align-self-start'>
+                                <Link onClick={deleteReview(locationId, review.id)} className='btn'>Delete</Link>
+                              </div>
+                            </ListGroupItem>
+                          </Link>
+                        )
+                      })
+                    })}
+                  </ListGroup>
+                ) : errors ? (
+                  <h2>Error...</h2>
+                ) : (
+                  <h2>No reviews</h2>
+                )}
+              </>
+            </div>
             <div className='user-favourites mt-4'>
               <h3 className="mt-5 mb-5">Your Places</h3>
               <div className='favourite-card-container'>

@@ -70,5 +70,26 @@ locationSchema.set('toJSON', {
   virtuals: true
 })
 
+countrySchema.methods.getOwnedReviews = function (fieldValue, user) {
+  console.log('this- -> ', this)
+  // put in if locations
+  this.locations.forEach(location => {
+    const locationWithReviews = {
+      locationId: location._id,
+      locationName: location.name,
+      locationImage: location.image[0],
+      reviews: []
+    }
+    location.reviews.forEach(review => {
+      if (review.owner.equals(user._id)){
+        locationWithReviews.reviews.push(review)
+      }
+    })
+    if (locationWithReviews.reviews.length){
+      fieldValue.push(locationWithReviews)
+    }
+  })
+}
+
 // * Model
 export default mongoose.model('VanSpot', countrySchema)
