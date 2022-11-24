@@ -253,7 +253,7 @@ legend {
 }
 
 .list-group-img {
-  width: 120px;
+  max-width: 120px;
 }
 
 .review-list {
@@ -264,6 +264,13 @@ legend {
 
   .buttons {
     flex-grow: 1;
+  }
+}
+
+.upload-image-div{
+  display: flex;
+  input{
+    width: 100%;
   }
 }
 
