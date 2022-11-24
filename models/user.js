@@ -77,46 +77,20 @@ userSchema.virtual('reviews', {
   ref: 'VanSpot',
   localField: '_id',
   foreignField: 'locations.reviews.owner',
-  get: function(res){
-    // res[country]
-    const userReviews = res.map(country => {
-      let reviewObject = {
-        countryId: '',
-        locationId: '',
-        reviews: []
-      }
-      const countryId = country._id
-      const locationIds = country.locations.map(loc => {
-        return loc.name
-      })
-      console.log('location ids ->', locationIds)
-      reviewObject = locationIds.map(id => {
-        const reviewObjectTemp = {
-          countryId: '',
-          locationId: '',
-          reviews: []
-        }
-        reviewObjectTemp.countryId = countryId
-        reviewObjectTemp.locationId = id
-        return reviewObjectTemp
-      })
-      // country.locations.forEach(loc => {
-      //   reviewObject.reviews(loc.reviews)
-      // })
+  get: function (res, _virtualType, user){
+    if (!res) return
+    const fieldValue = []
 
-      reviewObject.reviews
-      console.log(userReviews)
-      return reviewObject
-    })
+    if (res.length){
+      res.forEach(country => {
+        country.getOwnedReviews(fieldValue, user)
+      })
+    } else {
+      res.getOwnedReviews(fieldValue, user)
+    }
+
     
-
-    //console.log('User reviews object ->', userReviews)
-
-
-
-
-    // must return here: 
-    return userReviews
+    return fieldValue
   }
 })
 

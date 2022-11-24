@@ -20,6 +20,7 @@ import UploadImage from '../../helpers/UploadImage.js'
 const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
+  const [errors, setErrors] = useState(false)
   const [ formData, setFormData ] = useState({
     profileImage: '',
     userBio: '',
@@ -38,9 +39,12 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
+        console.log(data.reviews)
         console.log('This is data ->', data)
+        console.log('user.reviews ->', data.reviews[0])
       } catch (err) {
         console.log(err)
+        setErrors(true)
       }
     }
     getUser()
@@ -65,10 +69,7 @@ const UserProfilePage = () => {
     }
   }
 
-  useEffect(() => console.log(formData))
-
-
-
+  //useEffect(() => console.log('user useEffect ->',user))
 
   // ! JSX
   return (
@@ -78,7 +79,7 @@ const UserProfilePage = () => {
           <Col md="4" className='text-center'>
             <div className='user-details d-flex flex-column align-items-center'>
               <h3>{user.username}</h3>
-              <img className='img-thumbnail profile-pic' key={user.id} src={`${user.profileImage}`}></img>
+              <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
               <UploadImage 
                 imageFormData={formData}
                 setFormData={setFormData}
@@ -98,35 +99,26 @@ const UserProfilePage = () => {
           <Col md="8">
             <div className='user-reviews'>
               <h3>Your Reviews</h3>
-              <ListGroup className='ms-1'>
-                <ListGroupItem className='d-flex review-list list-group-item-action'>
-                  <div>
-                    <img className='list-group-img' src='https://tinyurl.com/5atpj5f8'></img>
-                  </div>
-                  <div className='d-flex flex-column align-items-start ms-3'>
-                    <h4>Location</h4>
-                    <p className='d-none d-sm-block'>Some paragraph text</p>
-                  </div>
-                  <div className='d-flex flex-column buttons align-self-start'>
-                    <Link className='btn'>Edit</Link>
-                    <Link className='btn'>Delete</Link>
-                  </div>
-                </ListGroupItem>
-                <ListGroupItem className='d-flex review-list list-group-item-action'>
-                  <div>
-                    <img className='list-group-img' src='https://tinyurl.com/5atpj5f8'></img>
-                  </div>
-                  <div className='d-flex flex-column align-items-start ms-3'>
-                    <h4>Location</h4>
-                    <p className='d-none d-sm-block'>Some paragraph text</p>
-                  </div>
-                  <div className='d-flex flex-column buttons align-self-start'>
-                    <Link className='btn'>Edit</Link>
-                    <Link className='btn'>Delete</Link>
-                  </div>
-                </ListGroupItem>
-              </ListGroup>
-            </div> 
+              <>
+                {user.reviews ? (
+                  <ListGroup className='ms-1'>
+                    {user.reviews.map(location => {
+                      const { reviews } = location
+                      console.log(reviews)
+                      return reviews.map(review => {
+                        return (
+                          <p key={review._id}>{review.text}</p>
+                        )
+                      })
+                    })}
+                  </ListGroup>
+                ) : errors ? (
+                  <h2>Error...</h2>
+                ) : (
+                  <h2>No reviews</h2>
+                )}
+              </>
+            </div>
             <div className='user-favourites mt-4'>
               <h3>Favourite Places</h3>
               <div className='favourite-card-container'>
