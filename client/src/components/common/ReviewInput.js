@@ -93,8 +93,8 @@ const ReviewInput = ({ location, setLocation }) => {
               const { _id } = rev
               return (
                 <div className='individual-review' key={_id}>
-                  <h4>{rev.owner.username}</h4>
-                  <span>Rating: {rev.rating} / 10</span>
+                  <h4 id='rev-name'>{rev.owner.username}</h4>
+                  <span className='rating'> {rev.rating}&#9733;</span>
                   <p>{rev.text}</p>
                   <hr></hr>
                 </div>

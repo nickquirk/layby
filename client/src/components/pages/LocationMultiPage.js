@@ -7,7 +7,7 @@ import { GrRestroom } from 'react-icons/gr'
 import { TbParking } from 'react-icons/tb'
 
 import FilterSearch from '../common/FilterSearch'
-
+import SpinnerItem from '../common/SpinnerItem'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/Col'
@@ -114,11 +114,11 @@ const LocationMultiPage = () => {
               )
             })}
           </Row>
-        ) : errors ? (
+        ) : errors ?
           <h2>Something has gone wrong, my sincere apologies...</h2>
-        ) : (
-          <h2>Loading...</h2>
-        )}
+          :
+          <SpinnerItem />
+        }
       </Container>
     </main>
   )
