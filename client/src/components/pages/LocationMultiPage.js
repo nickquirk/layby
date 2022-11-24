@@ -32,95 +32,98 @@ const LocationMultiPage = () => {
   }, [])
 
   return (
-    <main className="location-index">
-      <Container className=" fluid char-container mt-4">
-        <FilterSearch
-          locations={locations}
-          filteredLocations={filteredLocations}
-          setFilteredLocations={setFilteredLocations}
-        />
-        {filteredLocations.length ? (
-          <Row>
-            {filteredLocations.map((loc) => {
-              const {
-                name,
-                countryCode,
-                description,
-                freeparking,
-                image,
-                toilets,
-                water,
-                id
-              } = loc
-              return (
-                <Col
-                  key={id}
-                  xs="12"
-                  sm="12"
-                  md="6"
-                  lg="4"
-                  xl="4"
-                  className="char-card mb-4"
-                >
-                  <Link
-                    className="text-decoration-none"
-                    to={`/locations/${id}`}
+    <div className="site-wrapper">
+      <main className="location-index">
+        <Container className=" fluid char-container mt-4">
+          <FilterSearch
+            locations={locations}
+            filteredLocations={filteredLocations}
+            setFilteredLocations={setFilteredLocations}
+          />
+          {filteredLocations.length ? (
+            <Row>
+              {filteredLocations.map((loc) => {
+                const {
+                  name,
+                  countryCode,
+                  description,
+                  freeparking,
+                  image,
+                  toilets,
+                  water,
+                  id
+                } = loc
+                return (
+                  <Col
+                    key={id}
+                    xs="12"
+                    sm="12"
+                    md="6"
+                    lg="4"
+                    xl="4"
+                    className="char-card mb-4"
                   >
-                    <Card className="location-card">
-                      <div
-                        className="card-image"
-                        style={{ backgroundImage: `url(${image[0]})` }}
-                      ></div>
-                      <Card.Body className="d-flex flex-column">
-                        <div className='location-card-header'>
-                          <h4 className='location-card-title mb-4'>{name}</h4>
-                          <p className='card-code-multi'>{countryCode}</p>
-                        </div>
-                        {/* <p className="card-text">{description}</p> */}
-                        <span></span>
-                        <div className="icon-container d-flex justify-content-evenly">
-                          <div className="icon">
-                            {toilets === false ? (
-                              <></>
-                            ) : (
-                              <div className="ifg" id="restroom-ifg">
-                                <GrRestroom />
-                              </div>
-                            )}
+                    <Link
+                      className="text-decoration-none"
+                      to={`/locations/${id}`}
+                    >
+                      <Card className="location-card">
+                        <div
+                          className="card-image"
+                          style={{ backgroundImage: `url(${image[0]})` }}
+                        ></div>
+                        <Card.Body className="d-flex flex-column">
+                          <div className='location-card-header'>
+                            <h4 className='location-card-title mb-4'>{name}</h4>
+                            <p className='card-code-multi'>{countryCode}</p>
                           </div>
-                          <div className="icon">
-                            {freeparking === false ? (
-                              <></>
-                            ) : (
-                              <div className="ifg" id="parking-ifg">
-                                <TbParking />
-                              </div>
-                            )}
+                          {/* <p className="card-text">{description}</p> */}
+                          <span></span>
+                          <div className="icon-container d-flex justify-content-evenly">
+                            <div className="icon">
+                              {toilets === false ? (
+                                <></>
+                              ) : (
+                                <div className="ifg" id="restroom-ifg">
+                                  <GrRestroom />
+                                </div>
+                              )}
+                            </div>
+                            <div className="icon">
+                              {freeparking === false ? (
+                                <></>
+                              ) : (
+                                <div className="ifg" id="parking-ifg">
+                                  <TbParking />
+                                </div>
+                              )}
+                            </div>
+                            <div className="icon">
+                              {water === false ? (
+                                <></>
+                              ) : (
+                                <div className="ifg" id="water-ifg">
+                                  <MdOutlineWaterDrop />
+                                </div>
+                              )}
+                            </div>
                           </div>
-                          <div className="icon">
-                            {water === false ? (
-                              <></>
-                            ) : (
-                              <div className="ifg" id="water-ifg">
-                                <MdOutlineWaterDrop />
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </Card.Body>
-                    </Card>
-                  </Link>
-                </Col>
-              )
-            })}
-          </Row>
-        ) : errors ?
-          <h2>Something has gone wrong, my sincere apologies...</h2>
-          :
-          <SpinnerItem />
-        }
-      </Container>
-    </main>
+                        </Card.Body>
+                      </Card>
+                    </Link>
+                  </Col>
+                )
+              })}
+            </Row>
+          ) : errors ?
+            <h2>Something has gone wrong, my sincere apologies...</h2>
+            :
+            <SpinnerItem />
+          }
+        </Container>
+      </main>
+    </div>
+    
   )
 }
 

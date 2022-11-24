@@ -175,11 +175,69 @@ const UserProfilePage = () => {
                   
                 </Row>
               </div>
-            </div> */}
-          </Col>
-        </Row>
-      </Container>
-    </>
+            </Col>
+            <Col md="8">
+              <h3>Your Reviews</h3>
+              <div className='user-reviews'>
+                <>
+                  {user.reviews ? (
+                    <ListGroup className='ms-1'>
+                      {user.reviews.map(location => {
+                        const { reviews, locationId, locationName, locationImage } = location
+                        console.log(reviews)
+                        return reviews.map(review => {
+                          return (
+                            <Link 
+                              className="text-decoration-none" 
+                              key={review.id} to={`/locations/${locationId}`}>
+                              <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
+                                <div>
+                                  <img className='list-group-img' src={locationImage}></img>
+                                </div>
+                                <div className='d-flex flex-column align-items-start ms-3'>
+                                  <h4>{locationName}</h4>
+                                  <p className='d-none d-sm-block'>{review.text}</p>
+                                </div>
+                                <div className='d-flex flex-column buttons align-self-start'>
+                                  <Link onClick={deleteReview(locationId, review.id)} className='btn' to="">Delete</Link>
+                                </div>
+                              </ListGroupItem>
+                            </Link>
+                          )
+                        })
+                      })}
+                    </ListGroup>
+                  ) : errors ? (
+                    <h2>Error...</h2>
+                  ) : (
+                    <h2>No reviews</h2>
+                  )}
+                </>
+              </div>
+              {/* <div className='user-favourites mt-4'>
+                <h3 className="mt-5 mb-5">Your Places</h3>
+                <div className='favourite-card-container'>
+                  <Row>
+                    <Col md="6"  xs="6">
+                      <Card className='favourite-card'>
+                        <Card.Body>
+                          <Card.Img variant='top' src='https://tinyurl.com/5atpj5f8'/>
+                          <Card.Title>Location Name</Card.Title>
+                          <Card.Subtitle>Country here</Card.Subtitle>
+                          <Card.Link>Link to location</Card.Link>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                    
+                  </Row>
+                </div>
+              </div> */}
+            </Col>
+          </Row>
+        </Container>
+      </>
+    </div>
+    
   )
 }
 

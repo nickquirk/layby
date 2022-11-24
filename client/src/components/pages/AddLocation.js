@@ -63,17 +63,20 @@ const AddLocation = () => {
 
 
   return (
-    <div className="hero-page text-center form-main">
-      <h1 className="mt-5">Add a Location</h1>
-      <LocationForm
-        handleSubmit={handleSubmit}
-        formFields={formFields}
-        setFormFields={setFormFields}
-        errors={errors}
-        setErrors={setErrors}
-        formName="Add Location"
-      />
+    <div className="site-wrapper">
+      <div className="hero-page text-center form-main">
+        <h1 className="mt-5">Add a Location</h1>
+        <LocationForm
+          handleSubmit={handleSubmit}
+          formFields={formFields}
+          setFormFields={setFormFields}
+          errors={errors}
+          setErrors={setErrors}
+          formName="Add Location"
+        />
+      </div>
     </div>
+    
   )
 }
 
