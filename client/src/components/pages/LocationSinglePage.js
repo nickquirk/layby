@@ -18,6 +18,7 @@ import ReviewInput from '../common/ReviewInput'
 import InfographicSingle from '../common/InfographicSingle'
 import CarouselImageController from '../common/CarouselImage'
 import MapBox from '../common/MapBox'
+import SpinnerItem from '../common/SpinnerItem'
 
 
 const LocationSinglePage = () => {
@@ -69,7 +70,7 @@ const LocationSinglePage = () => {
     <main className="single-page">
       <Container className="fluid mt-4 single-page-container">
         <Row>
-          {location ? (
+          {location ?
             <>
               <div className='single-page-header'>
                 <div className='single-page-name'>
@@ -77,7 +78,7 @@ const LocationSinglePage = () => {
                   <p className='card-code'>{location.countryCode}</p>
                 </div>
                 <div className='single-page-rating'>
-                  <p className='card-code card-avg'>Rating: {location.avgRating}</p>
+                  <p className='card-avg'><span className='rating'>{location.avgRating} &#9733;</span></p>
                 </div>
               </div>
               <CarouselImageController location={location} />
@@ -113,9 +114,9 @@ const LocationSinglePage = () => {
                 </Tab>
               </Tabs>
             </>
-          ) : (
-            <h2>Something went wrong...</h2>
-          )}
+            :
+            <SpinnerItem />
+          }
         </Row>
       </Container>
     </main >
