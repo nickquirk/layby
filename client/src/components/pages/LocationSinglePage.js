@@ -70,7 +70,7 @@ const LocationSinglePage = () => {
                   <p className='card-code'>{location.countryCode}</p>
                 </div>
                 <div className='single-page-rating'>
-                  <p className='card-code card-avg'>Rating: {location.avgRating}</p>
+                  <p className='card-code card-avg'><span className='rating'>{location.avgRating} ⭐️</span></p>
                 </div>
               </div>
               <CarouselImageController location={location} />

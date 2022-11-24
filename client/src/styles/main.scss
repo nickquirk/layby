@@ -400,7 +400,7 @@ p {
     }
 
     .single-page-title {
-      margin: 10px 5px 10px 10px;
+      margin: 14px 5px 10px 10px;
       font-size: 20px;
     }
 
@@ -410,8 +410,9 @@ p {
       align-items: flex-start;
       color: $secondary;
       font-weight: 800;
-      font-size: 10px; /// change font sizes above 776px!
+      font-size: 12px; /// change font sizes above 776px!
     }
+
   }
 
   .location-description {
@@ -599,6 +600,7 @@ p {
     border: 1px solid #DEE2E6;
     border-radius: 5px;
     min-height: 100px;
+    max-height: 300px;
     overflow-y: scroll;
 
     .individual-review {
@@ -773,6 +775,7 @@ textarea {
       display: block; // display above a certain size 768px??
     }
   }
+
 }
 
 /* Desktop up - once gets above phone screen size of 992 then apply this */
