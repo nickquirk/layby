@@ -10,6 +10,7 @@ import { getToken } from '../common/Auth.js'
 
 // Custom Components
 import LocationForm from '../common/LocationForm.js'
+import UploadImage from '../../helpers/UploadImage.js'
 
 const AddLocation = () => {
   

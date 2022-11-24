@@ -2,6 +2,7 @@
 import Button from 'react-bootstrap/Button'
 import { BiPound, BiEuro } from 'react-icons/bi'
 import { TbCurrencyDirham } from 'react-icons/tb'
+import UploadImage from '../../helpers/UploadImage'
 
 const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErrors }) => {
 
@@ -161,15 +162,9 @@ const LocationForm = ({ handleSubmit, formFields, setFormFields, errors, setErro
             value={formFields.nearbyActivities}
           />
           {errors && errors.nearbyActivities && <small className='text-danger'>{errors.nearbyActivities}</small>}
-          <input
-            required
-            className="form-control mb-2"
-            type="text"
-            name="image"
-            id="image"
-            onChange={handleChange}
-            placeholder="Image URL*  e.g. https://..."
-            value={formFields.image}
+          <UploadImage 
+            imageFormData={formFields}
+            setFormData={setFormFields}
           />
           {errors && errors.image && <small className='text-danger'>{errors.image}</small>}
           {/* Generic Message Error */}

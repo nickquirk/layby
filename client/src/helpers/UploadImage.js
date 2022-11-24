@@ -15,7 +15,8 @@ const UploadImage = ({ imageFormData, setFormData }) => {
       // Send data as Axios reqest to cloudinary API
       const { data } = await axios.post(process.env.REACT_APP_CLOUDINARY_URL, formData)
       // Add profile image to form data
-      setFormData({ ...imageFormData, profileImage: data.secure_url })
+      setFormData({ ...imageFormData, image: data.secure_url })
+      console.log(data)
     } catch (err) {
       console.log(err)
     }
@@ -26,7 +27,7 @@ const UploadImage = ({ imageFormData, setFormData }) => {
     <div className='field'>
       <input
         className="input"
-        name="profileImage"
+        name="image"
         type='file'
         onChange={handleChange}
       />

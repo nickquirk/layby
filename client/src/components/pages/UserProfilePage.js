@@ -23,7 +23,7 @@ const UserProfilePage = () => {
   const [user, setUser] = useState([])
   const [errors, setErrors] = useState(false)
   const [ formData, setFormData ] = useState({
-    profileImage: '',
+    image: '',
     userBio: '',
   })
 
@@ -43,7 +43,7 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-        console.log(user)
+        console.log(data)
       } catch (err) {
         console.log(err)
         setErrors(true)
@@ -96,7 +96,7 @@ const UserProfilePage = () => {
           <Col md="4" className='text-center '>
             <div className='user-details d-flex flex-column align-items-center'>
               <h3>{user.username}</h3>
-              <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
+              <img className='img-thumbnail profile-pic' src={`${user.image}`}></img>
               <div className="upload-image-div d-flex mt-2">
                 <UploadImage 
                   imageFormData={formData}
@@ -105,7 +105,7 @@ const UserProfilePage = () => {
               </div>
               
               <Link onClick={handleSubmit} className='btn align-self-center btn-warning btn-lg mt-3 mb-3'>Upload Pic</Link>
-              {/* <textarea
+              <textarea
                 className='mt-3 user-bio field'  
                 name="userBio"
                 rows="3"
@@ -113,7 +113,7 @@ const UserProfilePage = () => {
                 onChange={handleChange}
               >
               </textarea>
-  <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link> */}
+              <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link>
             </div>
             <div className='mt-4 d-flex align-self-end'>
               <Link className='btn align-self-start' to="/login" onClick={() => handleLogout(navigate)}>Logout</Link>
@@ -232,11 +232,10 @@ const UserProfilePage = () => {
                   </Row>
                 </div>
               </div> */}
-            </Col>
-          </Row>
-        </Container>
-      </>
-    </div>
+          </Col>
+        </Row>
+      </Container>
+    </>
     
   )
 }
