@@ -18,6 +18,8 @@ const LoginPage = () => {
     password: ''
   })
 
+  const [ error , setError ] = useState('')
+
   // ! Executions
   // send off form data to our API
   const handleSubmit = async (e) => {
@@ -29,20 +31,22 @@ const LoginPage = () => {
       // navigate to home after successful login
       navigate('/')
     } catch (err) {
-      console.log(err)
+      setError(err.response.data.message)
+      console.log(err.response.data.message)
+      // setError({ ...error, [e.target.name]: '', message: '' })
     }
-    console.log('form submitted')
   }
 
   const handleChange = (e) => {
-    // This happens on any change to the form
-    // create shallow copy of form fields by spreading in to a new object
-    const updatedFormFields = { ...formFields }
-    // set key name to value entered into form field
-    updatedFormFields[e.target.name] = e.target.value
-    // set formFields = updatedFormFields
-    setFormFields(updatedFormFields)
-    // ! if there's an error, set to an empty string
+    // // This happens on any change to the form
+    // // create shallow copy of form fields by spreading in to a new object
+    // const updatedFormFields = { ...formFields }
+    // // set key name to value entered into form field
+    // updatedFormFields[e.target.name] = e.target.value
+    // // set formFields = updatedFormFields
+    // setFormFields(updatedFormFields)
+    // // remove any errors
+    setFormFields({ ...formFields, [e.target.name]: e.target.value })
   }
 
   return (
@@ -50,6 +54,7 @@ const LoginPage = () => {
       <h1 className="mt-5">Login</h1>
       <div className="form-container">
         <form onSubmit={handleSubmit}>
+          {/* Email */}
           <input
             required
             className="form-control mt-3 mb-3"
@@ -57,8 +62,9 @@ const LoginPage = () => {
             name="email"
             onChange={handleChange}
             placeholder="Email *"
-            value={formFields.username}
+            value={formFields.email}
           />
+          {/* Password */}
           <input
             required
             className="form-control mt-3 mb-5"
@@ -68,6 +74,9 @@ const LoginPage = () => {
             placeholder="Password *"
             value={formFields.password}
           />
+          {/* Error Message */}
+          {error && <small className='text-danger'>{error}</small>}
+          {/* {error && error.message && <small className='text-danger'>{error.message}</small>} */}
           <button to={'/'} className="btn btn-danger btn-lg mt-3 mb-3">Login</button>
         </form>
       </div>

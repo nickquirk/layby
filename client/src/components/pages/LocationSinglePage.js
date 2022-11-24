@@ -15,7 +15,7 @@ import Button from 'react-bootstrap/Button'
 
 // Imports
 import ReviewInput from '../common/ReviewInput'
-import Infographic from '../common/Infographic'
+import InfographicSingle from '../common/InfographicSingle'
 import CarouselImageController from '../common/CarouselImage'
 import MapBox from '../common/MapBox'
 import { getToken } from '../common/Auth'
@@ -81,16 +81,21 @@ const LocationSinglePage = () => {
                 fill
               >
                 <Tab eventKey="details" title="Details">
-                  <Col sm="12" md="6">
-                    <Infographic location={location} />
-                    {/* <hr className='hr'></hr> */}
-                    <h3 className='mt-3 mb-3'>Description</h3>
-                    <p>{location.description}</p>
+                  <Col sm="12" >
+                    <InfographicSingle location={location} />
+                    <hr className='single-page-hr'></hr>
+                    <h3 className='mt-3 mb-3'>Description:</h3>
+                    <p className='location-description'>{location.description}</p>
+                    <h6 className='mt-3 mb-3 nearby-activities-title'>Nearby Activities:</h6>
+                    <p className='location-description'>{location.nearbyActivities}</p>
+                    <hr className='single-page-hr'></hr>
                     <MapBox location={location} />
                   </Col>
                   <div className='edit-delete-buttons d-flex justify-content-evenly'>
-                    <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 '>Delete Location</button>
-                    <button to={(`/locations/${locationId}/edit`)} className='btn  btn-warning btn-lg mt-3 mb-3'>Edit Location</button>
+                    <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 ' id='del-btn'>Delete Location</button>
+                    <Link to={`/locations/${locationId}/edit`}>
+                      <button className='btn  btn-warning btn-lg mt-3 mb-3' id='edit-btn'>Edit Location</button>
+                    </Link>
                   </div>
                 </Tab>
                 <Tab eventKey="reviews" title="Reviews">

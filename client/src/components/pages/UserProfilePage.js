@@ -78,13 +78,14 @@ const UserProfilePage = () => {
         <Row className='text-center'>
           <Col md="4" className='text-center'>
             <div className='user-details d-flex flex-column align-items-center'>
+              <h3 className="mt-3 mb-5">Your Details</h3>
               <h3>{user.username}</h3>
               <img className='img-thumbnail profile-pic' src={`${user.profileImage}`}></img>
               <UploadImage 
                 imageFormData={formData}
                 setFormData={setFormData}
               />
-              <Link onClick={handleSubmit} className='btn mt-3 align-self-center'>Upload Pic</Link>
+              <Link onClick={handleSubmit} className='btn align-self-center btn-warning btn-lg mt-3 mb-3'>Upload Pic</Link>
               <textarea
                 className='mt-3 user-bio field'  
                 name="userBio"
@@ -93,7 +94,7 @@ const UserProfilePage = () => {
                 onChange={handleChange}
               >
               </textarea>
-              <Link className='btn mt-3 align-self-center'>Save</Link>
+              <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link>
             </div>
           </Col>
           <Col md="8">
@@ -120,7 +121,7 @@ const UserProfilePage = () => {
               </>
             </div>
             <div className='user-favourites mt-4'>
-              <h3>Favourite Places</h3>
+              <h3 className="mt-5 mb-5">Your Places</h3>
               <div className='favourite-card-container'>
                 <Row>
                   <Col md="6"  xs="6">
@@ -133,36 +134,7 @@ const UserProfilePage = () => {
                       </Card.Body>
                     </Card>
                   </Col>
-                  <Col md="6" xs="6">
-                    <Card className='favourite-card'>
-                      <Card.Body>
-                        <Card.Img variant='top' src='https://tinyurl.com/5atpj5f8'/>
-                        <Card.Title>Location Name</Card.Title>
-                        <Card.Subtitle>Country here</Card.Subtitle>
-                        <Card.Link>Link to location</Card.Link>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col md="6" xs="6">
-                    <Card className='favourite-card'>
-                      <Card.Body>
-                        <Card.Img variant='top' src='https://tinyurl.com/5atpj5f8'/>
-                        <Card.Title>Location Name</Card.Title>
-                        <Card.Subtitle>Country here</Card.Subtitle>
-                        <Card.Link>Link to location</Card.Link>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col md="6" xs="6">
-                    <Card className='favourite-card'>
-                      <Card.Body>
-                        <Card.Img variant='top' src='https://tinyurl.com/5atpj5f8'/>
-                        <Card.Title>Location Name</Card.Title>
-                        <Card.Subtitle>Country here</Card.Subtitle>
-                        <Card.Link>Link to location</Card.Link>
-                      </Card.Body>
-                    </Card>
-                  </Col>
+                  
                 </Row>
               </div>
             </div>

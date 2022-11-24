@@ -26,7 +26,7 @@ const NavBar = () => {
 
   return (
     <div className='navbar-container sticky-top'>
-      <Navbar expand="sm" className="navbar sticky-top">
+      <Navbar expand="md" className="navbar sticky-top">
         <Container>
           <Navbar.Brand as={Link} to='/' className='intro-navbar'><img
             src={Logo}
@@ -50,6 +50,7 @@ const NavBar = () => {
                     Profile
                   </Nav.Link>
                   <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>
+                  <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link>
                 </>
                 :
                 <>
@@ -59,7 +60,6 @@ const NavBar = () => {
                   <Nav.Link as={Link} to="/register">
                     Register
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link>
                 </>
               }
             </Nav>

@@ -22,7 +22,7 @@ const CarouselImageController = ({ location }) => {
               return (
                 <Carousel.Item key={img}>
                   <img
-                    className="d-block w-100"
+                    className="d-block w-100 single-page-image"
                     src={img}
                     alt="No Pretty Pictures Yet"
                     key={img}
