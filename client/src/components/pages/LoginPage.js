@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// imports
 import axios from 'axios'
 import { setToken } from '../common/Auth'
 
