@@ -630,6 +630,7 @@ p {
 
     input[type=range] {
       height: 38px;
+      appearance: none;
       -webkit-appearance: none;
       margin: 0px 0px 10px;
       width: 80%;
@@ -658,6 +659,7 @@ p {
       border-radius: 6px;
       background: #FFFFFF;
       cursor: pointer;
+      appearance: none;
       -webkit-appearance: none;
       margin-top: -11.5px;
     }
