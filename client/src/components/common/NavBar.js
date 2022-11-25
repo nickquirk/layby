@@ -50,7 +50,7 @@ const NavBar = () => {
                     Profile
                   </Nav.Link>
                   <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>
-                  <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link>
+                  {/* <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link> */}
                 </>
                 :
                 <>

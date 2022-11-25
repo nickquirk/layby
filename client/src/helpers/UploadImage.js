@@ -28,6 +28,7 @@ const UploadImage = ({ imageFormData, setFormData, handleSubmit }) => {
         className="input"
         name="image"
         type='file'
+        placeholder='Upload picture'
         onChange={handleChange}
         onSubmit={handleSubmit}
       />
