@@ -60,7 +60,12 @@ const UserProfilePage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.put(`/api/users/${userId}`, formData, {
+      await axios.put(`/api/users/${userId}`, formData, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      const { data } = await axios.get(`/api/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
@@ -82,6 +87,12 @@ const UserProfilePage = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
+      const { data } = await axios.get(`/api/users/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      setUser(data)
     } catch (err) {
       console.log(err)
     }
