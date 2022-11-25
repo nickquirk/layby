@@ -73,7 +73,7 @@ const ReviewInput = ({ location, setLocation }) => {
               {errors && errors.text && <small className="text-danger">{errors.text}</small>}
               <p id='rating-title'>Rating: {formFields.rating}</p>
               <div className='review-rating-container'>
-                <input type='range' name='rating' id='rating-range' min="1" max="5" onChange={handleChange} value={formFields.rating}></input>
+                <input type='range' name='rating' id='rating-range' min="0" max="5" onChange={handleChange} value={formFields.rating}></input>
               </div>
               {errors && errors.text && <small className="text-danger">{errors.text}</small>}
               <div className='rev-submit-container'>

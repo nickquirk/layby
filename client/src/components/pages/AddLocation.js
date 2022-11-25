@@ -47,7 +47,7 @@ const AddLocation = () => {
     try {
       console.log('FORM FIELDS', formFields)
       console.log('GET TOKEN ->', getToken())
-      await axios.post('/api/locations/', formFields, {
+      const { data } = await axios.post('/api/locations/', formFields, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
