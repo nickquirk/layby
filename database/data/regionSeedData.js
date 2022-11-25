@@ -29,5 +29,11 @@ export default [
     countryCode: 'PT',
     flag: '🇵🇹',
     locations: []
+  },
+  {
+    country: 'Ireland',
+    countryCode: 'IRE',
+    flag: '🇮🇪',
+    locations: []
   }
 ]

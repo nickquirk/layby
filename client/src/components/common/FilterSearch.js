@@ -32,7 +32,7 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
           id="filter"
           value={input.search}
         />
-      
+
         <select
           onChange={handleChange}
           name="countryCode"
@@ -46,6 +46,7 @@ const FilterSearch = ({ locations, setFilteredLocations }) => {
           <option value="PT">Portugal 🇵🇹</option>
           <option value="ESP">Spain 🇪🇸</option>
           <option value="UK">United Kingdom 🇬🇧</option>
+          <option value="IRE">Ireland 🇮🇪</option>
         </select>
       </div>
     </>

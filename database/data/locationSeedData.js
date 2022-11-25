@@ -13,7 +13,7 @@ export default [
     toilets: false,
     water: false,
     nearestFuel: 7.8,
-    nearbyActivities: 'Climbing, trecking',
+    nearbyActivities: 'Climbing, trekking',
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
@@ -87,7 +87,7 @@ export default [
     toilets: true,
     water: true,
     nearestFuel: 5,
-    nearbyActivities: 'Treking',
+    nearbyActivities: 'Trekking',
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027327/Pics/Portugal/Da%20Mata/IMG_20180101_180002753_ay7mqp.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027425/Pics/Portugal/Da%20Mata/DSC_7179_xcltzs.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027415/Pics/Portugal/Da%20Mata/DSC_7291_u6chgs.jpg'
@@ -175,7 +175,7 @@ export default [
     toilets: true,
     water: true,
     nearestFuel: 0.9,
-    nearbyActivities: 'Trecking, bars',
+    nearbyActivities: 'Trekking, bars',
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027309/Pics/Morocco/Chefchaoen/DSC_1317_mzbdhi.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027352/Pics/Morocco/Chefchaoen/DSC_1264_l0lob6.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027341/Pics/Morocco/Chefchaoen/DSC_1262_hro9gf.jpg'
@@ -217,6 +217,62 @@ export default [
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027404/Pics/Morocco/Tafraoute/DSC_1974_h1oucy.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027334/Pics/Morocco/Tafraoute/DSC_1945_vhki2c.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027337/Pics/Morocco/Tafraoute/DSC_1951_jfpek2.jpg'
+    ]
+  },
+  {
+    name: 'Kinsale',
+    latitude: 51.697963,
+    longitude: -8.499025,
+    countryCode: 'IRE',
+    currency: '€',
+    description:
+      'Stunning spot overlooking the scenic waterside town of Kinsale. You can park up right next to the historic Charlesfort, built in the 1600s. Fantastic views over the channel and good for catching up with the locals who wander up for the sunset. Lovely pub a 5 minute walk from the spot.',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
+    nearestFuel: 7.8,
+    nearbyActivities: 'Swimming, drinking.',
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    ]
+  },
+  {
+    name: 'Connemara Bay Beach',
+    latitude: 53.421170,
+    longitude: -10.140411,
+    countryCode: 'IRE',
+    currency: '€',
+    description:
+      'Idyllic spot on the Wild Atlantic Way outside Clifden where you can park right up by the beach. White sands and blue water with more than a fair chance of spotting a whale or dolphin in the water. Perfect for setting up a firepit or BBQ and watching the sun set.',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
+    nearestFuel: 15.1,
+    nearbyActivities: 'Swimming, Pub, BBQ',
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    ]
+  }, {
+    name: 'Derreen',
+    latitude: 51.768676,
+    longitude: -9.779658,
+    countryCode: 'IRE',
+    currency: '€',
+    description:
+      'A beautiful spot in County Kerry, space in the car-park of a stunning garden that is open to the public. Speak to the house owner if you would like to stay overnight - they are very accommodating. Bring a coat as it is often raining!',
+    parking: false,
+    freeparking: true,
+    toilets: true,
+    water: true,
+    nearestFuel: 10.7,
+    nearbyActivities: 'Swimming, walking around an amazing garden with trees from all over the world',
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
     ]
   },
 ]

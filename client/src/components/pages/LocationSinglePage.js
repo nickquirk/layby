@@ -91,15 +91,14 @@ const LocationSinglePage = () => {
                       <hr className='single-page-hr'></hr>
                       <MapBox location={location} />
                     </Col>
-                    {/* if owner show edit and delete*/}
-                    {isOwner(location.owner) && 
-                    <div className='edit-delete-buttons d-flex justify-content-evenly'>
-                      <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 ' id='del-btn'>Delete Location</button>
-                      <Link to={`/locations/${locationId}/edit`}>
-                        <button className='btn  btn-warning btn-lg mt-3 mb-3' id='edit-btn'>Edit Location</button>
-                      </Link>
-                    </div>
-                    } 
+                    {isOwner(location.owner) &&
+                      <div className='edit-delete-buttons d-flex justify-content-evenly'>
+                        <button onClick={deleteLocation} className='btn btn-danger btn-lg mt-3 mb-3 ' id='del-btn'>Delete Location</button>
+                        <Link to={`/locations/${locationId}/edit`}>
+                          <button className='btn  btn-warning btn-lg mt-3 mb-3' id='edit-btn'>Edit Location</button>
+                        </Link>
+                      </div>
+                    }
                   </Tab>
                   <Tab eventKey="reviews" title="Reviews">
                     <ReviewInput location={location} setLocation={setLocation} />
@@ -113,7 +112,7 @@ const LocationSinglePage = () => {
         </Container>
       </main >
     </div>
-    
+
   )
 }
 
