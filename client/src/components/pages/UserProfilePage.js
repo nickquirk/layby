@@ -43,7 +43,6 @@ const UserProfilePage = () => {
           },
         })
         setUser(data)
-        console.log(data)
       } catch (err) {
         console.log(err)
         setErrors(true)
@@ -147,7 +146,7 @@ const UserProfilePage = () => {
                                   <p className='d-none d-sm-block'>{review.text}</p>
                                 </div>
                                 <div className='d-flex flex-column buttons align-self-start'>
-                                  <Link onClick={() => deleteReview(locationId, review._id)} className='btn mt-3' id="del2-btn" to="">Delete</Link>
+                                  <Link onClick={() => deleteReview(locationId, review._id)} className='btn mt-3 align-self-end' id="del2-btn" to="">Delete</Link>
                                 </div>
                               </ListGroupItem>
                             </Link>
@@ -162,6 +161,7 @@ const UserProfilePage = () => {
                   )}
                 </>
               </div>
+              {/* ? User favourite locations will go here*/} 
               {/* <div className='user-favourites mt-4'>
               <h3 className="mt-5 mb-5">Your Places</h3>
               <div className='favourite-card-container'>

@@ -49,16 +49,16 @@ const NavBar = () => {
                   <Nav.Link as={Link} to={`/profile/${getUserId()}`}>
                     Profile
                   </Nav.Link>
-                  <span className='nav-link' onClick={() => handleLogout(navigate)}>Logout</span>
+                  <span className='nav-link' onClick={() => handleLogout(navigate)}><span className='red-text'>Logout</span></span>
                   {/* <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link> */}
                 </>
                 :
                 <>
-                  <Nav.Link as={Link} to="/login">
-                    Login
-                  </Nav.Link>
                   <Nav.Link as={Link} to="/register">
                     Register
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/login">
+                    <span className='red-text'>Login</span>
                   </Nav.Link>
                 </>
               }
