@@ -233,9 +233,10 @@ export default [
     water: false,
     nearestFuel: 7.8,
     nearbyActivities: 'Swimming, drinking.',
-    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    image: [
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368787/Pics/Ireland/Kinsale_cpa4n4.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368785/Pics/Ireland/Kinsale_nvh9hl.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368785/Pics/Ireland/Kinsale_cbbbvd.jpg'
     ]
   },
   {
@@ -252,9 +253,10 @@ export default [
     water: false,
     nearestFuel: 10,
     nearbyActivities: 'Surfing, hiking, climbing',
-    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    image: [
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367512/Pics/UK/Godrevy/Godrevy3_x3zfym.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367512/Pics/UK/Godrevy/Godrevy1_uxnsy2.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367512/Pics/UK/Godrevy/Godrevy2_hldui7.jpg'
     ]
   },
   {
@@ -265,9 +267,16 @@ export default [
     currency: '€',
     description:
       'Idyllic spot on the Wild Atlantic Way outside Clifden where you can park right up by the beach. White sands and blue water with more than a fair chance of spotting a whale or dolphin in the water. Perfect for setting up a firepit or BBQ and watching the sun set.',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
     nearestFuel: 10,
     nearbyActivities: 'Surfing, hiking, climbing',
     image: [
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368369/Pics/Ireland/Connemara_Bay_Beach_cn7z69.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368370/Pics/Ireland/Connemara_Bay_Beach_muzh6b.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368368/Pics/Ireland/Connemara_Bay_Beach_qbedzv.jpg'
     ]
   },
   {
@@ -285,6 +294,9 @@ export default [
     nearestFuel: 25,
     nearbyActivities: 'Walking',
     image: [
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367444/Pics/UK/Breacon/Breacon3_evj1um.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367444/Pics/UK/Breacon/Breacon2_ysaqqs.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367444/Pics/UK/Breacon/Breacon1_klmba3.jpg'
     ]
   }, {
     name: 'Derreen',
@@ -300,9 +312,12 @@ export default [
     water: true,
     nearestFuel: 10.7,
     nearbyActivities: 'Swimming, walking around an amazing garden with trees from all over the world',
-    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'],
+    image: [
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368785/Pics/Ireland/Derreen_tjt4pn.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368785/Pics/Ireland/Derreen_iauvpv.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368785/Pics/Ireland/Derreen_irj6l6.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669368785/Pics/Ireland/Derreen_rhi3i0.jpg'
+    ],
   },
   {
     name: 'Sennen Cove',
@@ -319,6 +334,9 @@ export default [
     nearestFuel: 20,
     nearbyActivities: 'Foraging, surfing, hiking, climbing',
     image: [
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367482/Pics/UK/Sennen%20Cove/Sennen3_sx5mrk.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367482/Pics/UK/Sennen%20Cove/Sennen2_egqgos.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669367482/Pics/UK/Sennen%20Cove/Sennen1_cekyem.jpg'
     ]
   },
 ]
