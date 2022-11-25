@@ -23,11 +23,12 @@ const UploadImage = ({ imageFormData, setFormData, handleSubmit }) => {
   }
 
   return (
-    <div className='field'>
+    <div id ="imageupload" className='field'>
       <input
         className="input"
         name="image"
         type='file'
+        placeholder='Upload picture'
         onChange={handleChange}
         onSubmit={handleSubmit}
       />

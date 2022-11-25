@@ -228,20 +228,33 @@ p {
       background-color: white;
     }
 
-    input {
-      width: 100%;
-      background-color: white;
-      border-color: 1px grey solid !important;
-    }
 
     label {
       text-align: center;
       color: grey;
     }
+
+    #imageupload {
+      font-family: 'Roboto Slab', serif;
+      color: grey;
+      border: 1px lightgrey solid;
+      line-height: 1;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: white;
+      width: 100%;
+      margin-bottom: 20px;
+
+    }
+
+    input {
+      width: 100%;
+      background-color: white;
+      border-color: 1px grey solid !important;
+    }
   }
 
   .btn {
-    width: 60%;
     margin-top: 30px;
     align-self: flex-end;
   }
@@ -261,8 +274,25 @@ legend {
   margin-top: 20px;
 }
 
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  max-width: 300px;
+  padding: 40px 10px 20px 10px;
+  border-radius: 4px;
+  background-color: whitesmoke;
+  border: 1px lightgrey solid;
+}
+
 .profile-pic {
   max-width: 200px;
+  border: 1px lightgrey solid;
+  border-radius: 4px;
+  background-color: whitesmoke;
+  margin-bottom: 5px;
 }
 
 .favourite-card {
@@ -274,20 +304,62 @@ legend {
   max-width: 120px;
 }
 
+
 .review-list {
   p {
     margin: 0;
-    background-color: whitesmoke;
+    // background-color: whitesmoke;
   }
 
   .buttons {
     flex-grow: 1;
+    justify-content: space-around;
   }
 }
 
-.upload-image-div{
+.profile-btn {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  align-self: center;
+}
+
+.profile-btn:hover {
+  background-color: $secondary;
+  color: white;
+}
+
+#del2-btn {
+  background-color: $secondary;
+  color: white;
+  border-radius: 5px;
+  align-self: center;
+}
+
+#del2-btn:hover {
+  background-color: white;
+  color: $secondary;
+}
+
+
+.upload-image-div {
   display: flex;
-  input{
+  flex-direction: column;
+
+  #imageupload {
+    font-family: 'Roboto Slab', serif;
+    color: grey;
+    border: 1px lightgrey solid;
+    line-height: 1;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 20px;
+
+  }
+
+  input {
     width: 100%;
     font-size: 14px;
   }
@@ -295,13 +367,14 @@ legend {
 
 .list-group-item {
   background-color: whitesmoke;
+  border-radius: 8px;
 }
 
 .user-reviews {
   overflow-y: scroll;
   min-height: 150px;
   max-height: 540px;
-
+  border-radius: 4px;
 }
 
 // ? Cards

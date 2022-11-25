@@ -123,7 +123,7 @@ const LocationMultiPage = () => {
         </Container>
       </main>
     </div>
-    
+
   )
 }
 

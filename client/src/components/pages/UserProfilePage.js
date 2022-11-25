@@ -92,21 +92,28 @@ const UserProfilePage = () => {
   // ! JSX
   return (
     <>
-      <Container className='profile-page-container'>
-        <Row className='text-center'>
-          <Col md="4" className='text-center '>
-            <div className='user-details d-flex flex-column align-items-center'>
-              <h3>{user.username}</h3>
-              <img className='img-thumbnail profile-pic' src={`${user.image}`}></img>
-              <div className="upload-image-div d-flex mt-2">
-                <UploadImage 
-                  imageFormData={formData}
-                  setFormData={setFormData}
-                  handleSubmit={handleSubmit}
-                />
+      <div className="site-wrapper">
+        <Container className='profile-page-container'>
+          <Row className='text-center'>
+            <Col md="4" className='text-center '>
+              <div className='user-details d-flex flex-column align-items-center'>
+                <h3 className="mt-5 mb-5">{user.username}</h3>
+                <div className='profile-container'>
+                  <img className='img-thumbnail profile-pic' src={`${user.image}`}></img>
+                  <div className="upload-image-div d-flex  mt-2">
+                    <Link onClick={handleSubmit} className=' profile-btn btn align-self-center btn-md btn-sm mb-3' >Upload</Link>
+                    <UploadImage 
+                      imageFormData={formData}
+                      setFormData={setFormData}
+                      handleSubmit={handleSubmit}
+                    />
+                  </div>
+                  <div className='mt-4 d-flex flex-column justify-content-center'>
+                    <Link className='profile-btn btn align-self-center btn-lg btn-md mt-5 mb-3' to="/locations/add" >Add Location</Link>
+                    <Link className='profile-btn btn align-self-center btn-lg btn-md mt-5 mb-5' to="/login" onClick={() => handleLogout(navigate)}>Logout</Link>
+                  </div>
+                </div>
               </div>
-              
-              <Link onClick={handleSubmit} className='btn align-self-center btn-warning btn-lg mt-3 mb-3'>Upload Pic</Link>
               {/* <textarea
                 className='mt-3 user-bio field'  
                 name="userBio"
@@ -116,51 +123,46 @@ const UserProfilePage = () => {
               >
               </textarea> */}
               {/* <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link> */}
-            </div>
-            <div className='mt-4 d-flex align-self-end'>
-              <Link className='btn align-self-start' to="/login" onClick={() => handleLogout(navigate)}>Logout</Link>
-              <Link className='btn align-self-end' to="/locations/add">Add Location</Link>
-            </div>
-          </Col>
-          <Col md="8">
-            <h3>Your Reviews</h3>
-            <div className='user-reviews'>
-              <>
-                {user.reviews ? (
-                  <ListGroup className='ms-1'>
-                    {user.reviews.map(location => {
-                      const { reviews, locationId, locationName, locationImage } = location
-                      return reviews.map(review => {
-                        return (
-                          <Link 
-                            className="text-decoration-none" 
-                            key={review._id} 
-                            to={`/locations/${locationId}`}>
-                            <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
-                              <div>
-                                <img className='list-group-img img-thumbnail' src={locationImage}></img>
-                              </div>
-                              <div className='d-flex flex-column align-items-start ms-3'>
-                                <h4>{locationName}</h4>
-                                <p className='d-none d-sm-block'>{review.text}</p>
-                              </div>
-                              <div className='d-flex flex-column buttons align-self-start'>
-                                <Link onClick={() => deleteReview(locationId, review._id)} className='btn btn-warning' to="">Delete</Link>
-                              </div>
-                            </ListGroupItem>
-                          </Link>
-                        )
-                      })
-                    })}
-                  </ListGroup>
-                ) : errors ? (
-                  <h2>Error...</h2>
-                ) : (
-                  <h2>No reviews</h2>
-                )}
-              </>
-            </div>
-            {/* <div className='user-favourites mt-4'>
+            </Col>
+            <Col md="8">
+              <h3 className="mt-5 mb-5">Your Reviews</h3>
+              <div className='user-reviews'>
+                <>
+                  {user.reviews ? (
+                    <ListGroup className='ms-1'>
+                      {user.reviews.map(location => {
+                        const { reviews, locationId, locationName, locationImage } = location
+                        return reviews.map(review => {
+                          return (
+                            <Link 
+                              className="text-decoration-none" 
+                              key={review._id} 
+                              to={`/locations/${locationId}`}>
+                              <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
+                                <div>
+                                  <img className='list-group-img img-thumbnail' src={locationImage}></img>
+                                </div>
+                                <div className='d-flex flex-column align-items-start ms-3'>
+                                  <h4>{locationName}</h4>
+                                  <p className='d-none d-sm-block'>{review.text}</p>
+                                </div>
+                                <div className='d-flex flex-column buttons align-self-start'>
+                                  <Link onClick={() => deleteReview(locationId, review._id)} className='btn mt-3' id="del2-btn" to="">Delete</Link>
+                                </div>
+                              </ListGroupItem>
+                            </Link>
+                          )
+                        })
+                      })}
+                    </ListGroup>
+                  ) : errors ? (
+                    <h2>Error...</h2>
+                  ) : (
+                    <h2>No reviews</h2>
+                  )}
+                </>
+              </div>
+              {/* <div className='user-favourites mt-4'>
               <h3 className="mt-5 mb-5">Your Places</h3>
               <div className='favourite-card-container'>
                 <Row>
@@ -234,9 +236,10 @@ const UserProfilePage = () => {
                   </Row>
                 </div>
               </div> */}
-          </Col>
-        </Row>
-      </Container>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </>
     
   )
