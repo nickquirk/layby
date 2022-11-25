@@ -219,4 +219,55 @@ export default [
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027337/Pics/Morocco/Tafraoute/DSC_1951_jfpek2.jpg'
     ]
   },
+  {
+    name: 'Godrevy',
+    latitude: 50.3006,
+    longitude: -5.2303,
+    countryCode: 'UK',
+    currency: '£',
+    description:
+      'A stunning spot on the wild and rugged Cornish coastline right in the middle of the mining heritage area. Dolphins and seals often spotted from the cliffsParking is small layby near the headland, next to the coastguard lookout point.',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
+    nearestFuel: 10,
+    nearbyActivities: 'Surfing, hiking, climbing',
+    image: [
+    ]
+  },
+  {
+    name: 'Breacon',
+    latitude: 53.479039,
+    longitude: -2.964563,
+    countryCode: 'UK',
+    currency: '£',
+    description:
+      'A lush green spot in the Breacon Beacons. Lots of laybys and spots out of the way to park unnoticed.Great pub in the village with free wifi',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
+    nearestFuel: 25,
+    nearbyActivities: 'Walking',
+    image: [
+    ]
+  },
+  {
+    name: 'Sennen Cove',
+    latitude: 50.075581,
+    longitude: -5.702987,
+    countryCode: 'UK',
+    currency: '£',
+    description:
+      'You need to pay for parking if you want to be near the beach, either the National Trust or Council car park (next to the lifeboat station).Some great pubs in the village with live music in the evenings.The walk on the coast-path round to LandsEnd is worthwhile, but avoid the tourist trap there!Great sea cliff climbing at Sennen Head, Bosigran and the Gurnards Head',
+    parking: true,
+    freeparking: false,
+    toilets: true,
+    water: false,
+    nearestFuel: 20,
+    nearbyActivities: 'Foraging, surfing, hiking, climbing',
+    image: [
+    ]
+  },
 ]
