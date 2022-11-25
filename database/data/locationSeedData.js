@@ -265,6 +265,10 @@ export default [
     currency: '€',
     description:
       'Idyllic spot on the Wild Atlantic Way outside Clifden where you can park right up by the beach. White sands and blue water with more than a fair chance of spotting a whale or dolphin in the water. Perfect for setting up a firepit or BBQ and watching the sun set.',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
     nearestFuel: 10,
     nearbyActivities: 'Surfing, hiking, climbing',
     image: [
