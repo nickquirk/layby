@@ -21,6 +21,7 @@ import secureRoute from './secureRoute.js'
 
 const router = express.Router()
 
+
 router.route('/locations')
   .get(getAllLocations)
   .post(secureRoute, addLocation)
