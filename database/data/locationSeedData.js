@@ -76,8 +76,8 @@ export default [
   },
   {
     name: 'Da Mata',
-    latitude: 37.806104,
-    longitude: -8.796337,
+    latitude: 37.142699,
+    longitude: -8.789405,
     countryCode: 'PT',
     currency: '€',
     description:
@@ -95,8 +95,8 @@ export default [
   },
   {
     name: 'Lagos',
-    latitude: 37.806104,
-    longitude: -8.796337,
+    latitude: 37.115517,
+    longitude: -8.677477,
     countryCode: 'PT',
     currency: '€',
     description: 'A large parking area in the center of the city of Lagos. Pretty ugly but functional, full camper service, great for exploring the city. €3 per night, €2 Service.',
@@ -239,6 +239,25 @@ export default [
     ]
   },
   {
+    name: 'Godrevy',
+    latitude: 50.3006,
+    longitude: -5.2303,
+    countryCode: 'UK',
+    currency: '£',
+    description:
+      'A stunning spot on the wild and rugged Cornish coastline right in the middle of the mining heritage area. Dolphins and seals often spotted from the cliffsParking is small layby near the headland, next to the coastguard lookout point.',
+    parking: false,
+    freeparking: true,
+    toilets: false,
+    water: false,
+    nearestFuel: 10,
+    nearbyActivities: 'Surfing, hiking, climbing',
+    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    ]
+  },
+  {
     name: 'Connemara Bay Beach',
     latitude: 53.421170,
     longitude: -10.140411,
@@ -246,15 +265,26 @@ export default [
     currency: '€',
     description:
       'Idyllic spot on the Wild Atlantic Way outside Clifden where you can park right up by the beach. White sands and blue water with more than a fair chance of spotting a whale or dolphin in the water. Perfect for setting up a firepit or BBQ and watching the sun set.',
+    nearestFuel: 10,
+    nearbyActivities: 'Surfing, hiking, climbing',
+    image: [
+    ]
+  },
+  {
+    name: 'Breacon',
+    latitude: 53.479039,
+    longitude: -2.964563,
+    countryCode: 'UK',
+    currency: '£',
+    description:
+      'A lush green spot in the Breacon Beacons. Lots of laybys and spots out of the way to park unnoticed.Great pub in the village with free wifi',
     parking: false,
     freeparking: true,
     toilets: false,
     water: false,
-    nearestFuel: 15.1,
-    nearbyActivities: 'Swimming, Pub, BBQ',
-    image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+    nearestFuel: 25,
+    nearbyActivities: 'Walking',
+    image: [
     ]
   }, {
     name: 'Derreen',
@@ -272,7 +302,23 @@ export default [
     nearbyActivities: 'Swimming, walking around an amazing garden with trees from all over the world',
     image: ['https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027310/Pics/Spain/Cova%20Negra/DSC_0910_EDIT_zmktv9.jpg',
       'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027434/Pics/Spain/Cova%20Negra/DSC_0916_n1il4m.jpg',
-      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'
+      'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669027453/Pics/Spain/Cova%20Negra/DSC_0915_o2qeh0.jpg'],
+  },
+  {
+    name: 'Sennen Cove',
+    latitude: 50.075581,
+    longitude: -5.702987,
+    countryCode: 'UK',
+    currency: '£',
+    description:
+      'You need to pay for parking if you want to be near the beach, either the National Trust or Council car park (next to the lifeboat station).Some great pubs in the village with live music in the evenings.The walk on the coast-path round to LandsEnd is worthwhile, but avoid the tourist trap there!Great sea cliff climbing at Sennen Head, Bosigran and the Gurnards Head',
+    parking: true,
+    freeparking: false,
+    toilets: true,
+    water: false,
+    nearestFuel: 20,
+    nearbyActivities: 'Foraging, surfing, hiking, climbing',
+    image: [
     ]
   },
 ]
