@@ -136,13 +136,8 @@ const UserProfilePage = () => {
                                   <h4>{locationName}</h4>
                                   <p className='d-none d-sm-block'>{review.text}</p>
                                 </div>
-<<<<<<< HEAD
-                                <div className='delete-review-btn'>
-                                  <Link onClick={() => deleteReview(locationId, review._id)} className='btn mt-3' id="del2-btn" to="">Delete</Link>
-=======
                                 <div className='d-flex flex-column buttons align-self-start'>
                                   <Link onClick={() => deleteReview(locationId, review._id)} className='btn mt-3 align-self-end' id="del2-btn" to="">Delete</Link>
->>>>>>> nick
                                 </div>
                               </ListGroupItem>
                             </Link>
