@@ -1,7 +1,7 @@
 /* eslint-disable comma-dangle */
 // * React
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 // * Imports
 import axios from 'axios'
@@ -83,7 +83,17 @@ const ReviewInput = ({ location, setLocation }) => {
             </form>
           </div>
           :
-          <></>
+          <div className='review-login-register'>
+            <p>Please Register or Login to leave a Review</p>
+            <div className='review-login-buttons'>
+              <Link to={'/login'}>
+                <button className='btn btn-lg btn-danger' id='review-login-buttons'>Login</button>
+              </Link>
+              <Link to={'/register'}>
+                <button className='btn btn-danger btn-lg' id='review-login-buttons'>Register</button>
+              </Link>
+            </div>
+          </div>
         }
         <div className='review-display-container'>
           <h3 className='community-reviews mb-3'>Community Reviews:</h3>
