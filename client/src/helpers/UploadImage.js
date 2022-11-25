@@ -30,7 +30,6 @@ const UploadImage = ({ imageFormData, setFormData, handleSubmit }) => {
         type='file'
         placeholder='Upload picture'
         onChange={handleChange}
-        onSubmit={handleSubmit}
       />
     </div>
   )
