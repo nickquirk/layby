@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import express from 'express'
 import mongoose from 'mongoose'
-import { } from 'dotenv/config'
+import 'dotenv/config'
 import router from './config/router.js'
 import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
