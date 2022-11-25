@@ -19,10 +19,6 @@ const NavBar = () => {
   // ! Navigation
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   setUserId(getUserId())
-  // },[])
-
 
   return (
     <div className='navbar-container sticky-top'>
@@ -50,7 +46,6 @@ const NavBar = () => {
                     Profile
                   </Nav.Link>
                   <span className='nav-link' onClick={() => handleLogout(navigate)}><span className='red-text'>Logout</span></span>
-                  {/* <Nav.Link as={Link} to="/locations/add">Add Location</Nav.Link> */}
                 </>
                 :
                 <>
