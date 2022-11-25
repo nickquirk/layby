@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
 // Bootstrap imports
-import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
