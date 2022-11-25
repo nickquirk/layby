@@ -18,7 +18,7 @@ const RegisterPage = () => {
     email: '',
     password: '',
     passwordConfirmation: '',
-    image: 'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669313278/default-images/115-1150152_default-profile-picture-avatar-png-red_vridk3.jpg',
+    image: 'https://res.cloudinary.com/dhjguxvm1/image/upload/v1669364899/default-images/van-logo_upuiqv.png',
   })
 
   // ! Executions 

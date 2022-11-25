@@ -76,8 +76,8 @@ export default [
   },
   {
     name: 'Da Mata',
-    latitude: 37.806104,
-    longitude: -8.796337,
+    latitude: 37.142699,
+    longitude: -8.789405,
     countryCode: 'PT',
     currency: '€',
     description:
@@ -95,8 +95,8 @@ export default [
   },
   {
     name: 'Lagos',
-    latitude: 37.806104,
-    longitude: -8.796337,
+    latitude: 37.115517,
+    longitude: -8.677477,
     countryCode: 'PT',
     currency: '€',
     description: 'A large parking area in the center of the city of Lagos. Pretty ugly but functional, full camper service, great for exploring the city. €3 per night, €2 Service.',
