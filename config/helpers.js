@@ -24,7 +24,7 @@ export const findReview = async (req, _res, location) => {
     if (!review) {
       throw new NotFound('Review not found')
     }
-    if (!req.currentUser._id.equals(review.owner)) {
+    if (!req.currentUser._id.equals(review.owner._id)) {
       throw new Unauthorised('Not permitted to delete this review')
     }
     return review

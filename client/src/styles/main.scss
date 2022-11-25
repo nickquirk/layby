@@ -168,6 +168,7 @@ p {
         font-size: 12px;
         padding-left: 6px;
         margin-top: 25px;
+        margin-bottom: 14px;
       }
     }
 
@@ -175,16 +176,13 @@ p {
       display: none; // display above a certain size 768px??
     }
 
-    #landing-page-icon-container {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .widget-container-multi {
-      display: flex;
-      justify-content: space-around;
-    }
   }
+
+}
+
+.widget-container-multi {
+  display: flex;
+  justify-content: space-around;
 }
 
 #post-text {
@@ -197,7 +195,7 @@ p {
   margin-bottom: 50px;
 }
 
-// ?Form
+// ? Form
 .form-main {
   display: flex;
   flex-direction: column;
@@ -337,6 +335,7 @@ legend {
   color: white;
   border-radius: 5px;
   align-self: center;
+  margin-top: 0px !important;
 }
 
 #del2-btn:hover {
@@ -530,7 +529,7 @@ p {
       align-items: flex-start;
       color: $secondary;
       font-weight: 800;
-      font-size: 12px; /// change font sizes above 776px!
+      font-size: 12px;
     }
 
     .rating {
@@ -745,10 +744,8 @@ p {
   position: relative;
   overflow: hidden;
   padding: 0px;
-  // border-top-left-radius: 20px; above mobile size implement these!!
-  // border-top-right-radius: 20px;
   border: 2px, solid, grey;
-  max-height: 250px; //above mobile make larger
+  max-height: 250px;
 
   .single-page-hero {
     object-fit: cover;
@@ -760,6 +757,7 @@ p {
   }
 }
 
+
 img {
   max-width: 100%;
   margin: 0;
@@ -769,13 +767,11 @@ img {
 .widget-container {
   display: flex;
   flex-direction: column;
-  // block-size: fit-content;
   max-width: 100%;
   background-color: whitesmoke;
   border-radius: 4px;
-  // border: 1px lightgrey solid;
   padding: 12px;
-  padding-left: 10px; // needs more padding above mobile screen size / change orientation to row
+  padding-left: 10px;
   margin-bottom: 10px;
 
   .widget-text {
@@ -838,7 +834,52 @@ textarea {
   border-radius: 4px;
 }
 
+.review-profile-item {
+  display: flex !important;
+  justify-content: space-between;
 
+  .delete-review-btn {
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+}
+
+
+// ? Location Index
+#index-header {
+  display: flex;
+  justify-content: space-evenly;
+
+  .index-page-title {
+    display: flex;
+
+    #index-title {
+      font-size: 18px;
+      margin-left: 0px !important;
+      margin-right: 4px;
+    }
+
+    #index-code {
+      font-size: 10px;
+      margin-top: 14px;
+
+    }
+  }
+
+  .index-review-container {
+    margin-left: 4px;
+
+    .index-rating {
+      color: $secondary;
+      font-size: 11px;
+      margin-top: 0px;
+    }
+
+    .card-avg-index {
+      margin-top: 6px;
+    }
+  }
+}
 
 @media (min-width: 576px) {
   .top-rated {
@@ -877,7 +918,7 @@ textarea {
   .card-code {
     margin-top: 24px;
     font-weight: 800;
-    font-size: 20px !important; /// change font sizes above 776px!
+    font-size: 20px !important;
   }
 
   .rating {
@@ -899,7 +940,9 @@ textarea {
 
     .widget-text {
       font-weight: 400;
-      font-size: 9px;
+      font-size: 12px;
+      margin-bottom: 8px;
+      margin-top: 15px;
     }
 
     .ifg {
@@ -922,7 +965,7 @@ textarea {
 
 }
 
-/* Desktop up - once gets above phone screen size of 992 then apply this */
+
 @media (min-width: 992px) {
   .landing-page {
     margin-left: 100px;

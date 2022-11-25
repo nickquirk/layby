@@ -22,7 +22,7 @@ const UserProfilePage = () => {
   // ! State
   const [user, setUser] = useState([])
   const [errors, setErrors] = useState(false)
-  const [ formData, setFormData ] = useState({
+  const [formData, setFormData] = useState({
     image: '',
     userBio: '',
   })
@@ -59,7 +59,12 @@ const UserProfilePage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const { data } = await axios.put(`/api/users/${userId}`, formData, {
+      await axios.put(`/api/users/${userId}`, formData, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      const { data } = await axios.get(`/api/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
@@ -81,6 +86,12 @@ const UserProfilePage = () => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
+      const { data } = await axios.get(`/api/users/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${getToken()}`,
+        },
+      })
+      setUser(data)
     } catch (err) {
       console.log(err)
     }
@@ -101,7 +112,7 @@ const UserProfilePage = () => {
                   <img className='img-thumbnail profile-pic' src={`${user.image}`}></img>
                   <div className="upload-image-div d-flex  mt-2">
                     <Link onClick={handleSubmit} className=' profile-btn btn align-self-center btn-md btn-sm mb-3' >Upload</Link>
-                    <UploadImage 
+                    <UploadImage
                       imageFormData={formData}
                       setFormData={setFormData}
                       handleSubmit={handleSubmit}
@@ -113,15 +124,6 @@ const UserProfilePage = () => {
                   </div>
                 </div>
               </div>
-              {/* <textarea
-                className='mt-3 user-bio field'  
-                name="userBio"
-                rows="3"
-                value={formData.userBio}
-                onChange={handleChange}
-              >
-              </textarea> */}
-              {/* <Link className='btn btn-warning btn-lg mt-3 mb-3align-self-center'>Save</Link> */}
             </Col>
             <Col md="8">
               <h3 className="mt-5 mb-5">Your Reviews</h3>
@@ -133,11 +135,11 @@ const UserProfilePage = () => {
                         const { reviews, locationId, locationName, locationImage } = location
                         return reviews.map(review => {
                           return (
-                            <Link 
-                              className="text-decoration-none" 
-                              key={review._id} 
+                            <Link
+                              className="text-decoration-none"
+                              key={review._id}
                               to={`/locations/${locationId}`}>
-                              <ListGroupItem className='d-flex review-list list-group-item-action mt-2'>
+                              <ListGroupItem className='d-flex review-list list-group-item-action mt-2 review-profile-item'>
                                 <div>
                                   <img className='list-group-img img-thumbnail' src={locationImage}></img>
                                 </div>
@@ -241,7 +243,7 @@ const UserProfilePage = () => {
         </Container>
       </div>
     </>
-    
+
   )
 }
 

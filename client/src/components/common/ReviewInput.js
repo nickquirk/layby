@@ -19,10 +19,9 @@ const ReviewInput = ({ location, setLocation }) => {
 
   const [formFields, setFormFields] = useState({
     text: '',
-    rating: '',
+    rating: '0',
   })
   const [errors, setErrors] = useState(null)
-
 
 
   const handleSubmit = async (e) => {
@@ -33,7 +32,7 @@ const ReviewInput = ({ location, setLocation }) => {
           Authorization: `Bearer ${getToken()}`,
         },
       })
-      setFormFields({ text: '', rating: '' })
+      setFormFields({ text: '', rating: '0' })
       const { data } = await axios.get(`/api/locations/${locationId}`)
       setLocation(data)
       console.log(formFields)
@@ -72,7 +71,7 @@ const ReviewInput = ({ location, setLocation }) => {
                 value={formFields.text}
               />
               {errors && errors.text && <small className="text-danger">{errors.text}</small>}
-              <p id='rating-title'>Rating:</p>
+              <p id='rating-title'>Rating: {formFields.rating}</p>
               <div className='review-rating-container'>
                 <input type='range' name='rating' id='rating-range' min="1" max="5" onChange={handleChange} value={formFields.rating}></input>
               </div>

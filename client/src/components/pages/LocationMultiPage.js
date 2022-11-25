@@ -9,6 +9,8 @@ import { TbParking } from 'react-icons/tb'
 import FilterSearch from '../common/FilterSearch'
 import SpinnerItem from '../common/SpinnerItem'
 import Container from 'react-bootstrap/Container'
+import InfographicMulti from '../common/InfographicMulti'
+
 import Row from 'react-bootstrap/row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -73,41 +75,16 @@ const LocationMultiPage = () => {
                           style={{ backgroundImage: `url(${image[0]})` }}
                         ></div>
                         <Card.Body className="d-flex flex-column">
-                          <div className='location-card-header'>
-                            <h4 className='location-card-title mb-4'>{name}</h4>
-                            <p className='card-code-multi'>{countryCode}</p>
-                          </div>
-                          {/* <p className="card-text">{description}</p> */}
-                          <span></span>
-                          <div className="icon-container d-flex justify-content-evenly">
-                            <div className="icon">
-                              {toilets === false ? (
-                                <></>
-                              ) : (
-                                <div className="ifg" id="restroom-ifg">
-                                  <GrRestroom />
-                                </div>
-                              )}
+                          <div className='location-card-header' id='index-header'>
+                            <div className='index-page-title'>
+                              <h4 className='location-card-title mb-4' id='index-title'>{name}</h4>
+                              <p className='card-code-multi' id='index-code'>{countryCode}</p>
                             </div>
-                            <div className="icon">
-                              {freeparking === false ? (
-                                <></>
-                              ) : (
-                                <div className="ifg" id="parking-ifg">
-                                  <TbParking />
-                                </div>
-                              )}
-                            </div>
-                            <div className="icon">
-                              {water === false ? (
-                                <></>
-                              ) : (
-                                <div className="ifg" id="water-ifg">
-                                  <MdOutlineWaterDrop />
-                                </div>
-                              )}
+                            <div className='index-review-container'>
+                              <p className='card-avg-index'><span className='index-rating'>{loc.avgRating} &#9733;</span></p>
                             </div>
                           </div>
+                          <InfographicMulti location={loc} />
                         </Card.Body>
                       </Card>
                     </Link>
