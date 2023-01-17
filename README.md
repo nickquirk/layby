@@ -159,7 +159,7 @@ We used Git so that we could all contribute to the project at the same time whil
 
 We adopted the following strategy for version control. We each worked on our own feature branch, pushing to the development branch when we had completed each feature or made a major change and there were no code-breaking bugs. At the end of the project we all pushed our changes and merged the development branch into the main branch. 
 
-![](https://res.cloudinary.com/dhjguxvm1/image/upload/v1673625141/Readme_Pics/Project3/image3_mxfq5s.png)
+![](https://res.cloudinary.com/dhjguxvm1/image/upload/b_rgb:ffffff/v1673625141/Readme_Pics/Project3/image3_mxfq5s.png)
 
 Working in this way meant that we all had a backup of our most recent work on our remote and could also try things out on our own feature branch and make sure that any major bugs were fixed before pushing to the development branch. This ensured that everyone had a working version of the code and also that our code was backed up in multiple places, in multiple different versions should we need to roll it back. 
 
